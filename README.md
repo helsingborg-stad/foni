@@ -1,5 +1,13 @@
 # Foni
 
+- [Foni](#foni)
+  - [Git Setup](#git-setup)
+    - [Unity Diff Tool](#unity-diff-tool)
+  - [Unity Setup](#unity-setup)
+  - [Third-Party Notices](#third-party-notices)
+    - [Free Cartoon Trees Vectors](#free-cartoon-trees-vectors)
+    - [Material Symbols by Google](#material-symbols-by-google)
+
 Foni is an educational app/game intended to help pre-school children learn
 how to phonetically pronounce alphabetical letters by associating them with
 simple objects, such fruit.
@@ -29,3 +37,19 @@ For more info about this check out the
 This project is built using Unity and is intended to be compatible with the
 latest Unity 2022 version. Unity editor versions are easily managed using
 [Unity Hub](https://unity.com/unity-hub).
+
+## Third-Party Notices
+
+This project uses external/third-party assets.
+
+### Free Cartoon Trees Vectors
+
+- Usage: In-game tree image (modified)
+- License: [Free Vector Standard License](https://www.freevector.com/standard-license)
+- Link: https://www.freevector.com/free-cartoon-trees-vectors-18742
+
+### Material Symbols by Google
+
+- Usage: Various in-game text-symbols
+- License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
+- Link: https://fonts.google.com/icons
