@@ -1,0 +1,195 @@
+{
+  "letters": [
+    {
+      "id": "a",
+      "words": [
+        "apelsin",
+        "avokado",
+        "armar"
+      ]
+    },
+    {
+      "id": "b",
+      "words": [
+        "blåbär",
+        "barnvagn",
+        "byxor"
+      ]
+    },
+    {
+      "id": "d",
+      "words": [
+        "drake",
+        "docka",
+        "dator"
+      ]
+    },
+    {
+      "id": "e",
+      "words": [
+        "ekorre",
+        "eka",
+        "eld"
+      ]
+    },
+    {
+      "id": "f",
+      "words": [
+        "får",
+        "fingrar",
+        "fjäril"
+      ]
+    },
+    {
+      "id": "g",
+      "words": [
+        "gris",
+        "groda",
+        "gaffel"
+      ]
+    },
+    {
+      "id": "h",
+      "words": [
+        "häst",
+        "hallon",
+        "halsduk"
+      ]
+    },
+    {
+      "id": "i",
+      "words": [
+        "igelkott",
+        "is",
+        "insekter"
+      ]
+    },
+    {
+      "id": "j",
+      "words": [
+        "julgran",
+        "jacka",
+        "juice"
+      ]
+    },
+    {
+      "id": "k",
+      "words": [
+        "kiwi",
+        "kniv",
+        "knä"
+      ]
+    },
+    {
+      "id": "l",
+      "words": [
+        "lime",
+        "lastbil",
+        "linjal"
+      ]
+    },
+    {
+      "id": "m",
+      "words": [
+        "marsvin",
+        "moln",
+        "motorcykel"
+      ]
+    },
+    {
+      "id": "n",
+      "words": [
+        "nyckelpiga",
+        "nyckel",
+        "naglar"
+      ]
+    },
+    {
+      "id": "o",
+      "words": [
+        "orange",
+        "oliv",
+        "ost"
+      ]
+    },
+    {
+      "id": "p",
+      "words": [
+        "persika",
+        "pussas",
+        "paraply"
+      ]
+    },
+    {
+      "id": "r",
+      "words": [
+        "räv",
+        "russin",
+        "ryggsäck"
+      ]
+    },
+    {
+      "id": "s",
+      "words": [
+        "smultron",
+        "sked",
+        "segelbåt"
+      ]
+    },
+    {
+      "id": "t",
+      "words": [
+        "tröja",
+        "tår",
+        "traktor"
+      ]
+    },
+    {
+      "id": "u",
+      "words": [
+        "ubåt",
+        "ugn",
+        "undulat"
+      ]
+    },
+    {
+      "id": "v",
+      "words": [
+        "vindruva",
+        "vas",
+        "varm"
+      ]
+    },
+    {
+      "id": "y",
+      "words": [
+        "yxa",
+        "yr"
+      ]
+    },
+    {
+      "id": "å",
+      "words": [
+        "ål",
+        "ånga",
+        "åra"
+      ]
+    },
+    {
+      "id": "ä",
+      "words": [
+        "ägg",
+        "älg",
+        "äng"
+      ]
+    },
+    {
+      "id": "ö",
+      "words": [
+        "ödla",
+        "ögonbryn",
+        "öra"
+      ]
+    }
+  ]
+}

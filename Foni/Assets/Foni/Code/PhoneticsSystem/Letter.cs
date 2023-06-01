@@ -1,6 +1,6 @@
 using System;
 
-namespace Foni.Code.LetterSystem
+namespace Foni.Code.PhoneticsSystem
 {
     [Serializable]
     public struct Letter

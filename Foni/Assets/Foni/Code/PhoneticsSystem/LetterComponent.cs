@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Foni.Code.LetterSystem
+namespace Foni.Code.PhoneticsSystem
 {
     public enum ELetterState
     {
