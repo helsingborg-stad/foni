@@ -9,5 +9,6 @@ namespace Foni.Code.AsyncSystem
     {
         Coroutine StartCoroutine(IEnumerator routine);
         Task RunOnMainThread(Func<IEnumerator> routine);
+        void QueueOnMainThread(Action action);
     }
 }

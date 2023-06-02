@@ -16,6 +16,7 @@ namespace Foni.Code.AsyncSystem
         }
 
         private readonly Queue<MainThreadTask> _pendingMainThreadTasks = new();
+        private readonly Queue<Action> _pendingMainThreadActions = new();
 
         private static IEnumerator RunMainThreadTask(MainThreadTask task)
         {
@@ -25,11 +26,28 @@ namespace Foni.Code.AsyncSystem
 
         private void Update()
         {
+            RunQueuedMainThreadTasks();
+            RunQueuedMainThreadActions();
+        }
+
+        private void RunQueuedMainThreadTasks()
+        {
             lock (_pendingMainThreadTasks)
             {
                 while (_pendingMainThreadTasks.TryDequeue(out var pendingTask))
                 {
                     StartCoroutine(RunMainThreadTask(pendingTask));
+                }
+            }
+        }
+
+        private void RunQueuedMainThreadActions()
+        {
+            lock (_pendingMainThreadTasks)
+            {
+                while (_pendingMainThreadActions.TryDequeue(out var pendingAction))
+                {
+                    pendingAction();
                 }
             }
         }
@@ -50,6 +68,14 @@ namespace Foni.Code.AsyncSystem
             }
 
             return tcs.Task;
+        }
+
+        public void QueueOnMainThread(Action action)
+        {
+            lock (_pendingMainThreadActions)
+            {
+                _pendingMainThreadActions.Enqueue(action);
+            }
         }
     }
 }
