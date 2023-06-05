@@ -1,4 +1,4 @@
-using Foni.Code.AssetSystem.Implementation;
+using Foni.Code.AssetSystem;
 using Foni.Code.AsyncSystem;
 using UnityEngine;
 
@@ -17,8 +17,8 @@ namespace Foni.Code.Core
             Debug.Log("Setting up globals");
             var serviceLocator = new CoreServiceLocator
             {
-                AssetService = new DeviceLocalAssetService(),
-                AsyncService = gameObject.AddComponent<AsyncService>()
+                AsyncService = gameObject.AddComponent<AsyncService>(),
+                AssetCache = new AssetCache()
             };
             Globals.ServiceLocator = serviceLocator;
         }

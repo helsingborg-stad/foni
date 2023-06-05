@@ -6,10 +6,11 @@ namespace Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource
 {
     public class FileAccessStreamingAssetsStrategy : IStreamingAssetStrategy
     {
-        public Task<string> Get(string path)
+        public async Task<string> Get(string path)
         {
             var fileUri = Path.Combine(Application.streamingAssetsPath, path);
-            return File.ReadAllTextAsync(fileUri);
+            var bytes = await File.ReadAllBytesAsync(fileUri);
+            return System.Convert.ToBase64String(bytes);
         }
     }
 }

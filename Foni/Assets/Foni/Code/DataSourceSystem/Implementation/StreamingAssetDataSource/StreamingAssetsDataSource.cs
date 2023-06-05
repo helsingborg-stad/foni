@@ -1,6 +1,5 @@
 using System;
 using System.Threading.Tasks;
-using UnityEngine;
 
 namespace Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource
 {
@@ -17,13 +16,7 @@ namespace Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource
             }
         }
 
-        public async Task<T> Load<T>(string path)
-        {
-            var raw = await LoadRaw(path);
-            return JsonUtility.FromJson<T>(raw);
-        }
-
-        public async Task<string> LoadRaw(string path)
+        public async Task<string> LoadBase64(string path)
         {
             var result = await Strategy.Get(path);
             return result;

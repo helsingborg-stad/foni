@@ -35,7 +35,7 @@ namespace Foni.Code.PhoneticsSystem
 
         public void UpdateFromLetter(Letter newLetter)
         {
-            text.SetText(newLetter.id);
+            text.SetText(newLetter.ID);
         }
 
         public void SetState(ELetterState newState)

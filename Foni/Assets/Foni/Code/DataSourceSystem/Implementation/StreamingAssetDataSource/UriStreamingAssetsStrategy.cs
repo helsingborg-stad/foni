@@ -10,7 +10,7 @@ namespace Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource
 {
     public class UriStreamingAssetsStrategy : IStreamingAssetStrategy
     {
-        private static IEnumerator PerformWebRequest(string uri, Action<string> resultCallback)
+        private static IEnumerator PerformWebRequest(string uri, Action<byte[]> resultCallback)
         {
             var request = UnityWebRequest
                 .Get(uri);
@@ -22,19 +22,19 @@ namespace Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource
                 throw new Exception($"Failed to access uri {uri} ({request.result})");
             }
 
-            resultCallback(request.downloadHandler.text);
+            resultCallback(request.downloadHandler.data);
         }
 
         public async Task<string> Get(string path)
         {
             var fileUri = Path.Combine(Application.streamingAssetsPath, path);
 
-            string requestResult = null;
+            byte[] bytes = { };
 
             await Globals.ServiceLocator.AsyncService.RunOnMainThread(() => PerformWebRequest(fileUri,
-                result => requestResult = result));
+                result => bytes = result));
 
-            return requestResult;
+            return Convert.ToBase64String(bytes);
         }
     }
 }

@@ -22,16 +22,16 @@ namespace Foni.Code.Core
             Register(serviceType, (IService)service);
         }
 
-        public IAssetService AssetService
-        {
-            get => GetAs<IAssetService>(EService.AssetService);
-            set => RegisterAs(EService.AssetService, value);
-        }
-
         public IAsyncService AsyncService
         {
             get => GetAs<IAsyncService>(EService.AsyncManager);
             set => RegisterAs(EService.AsyncManager, value);
+        }
+
+        public IAssetCache AssetCache
+        {
+            get => GetAs<IAssetCache>(EService.AssetCache);
+            set => RegisterAs(EService.AssetCache, value);
         }
     }
 }
