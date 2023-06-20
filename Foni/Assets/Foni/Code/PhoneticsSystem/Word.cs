@@ -13,6 +13,21 @@ namespace Foni.Code.PhoneticsSystem
     {
         public string ID;
         public SoftRef<Sprite> Sprite;
+
+        public bool Equals(Word other)
+        {
+            return ID == other.ID;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Word other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return (ID != null ? ID.GetHashCode() : 0);
+        }
     }
 
     public static class WordSerialization

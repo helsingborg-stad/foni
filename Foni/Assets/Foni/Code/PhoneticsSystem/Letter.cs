@@ -12,6 +12,21 @@ namespace Foni.Code.PhoneticsSystem
     {
         public string ID;
         public List<Word> Words;
+
+        public bool Equals(Letter other)
+        {
+            return ID == other.ID;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Letter other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return ID != null ? ID.GetHashCode() : 0;
+        }
     }
 
     public static class LetterSerialization

@@ -1,0 +1,16 @@
+{
+  "rounds": [
+    { "letters": ["s", "i", "l" ]},
+    { "letters": ["o", "m" ]},
+    { "letters": ["e", "n" ]},
+    { "letters": ["a", "t" ]},
+    { "letters": ["b", "u" ]},
+    { "letters": ["r", "f" ]},
+    { "letters": ["d", "å" ]},
+    { "letters": ["j", "k" ]},
+    { "letters": ["g", "p" ]},
+    { "letters": ["h", "y" ]},
+    { "letters": ["v", "ä" ]},
+    { "letters": ["ö"]}
+  ]
+}

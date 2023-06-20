@@ -17,7 +17,7 @@ namespace Foni.Code.Core
     {
         public List<Letter> Letters;
         public List<Word> Words;
-        public string[][] RoundConfig;
+        public RoundConfig RoundConfig;
     }
 
     public struct GameState
@@ -59,29 +59,18 @@ namespace Foni.Code.Core
         private async Task LoadAssets()
         {
             var words = await WordSerialization.LoadFromDataSource(_assetDataSource);
+            var letters = await LetterSerialization.LoadFromDataSource(_assetDataSource, words);
+            var roundConfig = await RoundConfigSerialization.LoadFromDataSource(_assetDataSource, letters);
             _loadedAssets = new LoadedAssets
             {
-                Letters = await LetterSerialization.LoadFromDataSource(_assetDataSource, words),
+                Letters = letters,
                 Words = words,
-                RoundConfig = new[]
-                {
-                    new[] { "s", "i", "l" },
-                    new[] { "o", "m" },
-                    new[] { "e", "n" },
-                    new[] { "a", "t" },
-                    new[] { "b", "u" },
-                    new[] { "r", "f" },
-                    new[] { "d", "å" },
-                    new[] { "j", "k" },
-                    new[] { "g", "p" },
-                    new[] { "h", "y" },
-                    new[] { "v", "ä" },
-                    new[] { "ö" }
-                }
+                RoundConfig = roundConfig
             };
 
             Debug.LogFormat("Loaded words: {0}", _loadedAssets.Words.Count);
             Debug.LogFormat("Loaded letters: {0}", _loadedAssets.Letters.Count);
+            Debug.LogFormat("Loaded rounds: {0}", _loadedAssets.RoundConfig.Rounds.Count);
 
             Globals.ServiceLocator.AsyncService.QueueOnMainThread(StartGame_Entry);
         }
@@ -141,10 +130,7 @@ namespace Foni.Code.Core
         {
             ++_gameState.CurrentRound;
 
-            var lettersForRound = _loadedAssets.RoundConfig[_gameState.CurrentRound]
-                .ToList()
-                .ConvertAll(character => _loadedAssets.Letters
-                    .Find(letter => letter.ID == character));
+            var lettersForRound = _loadedAssets.RoundConfig.Rounds[_gameState.CurrentRound].Letters;
 
             var lettersNotPartOfRound =
                 _loadedAssets.Letters
@@ -214,7 +200,7 @@ namespace Foni.Code.Core
             var isLastLetterOfRound = _gameState.CurrentLetter == _gameState.ActiveLetters.Count - 1;
             if (isLastLetterOfRound)
             {
-                var isLastRound = _gameState.CurrentRound == _loadedAssets.RoundConfig.Length - 1;
+                var isLastRound = _gameState.CurrentRound == _loadedAssets.RoundConfig.Rounds.Count - 1;
                 if (isLastRound)
                 {
                     yield return DoGameOver();
