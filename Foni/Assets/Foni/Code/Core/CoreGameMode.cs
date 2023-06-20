@@ -31,12 +31,16 @@ namespace Foni.Code.Core
 
     public class CoreGameMode : MonoBehaviour
     {
-        [FormerlySerializedAs("tree")]
         [Header("References")] //
         [SerializeField]
         private PhoneticsTree phoneticsTree;
 
         [SerializeField] private List<RevealObjectComponent> revealObjects;
+
+        [Header("Config")] //
+        [Tooltip("Not used in builds. Negative values are ignored and will use default/no seed.")]
+        [SerializeField]
+        private int editorRandomSeed = -1;
 
         private LoadedAssets _loadedAssets;
         private GameState _gameState;
@@ -83,7 +87,12 @@ namespace Foni.Code.Core
         private IEnumerator StartGame()
         {
             Debug.Log("Starting game");
-            _randomness = new Random(1337);
+
+#if UNITY_EDITOR
+            _randomness = editorRandomSeed >= 0 ? new Random(editorRandomSeed) : new Random();
+#else
+            _randomness = new Random();
+#endif
 
             _gameState = new GameState
             {
@@ -112,8 +121,6 @@ namespace Foni.Code.Core
             var guessedLetter = letterComponent.Letter;
             var correctLetter = _gameState.ActiveLetters[_gameState.CurrentLetter];
             var guessedCorrectly = guessedLetter.ID == correctLetter.ID;
-
-            Debug.LogFormat("Guessed correctly? {0}", guessedCorrectly);
 
             if (guessedCorrectly)
             {

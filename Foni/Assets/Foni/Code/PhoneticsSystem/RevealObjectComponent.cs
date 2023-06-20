@@ -10,14 +10,11 @@ namespace Foni.Code.PhoneticsSystem
 {
     public class RevealObjectComponent : MonoBehaviour
     {
-        [FormerlySerializedAs("revealRoot")]
         [Header("References")] //
         [SerializeField]
         private GameObject animateRoot;
 
-        [FormerlySerializedAs("revealRenderer")] [SerializeField]
-        private Renderer animateRenderer;
-
+        [SerializeField] private Renderer animateRenderer;
         [SerializeField] private SpriteRenderer spriteRenderer;
 
         [Header("Config/Animation")] //

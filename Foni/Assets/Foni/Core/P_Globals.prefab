@@ -71,8 +71,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc0c615e4f6a4b0db8684d2a267a2038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 0}
+  phoneticsTree: {fileID: 0}
   revealObjects:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  editorRandomSeed: 1337
