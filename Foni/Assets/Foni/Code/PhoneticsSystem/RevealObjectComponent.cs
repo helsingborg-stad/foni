@@ -18,9 +18,13 @@ namespace Foni.Code.PhoneticsSystem
         [FormerlySerializedAs("revealRenderer")] [SerializeField]
         private Renderer animateRenderer;
 
+        [SerializeField] private SpriteRenderer spriteRenderer;
+
         [Header("Config/Animation")] //
         [SerializeField]
         private EEasing spawnEasing;
+
+        [SerializeField] private EEasing despawnEasing;
 
         [SerializeField] private float spawnDuration;
 
@@ -49,9 +53,20 @@ namespace Foni.Code.PhoneticsSystem
             animateRenderer.material = _materialInstance;
         }
 
+        public void SetSprite(Sprite newSprite)
+        {
+            spriteRenderer.sprite = newSprite;
+        }
+
         public IEnumerator AnimateSpawn()
         {
             yield return TweenManager.OneShot(spawnEasing, 0.0f, 1.0f, spawnDuration,
+                TweenAction.TransformScale(animateRoot));
+        }
+
+        public IEnumerator AnimateDespawn()
+        {
+            yield return TweenManager.OneShot(despawnEasing, 1.0f, 0.0f, spawnDuration,
                 TweenAction.TransformScale(animateRoot));
         }
 
@@ -62,6 +77,11 @@ namespace Foni.Code.PhoneticsSystem
 
             yield return bounceAnimation;
             yield return materialAnimation;
+        }
+
+        public void HideImmediately()
+        {
+            _materialInstance.SetFloat(RevealPropertyId, 0);
         }
 
         private IEnumerator AnimateMaterialReveal()

@@ -33,8 +33,13 @@ namespace Foni.Code.PhoneticsSystem
 
         [Header("Config")] [SerializeField] private List<LetterStateConfig> states;
 
+        public Letter Letter { get; private set; }
+
+        public event EventHandler OnClicked;
+
         public void UpdateFromLetter(Letter newLetter)
         {
+            Letter = newLetter;
             text.SetText(newLetter.ID);
         }
 
@@ -67,8 +72,7 @@ namespace Foni.Code.PhoneticsSystem
 
         void IInputListener.OnPressDown()
         {
-            var randomState = (ELetterState)Random.Range(0, 3);
-            SetState(randomState);
+            OnClicked?.Invoke(this, EventArgs.Empty);
         }
 
         void IInputListener.OnPressUp()

@@ -28,13 +28,13 @@ namespace Foni.Code.AssetSystem
             var cache = Globals.ServiceLocator.AssetCache;
             if (cache.IsCached(_assetPath))
             {
-                Debug.LogFormat("Using cache for {0}", _assetPath);
                 Asset = cache.Get<TAssetType>(_assetPath);
                 return;
             }
 
+            // TODO: Check if asset is pending load and add to a callback subscription instead of potentially loading 2+ times
+
             var rawAssetContent = await dataSource.LoadBase64(_assetPath);
-            Debug.LogFormat("Loading {0}", _assetPath);
             await Globals.ServiceLocator.AsyncService.RunOnMainThread(() => ConvertRaw(rawAssetContent));
         }
 

@@ -20,6 +20,11 @@ namespace Foni.Code.Util
             }
         }
 
+        public static GameObject GetGameObject(MonoBehaviour behaviourSource)
+        {
+            return behaviourSource.gameObject;
+        }
+
         public static TComponent GetChecked<TComponent>(MonoBehaviour source)
             where TComponent : MonoBehaviour
         {
