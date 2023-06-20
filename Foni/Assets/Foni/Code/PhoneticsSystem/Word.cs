@@ -42,7 +42,7 @@ namespace Foni.Code.PhoneticsSystem
         public static async Task<List<Word>> LoadFromDataSource(IDataSource dataSource)
         {
             var rawBase64 = await dataSource.LoadBase64("words.json");
-            var raw = Encoding.Default.GetString(Convert.FromBase64String(rawBase64));
+            var raw = Encoding.UTF8.GetString(Convert.FromBase64String(rawBase64));
             return
                 JsonUtility.FromJson<SerializedWordRoot>(raw)
                     .words
