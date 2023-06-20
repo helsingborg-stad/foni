@@ -1,11 +1,14 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Foni.Code.InputSystem;
+using Foni.Code.TweenSystem;
+using Foni.Code.TweenSystem.Actions;
+using Foni.Code.TweenSystem.Easing;
 using Foni.Code.Util;
 using TMPro;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Foni.Code.PhoneticsSystem
 {
@@ -26,12 +29,25 @@ namespace Foni.Code.PhoneticsSystem
 
     public class LetterComponent : MonoBehaviour, IInputListener
     {
-        [Header("References")] [SerializeField]
+        [Header("References")] //
+        [SerializeField]
         private TextMeshProUGUI text;
 
         [SerializeField] private SpriteRenderer innerCircle;
+        [SerializeField] private GameObject animateRoot;
 
-        [Header("Config")] [SerializeField] private List<LetterStateConfig> states;
+        [Header("Config")] //
+        [SerializeField]
+        private List<LetterStateConfig> states;
+
+        [Header("Config/Animation")] //
+        [SerializeField]
+        private EEasing showEasing;
+
+        [SerializeField] private EEasing hideEasing;
+
+        [SerializeField] private float showDuration;
+
 
         public Letter Letter { get; private set; }
 
@@ -41,6 +57,23 @@ namespace Foni.Code.PhoneticsSystem
         {
             Letter = newLetter;
             text.SetText(newLetter.ID);
+        }
+
+        public void HideImmediately()
+        {
+            animateRoot.transform.localScale = Vector3.zero;
+        }
+
+        public IEnumerator AnimateShow()
+        {
+            yield return TweenManager.OneShot(showEasing, 0.0f, 1.0f, showDuration,
+                TweenAction.TransformScale(animateRoot));
+        }
+
+        public IEnumerator AnimateHide()
+        {
+            yield return TweenManager.OneShot(hideEasing, 1.0f, 0.0f, showDuration,
+                TweenAction.TransformScale(animateRoot));
         }
 
         public void SetState(ELetterState newState)

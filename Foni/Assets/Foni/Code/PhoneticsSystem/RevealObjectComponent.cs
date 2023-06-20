@@ -3,7 +3,6 @@ using Foni.Code.TweenSystem;
 using Foni.Code.TweenSystem.Easing;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.Serialization;
 using TweenAction = Foni.Code.TweenSystem.Actions.TweenAction;
 
 namespace Foni.Code.PhoneticsSystem
@@ -19,11 +18,10 @@ namespace Foni.Code.PhoneticsSystem
 
         [Header("Config/Animation")] //
         [SerializeField]
-        private EEasing spawnEasing;
+        private EEasing showEasing;
 
-        [SerializeField] private EEasing despawnEasing;
-
-        [SerializeField] private float spawnDuration;
+        [SerializeField] private EEasing hideEasing;
+        [SerializeField] private float showDuration;
 
         [SerializeField] private EEasing revealEasing;
         [SerializeField] private float revealDuration;
@@ -55,15 +53,15 @@ namespace Foni.Code.PhoneticsSystem
             spriteRenderer.sprite = newSprite;
         }
 
-        public IEnumerator AnimateSpawn()
+        public IEnumerator AnimateShow()
         {
-            yield return TweenManager.OneShot(spawnEasing, 0.0f, 1.0f, spawnDuration,
+            yield return TweenManager.OneShot(showEasing, 0.0f, 1.0f, showDuration,
                 TweenAction.TransformScale(animateRoot));
         }
 
-        public IEnumerator AnimateDespawn()
+        public IEnumerator AnimateHide()
         {
-            yield return TweenManager.OneShot(despawnEasing, 1.0f, 0.0f, spawnDuration,
+            yield return TweenManager.OneShot(hideEasing, 1.0f, 0.0f, showDuration,
                 TweenAction.TransformScale(animateRoot));
         }
 
@@ -76,7 +74,7 @@ namespace Foni.Code.PhoneticsSystem
             yield return materialAnimation;
         }
 
-        public void HideImmediately()
+        public void ShroudImmediately()
         {
             _materialInstance.SetFloat(RevealPropertyId, 0);
         }

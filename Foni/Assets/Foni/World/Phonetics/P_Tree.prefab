@@ -37,7 +37,7 @@ Transform:
   - {fileID: 9217704698688370117}
   - {fileID: 7758790244789685451}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8998601038463009779
 MonoBehaviour:
@@ -525,22 +525,6 @@ PrefabInstance:
     - target: {fileID: 6393321093490326968, guid: 9890237b88ca74481b11e52acbe708ca, type: 3}
       propertyPath: m_Name
       value: P_Letter_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6751654157808900201, guid: 9890237b88ca74481b11e52acbe708ca, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6751654157808900201, guid: 9890237b88ca74481b11e52acbe708ca, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6751654157808900201, guid: 9890237b88ca74481b11e52acbe708ca, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8312795636248958108, guid: 9890237b88ca74481b11e52acbe708ca, type: 3}
-      propertyPath: m_Name
-      value: Inner Circle
       objectReference: {fileID: 0}
     - target: {fileID: 8934616252826913202, guid: 9890237b88ca74481b11e52acbe708ca, type: 3}
       propertyPath: m_RootOrder

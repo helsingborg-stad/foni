@@ -8,7 +8,6 @@ using Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource;
 using Foni.Code.PhoneticsSystem;
 using Foni.Code.Util;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = System.Random;
 
 namespace Foni.Code.Core
@@ -187,7 +186,7 @@ namespace Foni.Code.Core
             var randomizedRevealObjects = _gameState.RevealObjects.InRandomOrder(_randomness);
             foreach (var revealObject in randomizedRevealObjects)
             {
-                activeCoroutines.Add(StartCoroutine(revealObject.AnimateSpawn()));
+                activeCoroutines.Add(StartCoroutine(revealObject.AnimateShow()));
                 yield return new WaitForSeconds(0.1f);
             }
 
@@ -195,6 +194,8 @@ namespace Foni.Code.Core
             {
                 yield return activeCoroutine;
             }
+
+            yield return phoneticsTree.AnimateShowingLeaves();
         }
 
         private IEnumerator DoGuessedCorrectly()
@@ -202,7 +203,7 @@ namespace Foni.Code.Core
             // TODO: Play feedback effects
             _gameState.IsGameActive = false;
 
-            yield return _gameState.RevealObjects[_gameState.CurrentLetter].AnimateDespawn();
+            yield return _gameState.RevealObjects[_gameState.CurrentLetter].AnimateHide();
 
             var isLastLetterOfRound = _gameState.CurrentLetter == _gameState.ActiveLetters.Count - 1;
             if (isLastLetterOfRound)
@@ -214,7 +215,9 @@ namespace Foni.Code.Core
                     yield break;
                 }
 
-                _gameState.RevealObjects.ForEach(revealObject => revealObject.HideImmediately());
+                _gameState.RevealObjects.ForEach(revealObject => revealObject.ShroudImmediately());
+                yield return phoneticsTree.AnimateHidingLeaves();
+                phoneticsTree.ResetAllLeaves();
                 yield return SetupNextRound();
                 yield return DoOpeningAnimation();
             }

@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using Foni.Code.Util;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -17,6 +19,8 @@ namespace Foni.Code.PhoneticsSystem
 
         private void Start()
         {
+            letterComponents.ForEach(ResetLetterComponentVisuals);
+            letterComponents.ForEach(HideLetterComponentVisuals);
             letterComponents.ForEach(BindClickEvent);
         }
 
@@ -35,9 +39,48 @@ namespace Foni.Code.PhoneticsSystem
             letterComponents.ForEach(ResetLetterComponentVisuals);
         }
 
-        private void ResetLetterComponentVisuals(LetterComponent letterComponent)
+        public IEnumerator AnimateShowingLeaves()
+        {
+            var coroutines = new List<Coroutine>();
+            var componentsInRandomizedOrder = letterComponents.InRandomOrder();
+
+            foreach (var letterComponent in componentsInRandomizedOrder)
+            {
+                coroutines.Add(StartCoroutine(letterComponent.AnimateShow()));
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            foreach (var coroutine in coroutines)
+            {
+                yield return coroutine;
+            }
+        }
+
+        public IEnumerator AnimateHidingLeaves()
+        {
+            var coroutines = new List<Coroutine>();
+            var componentsInRandomizedOrder = letterComponents.InRandomOrder();
+
+            foreach (var letterComponent in componentsInRandomizedOrder)
+            {
+                coroutines.Add(StartCoroutine(letterComponent.AnimateHide()));
+                yield return new WaitForSeconds(0.1f);
+            }
+
+            foreach (var coroutine in coroutines)
+            {
+                yield return coroutine;
+            }
+        }
+
+        private static void ResetLetterComponentVisuals(LetterComponent letterComponent)
         {
             letterComponent.SetState(ELetterState.Default);
+        }
+
+        private static void HideLetterComponentVisuals(LetterComponent letterComponent)
+        {
+            letterComponent.HideImmediately();
         }
 
         private void BindClickEvent(LetterComponent letterComponent)

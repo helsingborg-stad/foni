@@ -84,6 +84,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1442824089301442356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3246971084143065998}
+  m_Layer: 0
+  m_Name: AnimateRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3246971084143065998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442824089301442356}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6751654157808900201}
+  m_Father: {fileID: 8934616252826913202}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3007626900218550199
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +281,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6751654157808900201}
+  - {fileID: 3246971084143065998}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -267,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 513444229595727191}
   innerCircle: {fileID: 4566437313589086182}
+  animateRoot: {fileID: 1442824089301442356}
   states:
   - state: 0
     color: {r: 1, g: 0.7921569, b: 0.6, a: 1}
@@ -280,6 +313,9 @@ MonoBehaviour:
     color: {r: 0.69803923, g: 0.9607843, b: 0.8627451, a: 1}
     enabledObjects:
     - {fileID: 1268347998332249998}
+  showEasing: 30
+  hideEasing: 29
+  showDuration: 0.8
 --- !u!58 &1933489260746421819
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -347,7 +383,7 @@ Transform:
   - {fileID: 2465206597087567078}
   - {fileID: 3011973552406729522}
   - {fileID: 4214731903913020581}
-  m_Father: {fileID: 8934616252826913202}
+  m_Father: {fileID: 3246971084143065998}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9182638202065467462
