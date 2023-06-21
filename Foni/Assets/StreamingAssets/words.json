@@ -1,288 +1,75 @@
 {
   "words": [
-    {
-      "id": "apelsin",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "avokado",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "armar",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "blåbär",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "barnvagn",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "byxor",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "drake",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "docka",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "dator",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ekorre",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "eka",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "eld",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "får",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "fingrar",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "fjäril",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "gris",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "groda",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "gaffel",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "häst",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "hallon",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "halsduk",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "igelkott",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "is",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "insekter",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "julgran",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "jacka",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "juice",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "kiwi",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "kniv",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "knä",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "lime",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "lastbil",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "linjal",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "marsvin",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "moln",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "motorcykel",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "nyckelpiga",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "nyckel",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "naglar",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "orange",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "oliv",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ost",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "persika",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "pussas",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "paraply",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "räv",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "russin",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ryggsäck",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "smultron",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "sked",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "segelbåt",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "tröja",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "tår",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "traktor",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ubåt",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ugn",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "undulat",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "vindruva",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "vas",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "varm",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "yxa",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "yr",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ål",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ånga",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "åra",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ägg",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "älg",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "äng",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ödla",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "ögonbryn",
-      "image": "Phonetics/T_Object_Orange.png"
-    },
-    {
-      "id": "öra",
-      "image": "Phonetics/T_Object_Orange.png"
-    }
+    { "id": "apelsin", "image": "Phonetics/T_Object_apelsin.png" },
+    { "id": "avokado", "image": "Phonetics/T_Object_avokado.png" },
+    { "id": "armar", "image": "Phonetics/T_Object_armar.png" },
+    { "id": "blåbär", "image": "Phonetics/T_Object_blabar.png" },
+    { "id": "barnvagn", "image": "Phonetics/T_Object_barnvagn.png" },
+    { "id": "byxor", "image": "Phonetics/T_Object_byxor.png" },
+    { "id": "drake", "image": "Phonetics/T_Object_drake.png" },
+    { "id": "docka", "image": "Phonetics/T_Object_docka.png" },
+    { "id": "dator", "image": "Phonetics/T_Object_dator.png" },
+    { "id": "ekorre", "image": "Phonetics/T_Object_ekorre.png" },
+    { "id": "eka", "image": "Phonetics/T_Object_eka.png" },
+    { "id": "eld", "image": "Phonetics/T_Object_eld.png" },
+    { "id": "får", "image": "Phonetics/T_Object_far.png" },
+    { "id": "fingrar", "image": "Phonetics/T_Object_fingrar.png" },
+    { "id": "fjäril", "image": "Phonetics/T_Object_fjaril.png" },
+    { "id": "gris", "image": "Phonetics/T_Object_gris.png" },
+    { "id": "groda", "image": "Phonetics/T_Object_groda.png" },
+    { "id": "gaffel", "image": "Phonetics/T_Object_gaffel.png" },
+    { "id": "häst", "image": "Phonetics/T_Object_hast.png" },
+    { "id": "hallon", "image": "Phonetics/T_Object_hallon.png" },
+    { "id": "halsduk", "image": "Phonetics/T_Object_halsduk.png" },
+    { "id": "igelkott", "image": "Phonetics/T_Object_igelkott.png" },
+    { "id": "is", "image": "Phonetics/T_Object_is.png" },
+    { "id": "insekter", "image": "Phonetics/T_Object_insekter.png" },
+    { "id": "julgran", "image": "Phonetics/T_Object_julgran.png" },
+    { "id": "jacka", "image": "Phonetics/T_Object_jacka.png" },
+    { "id": "juice", "image": "Phonetics/T_Object_juice.png" },
+    { "id": "kiwi", "image": "Phonetics/T_Object_kiwi.png" },
+    { "id": "kniv", "image": "Phonetics/T_Object_kniv.png" },
+    { "id": "knä", "image": "Phonetics/T_Object_kna.png" },
+    { "id": "lime", "image": "Phonetics/T_Object_lime.png" },
+    { "id": "lastbil", "image": "Phonetics/T_Object_lastbil.png" },
+    { "id": "linjal", "image": "Phonetics/T_Object_linjal.png" },
+    { "id": "marsvin", "image": "Phonetics/T_Object_marsvin.png" },
+    { "id": "moln", "image": "Phonetics/T_Object_moln.png" },
+    { "id": "motorcykel", "image": "Phonetics/T_Object_motorcykel.png" },
+    { "id": "nyckelpiga", "image": "Phonetics/T_Object_nyckelpiga.png" },
+    { "id": "nyckel", "image": "Phonetics/T_Object_nyckel.png" },
+    { "id": "naglar", "image": "Phonetics/T_Object_naglar.png" },
+    { "id": "orange", "image": "Phonetics/T_Object_orange.png" },
+    { "id": "oliv", "image": "Phonetics/T_Object_oliv.png" },
+    { "id": "ost", "image": "Phonetics/T_Object_ost.png" },
+    { "id": "persika", "image": "Phonetics/T_Object_persika.png" },
+    { "id": "pussas", "image": "Phonetics/T_Object_pussas.png" },
+    { "id": "paraply", "image": "Phonetics/T_Object_paraply.png" },
+    { "id": "räv", "image": "Phonetics/T_Object_rav.png" },
+    { "id": "russin", "image": "Phonetics/T_Object_russin.png" },
+    { "id": "ryggsäck", "image": "Phonetics/T_Object_ryggsack.png" },
+    { "id": "smultron", "image": "Phonetics/T_Object_smultron.png" },
+    { "id": "sked", "image": "Phonetics/T_Object_sked.png" },
+    { "id": "segelbåt", "image": "Phonetics/T_Object_segelbat.png" },
+    { "id": "tröja", "image": "Phonetics/T_Object_troja.png" },
+    { "id": "tår", "image": "Phonetics/T_Object_tar.png" },
+    { "id": "traktor", "image": "Phonetics/T_Object_traktor.png" },
+    { "id": "ubåt", "image": "Phonetics/T_Object_ubat.png" },
+    { "id": "ugn", "image": "Phonetics/T_Object_ugn.png" },
+    { "id": "undulat", "image": "Phonetics/T_Object_undulat.png" },
+    { "id": "vindruva", "image": "Phonetics/T_Object_vindruva.png" },
+    { "id": "vas", "image": "Phonetics/T_Object_vas.png" },
+    { "id": "varm", "image": "Phonetics/T_Object_varm.png" },
+    { "id": "yxa", "image": "Phonetics/T_Object_yxa.png" },
+    { "id": "yr", "image": "Phonetics/T_Object_yr.png" },
+    { "id": "ål", "image": "Phonetics/T_Object_al.png" },
+    { "id": "ånga", "image": "Phonetics/T_Object_anga.png" },
+    { "id": "åra", "image": "Phonetics/T_Object_ara.png" },
+    { "id": "ägg", "image": "Phonetics/T_Object_agg.png" },
+    { "id": "älg", "image": "Phonetics/T_Object_alg.png" },
+    { "id": "äng", "image": "Phonetics/T_Object_ang.png" },
+    { "id": "ödla", "image": "Phonetics/T_Object_odla.png" },
+    { "id": "ögonbryn", "image": "Phonetics/T_Object_ogonbryn.png" },
+    { "id": "öra", "image": "Phonetics/T_Object_ora.png" }
   ]
 }
