@@ -24,14 +24,5 @@ namespace Foni.Code.Util
         {
             return behaviourSource.gameObject;
         }
-
-        public static TComponent GetChecked<TComponent>(MonoBehaviour source)
-            where TComponent : MonoBehaviour
-        {
-            var hopefullyTheComponent = source.GetComponent<TComponent>();
-            Debug.AssertFormat(hopefullyTheComponent != null, "No component of type {0} on Game Mode object!",
-                typeof(TComponent));
-            return hopefullyTheComponent;
-        }
     }
 }

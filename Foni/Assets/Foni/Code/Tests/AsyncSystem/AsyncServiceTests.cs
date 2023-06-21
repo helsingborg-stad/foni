@@ -31,7 +31,7 @@ namespace Foni.Code.Tests.AsyncSystem
             asyncService.StartCoroutine(MockCoroutine());
             yield return null;
 
-            Assert.True(shouldBeTrue);
+            Assert.IsTrue(shouldBeTrue);
         }
 
         [UnityTest]
