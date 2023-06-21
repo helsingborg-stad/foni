@@ -22,6 +22,7 @@ namespace Foni.Code.PhoneticsSystem
 
         [SerializeField] private EEasing hideEasing;
         [SerializeField] private float showDuration;
+        [SerializeField] private float hideDuration;
 
         [SerializeField] private EEasing revealEasing;
         [SerializeField] private float revealDuration;
@@ -61,7 +62,7 @@ namespace Foni.Code.PhoneticsSystem
 
         public IEnumerator AnimateHide()
         {
-            yield return TweenManager.OneShot(hideEasing, 1.0f, 0.0f, showDuration,
+            yield return TweenManager.OneShot(hideEasing, 1.0f, 0.0f, hideDuration,
                 TweenAction.TransformScale(animateRoot));
         }
 

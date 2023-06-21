@@ -316,6 +316,7 @@ MonoBehaviour:
   showEasing: 30
   hideEasing: 29
   showDuration: 0.8
+  hideDuration: 0.5
 --- !u!58 &1933489260746421819
 CircleCollider2D:
   m_ObjectHideFlags: 0

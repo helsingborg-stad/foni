@@ -713,6 +713,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5493417365725148017}
     - target: {fileID: 3997722351674901927, guid: 6f140be550a7141c2865afad5050065a, type: 3}
+      propertyPath: editorRandomSeed
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3997722351674901927, guid: 6f140be550a7141c2865afad5050065a, type: 3}
       propertyPath: revealObjects.Array.data[0]
       value: 
       objectReference: {fileID: 631580424}
