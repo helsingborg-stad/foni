@@ -24,5 +24,17 @@ namespace Foni.Code.Util
         {
             return behaviourSource.gameObject;
         }
+
+        public static void DestroyAllChildren(this GameObject parent)
+        {
+            var childCount = parent.transform.childCount;
+
+            for (var i = childCount - 1; i >= 0; i--)
+            {
+                var childObject = parent.transform.GetChild(i).gameObject;
+                childObject.transform.SetParent(null);
+                Object.Destroy(childObject);
+            }
+        }
     }
 }

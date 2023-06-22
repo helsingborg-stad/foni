@@ -8,7 +8,7 @@ namespace Foni.Code.Core
     {
         private void Start()
         {
-            DontDestroyOnLoad(this);
+            /*DontDestroyOnLoad(this);*/
             Globals.GlobalsManager = this;
         }
 

@@ -6,6 +6,7 @@ using Foni.Code.AsyncSystem;
 using Foni.Code.DataSourceSystem;
 using Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource;
 using Foni.Code.PhoneticsSystem;
+using Foni.Code.UI;
 using Foni.Code.Util;
 using UnityEngine;
 using Random = System.Random;
@@ -19,6 +20,12 @@ namespace Foni.Code.Core
         public RoundConfig RoundConfig;
     }
 
+    public struct RoundHistoryEntry
+    {
+        public List<Letter> Letters;
+        public List<Word> Words;
+    }
+
     public struct GameState
     {
         public bool IsGameActive;
@@ -26,6 +33,7 @@ namespace Foni.Code.Core
         public int CurrentLetter;
         public List<Letter> ActiveLetters;
         public List<RevealObjectComponent> RevealObjects;
+        public List<RoundHistoryEntry> History;
     }
 
     public class CoreGameMode : MonoBehaviour
@@ -35,6 +43,8 @@ namespace Foni.Code.Core
         private PhoneticsTree phoneticsTree;
 
         [SerializeField] private List<RevealObjectComponent> revealObjects;
+
+        [SerializeField] private GameResultsUI gameResultsUI;
 
         [Header("Config")] //
         [Tooltip("Not used in builds. Negative values are ignored and will use default/no seed.")]
@@ -99,7 +109,8 @@ namespace Foni.Code.Core
                 CurrentRound = -1,
                 CurrentLetter = -1,
                 ActiveLetters = new List<Letter>(),
-                RevealObjects = new List<RevealObjectComponent>()
+                RevealObjects = new List<RevealObjectComponent>(),
+                History = Enumerable.Repeat(new RoundHistoryEntry(), _loadedAssets.RoundConfig.Rounds.Count).ToList()
             };
 
             phoneticsTree.OnLeafClicked += OnPhoneticsTreeLeafClicked;
@@ -178,6 +189,11 @@ namespace Foni.Code.Core
             _gameState.ActiveLetters = lettersForRound;
             _gameState.RevealObjects = activeRevealObjects;
             _gameState.CurrentLetter = -1;
+            _gameState.History[_gameState.CurrentRound] = new RoundHistoryEntry
+            {
+                Letters = lettersForRound,
+                Words = wordsForRound
+            };
         }
 
         private IEnumerator DoOpeningAnimation()
@@ -229,7 +245,26 @@ namespace Foni.Code.Core
         private IEnumerator DoGameOver()
         {
             Debug.Log("Game is over");
-            yield break;
+            yield return phoneticsTree.AnimateHidingLeaves();
+            GameObjectUtils.EnableIfDisabled(gameResultsUI.gameObject);
+
+            var resultCardInfos = _gameState.History
+                .ConvertAll(RoundHistoryEntryToResultCardInfo)
+                .SelectMany(list => list)
+                .ToList();
+
+            gameResultsUI.SetCards(resultCardInfos);
+
+            yield return gameResultsUI.AnimateShow();
+        }
+
+        private static List<ResultCardInfo> RoundHistoryEntryToResultCardInfo(RoundHistoryEntry historyEntry)
+        {
+            return historyEntry.Letters.Select((letter, index) => new ResultCardInfo
+            {
+                Title = letter.ID,
+                Sprite = historyEntry.Words[index].Sprite.Asset
+            }).ToList();
         }
 
         private IEnumerator StartNextGuess()
