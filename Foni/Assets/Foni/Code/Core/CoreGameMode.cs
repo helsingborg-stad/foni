@@ -246,7 +246,7 @@ namespace Foni.Code.Core
         {
             Debug.Log("Game is over");
             yield return phoneticsTree.AnimateHidingLeaves();
-            GameObjectUtils.EnableIfDisabled(gameResultsUI.gameObject);
+            gameResultsUI.gameObject.EnableIfDisabled();
 
             var resultCardInfos = _gameState.History
                 .ConvertAll(RoundHistoryEntryToResultCardInfo)

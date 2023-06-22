@@ -4,7 +4,7 @@ namespace Foni.Code.Util
 {
     public static class GameObjectUtils
     {
-        public static void DisableIfEnabled(GameObject gameObject)
+        public static void DisableIfEnabled(this GameObject gameObject)
         {
             if (gameObject.activeSelf)
             {
@@ -12,7 +12,7 @@ namespace Foni.Code.Util
             }
         }
 
-        public static void EnableIfDisabled(GameObject gameObject)
+        public static void EnableIfDisabled(this GameObject gameObject)
         {
             if (!gameObject.activeSelf)
             {
@@ -20,7 +20,7 @@ namespace Foni.Code.Util
             }
         }
 
-        public static GameObject GetGameObject(MonoBehaviour behaviourSource)
+        public static GameObject GetGameObject(this MonoBehaviour behaviourSource)
         {
             return behaviourSource.gameObject;
         }
