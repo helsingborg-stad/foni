@@ -14,7 +14,7 @@ namespace Foni.Code.Tests.Util
 
             Assert.IsTrue(gameObject.activeSelf);
 
-            GameObjectUtils.DisableIfEnabled(gameObject);
+            gameObject.DisableIfEnabled();
 
             Assert.IsFalse(gameObject.activeSelf);
         }
@@ -27,7 +27,7 @@ namespace Foni.Code.Tests.Util
 
             Assert.IsFalse(gameObject.activeSelf);
 
-            GameObjectUtils.EnableIfDisabled(gameObject);
+            gameObject.EnableIfDisabled();
 
             Assert.IsTrue(gameObject.activeSelf);
         }
@@ -42,9 +42,27 @@ namespace Foni.Code.Tests.Util
             var gameObject = new GameObject();
             var behaviour = gameObject.AddComponent<MockComponent>();
 
-            var result = GameObjectUtils.GetGameObject(behaviour);
+            var result = behaviour.GetGameObject();
 
             Assert.AreEqual(gameObject, result);
+        }
+
+        [Test]
+        public void DestroyAllChildren()
+        {
+            var root = new GameObject();
+            var child1 = new GameObject();
+            var child2 = new GameObject();
+            child1.transform.SetParent(root.transform);
+            child2.transform.SetParent(root.transform);
+
+            var valueBefore = root.transform.childCount;
+            root.DestroyAllChildren();
+            // ReSharper disable once Unity.InefficientPropertyAccess
+            var valueAfter = root.transform.childCount;
+
+            Assert.AreEqual(2, valueBefore);
+            Assert.Zero(valueAfter);
         }
     }
 }
