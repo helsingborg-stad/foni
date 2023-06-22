@@ -47,9 +47,11 @@ namespace Foni.Code.Core
         [SerializeField] private GameResultsUI gameResultsUI;
 
         [Header("Config")] //
+#if UNITY_EDITOR
         [Tooltip("Not used in builds. Negative values are ignored and will use default/no seed.")]
         [SerializeField]
         private int editorRandomSeed = -1;
+#endif
 
         private LoadedAssets _loadedAssets;
         private GameState _gameState;
