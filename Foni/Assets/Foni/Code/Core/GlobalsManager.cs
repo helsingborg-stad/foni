@@ -1,5 +1,6 @@
 using Foni.Code.AssetSystem;
 using Foni.Code.AsyncSystem;
+using Foni.Code.SettingsSystem;
 using UnityEngine;
 
 namespace Foni.Code.Core
@@ -21,6 +22,9 @@ namespace Foni.Code.Core
                 AssetCache = new AssetCache()
             };
             Globals.ServiceLocator = serviceLocator;
+            Globals.SettingsManager = gameObject.AddComponent<SettingsManager>();
+
+            SettingsManager.ApplySettings();
         }
     }
 }
