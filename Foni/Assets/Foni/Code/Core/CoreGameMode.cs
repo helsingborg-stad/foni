@@ -44,6 +44,8 @@ namespace Foni.Code.Core
 
         [SerializeField] private List<RevealObjectComponent> revealObjects;
 
+        [SerializeField] private HandGesture handGesture;
+
         [SerializeField] private GameResultsUI gameResultsUI;
 
         [Header("Config")] //
@@ -137,11 +139,14 @@ namespace Foni.Code.Core
             if (guessedCorrectly)
             {
                 letterComponent.SetState(ELetterState.Correct);
+                handGesture.Hide();
+
                 StartCoroutine(DoGuessedCorrectly());
             }
             else
             {
                 letterComponent.SetState(ELetterState.Incorrect);
+                handGesture.Show();
             }
         }
 
@@ -177,6 +182,11 @@ namespace Foni.Code.Core
                 .ForEach(GameObjectUtils.EnableIfDisabled);
 
             // TODO: Load in parallel + make sure assets aren't loading 2+ times (see SoftRef.cs)
+            foreach (var letter in lettersForRound)
+            {
+                yield return new WaitForTask(() => letter.HandGestureSprite.Load(_assetDataSource));
+            }
+
             foreach (var word in wordsForRound)
             {
                 yield return new WaitForTask(() => word.Sprite.Load(_assetDataSource));
@@ -272,8 +282,10 @@ namespace Foni.Code.Core
         private IEnumerator StartNextGuess()
         {
             _gameState.CurrentLetter++;
+            var letter = _gameState.ActiveLetters[_gameState.CurrentLetter];
             var activeRevealObject = _gameState.RevealObjects[_gameState.CurrentLetter];
             phoneticsTree.ResetAllLeaves();
+            handGesture.SetSprite(letter.HandGestureSprite.Asset);
             yield return activeRevealObject.AnimateReveal();
         }
     }

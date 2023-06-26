@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Foni.Code.AssetSystem;
 using Foni.Code.DataSourceSystem;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace Foni.Code.PhoneticsSystem
     {
         public string ID;
         public List<Word> Words;
+        public SoftRef<Sprite> HandGestureSprite;
 
         public bool Equals(Letter other)
         {
@@ -36,6 +38,7 @@ namespace Foni.Code.PhoneticsSystem
         {
             public string id;
             public string[] words;
+            public string handGestureImage;
         }
 
         [Serializable]
@@ -61,7 +64,12 @@ namespace Foni.Code.PhoneticsSystem
                 serializedLetter.words
                     .ToList()
                     .ConvertAll(WordIdToWord);
-            return new Letter { ID = serializedLetter.id, Words = letterWords };
+            return new Letter
+            {
+                ID = serializedLetter.id,
+                Words = letterWords,
+                HandGestureSprite = new SoftRef<Sprite>(serializedLetter.handGestureImage)
+            };
         }
 
         public static async Task<List<Letter>> LoadFromDataSource(IDataSource dataSource, List<Word> wordSource)

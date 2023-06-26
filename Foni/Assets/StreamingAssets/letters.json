@@ -6,7 +6,7 @@
         "apelsin",
         "avokado",
         "armar"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_a.png"
     },
     {
       "id": "b",
@@ -14,7 +14,7 @@
         "blåbär",
         "barnvagn",
         "byxor"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_b.png"
     },
     {
       "id": "d",
@@ -22,7 +22,7 @@
         "drake",
         "docka",
         "dator"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_d.png"
     },
     {
       "id": "e",
@@ -30,7 +30,7 @@
         "ekorre",
         "eka",
         "eld"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_e.png"
     },
     {
       "id": "f",
@@ -38,7 +38,7 @@
         "får",
         "fingrar",
         "fjäril"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_f.png"
     },
     {
       "id": "g",
@@ -46,7 +46,7 @@
         "gris",
         "groda",
         "gaffel"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_g.png"
     },
     {
       "id": "h",
@@ -54,7 +54,7 @@
         "häst",
         "hallon",
         "halsduk"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_h.png"
     },
     {
       "id": "i",
@@ -62,7 +62,7 @@
         "igelkott",
         "isbit",
         "insekter"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_i.png"
     },
     {
       "id": "j",
@@ -70,7 +70,7 @@
         "julgran",
         "jacka",
         "juice"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_j.png"
     },
     {
       "id": "k",
@@ -78,7 +78,7 @@
         "kiwi",
         "kniv",
         "knä"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_k.png"
     },
     {
       "id": "l",
@@ -86,7 +86,7 @@
         "lime",
         "lastbil",
         "linjal"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_l.png"
     },
     {
       "id": "m",
@@ -94,7 +94,7 @@
         "marsvin",
         "moln",
         "motorcykel"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_m.png"
     },
     {
       "id": "n",
@@ -102,7 +102,7 @@
         "nyckelpiga",
         "nyckel",
         "naglar"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_n.png"
     },
     {
       "id": "o",
@@ -110,7 +110,7 @@
         "orange",
         "oliv",
         "ost"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_o.png"
     },
     {
       "id": "p",
@@ -118,7 +118,7 @@
         "persika",
         "potatis",
         "paraply"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_p.png"
     },
     {
       "id": "r",
@@ -126,7 +126,7 @@
         "räv",
         "russin",
         "ryggsäck"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_r.png"
     },
     {
       "id": "s",
@@ -134,7 +134,7 @@
         "smultron",
         "sked",
         "segelbåt"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_s.png"
     },
     {
       "id": "t",
@@ -142,7 +142,7 @@
         "tröja",
         "tår",
         "traktor"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_t.png"
     },
     {
       "id": "u",
@@ -150,7 +150,7 @@
         "ubåt",
         "ugn",
         "undulat"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_u.png"
     },
     {
       "id": "v",
@@ -158,14 +158,14 @@
         "vindruva",
         "vas",
         "vattendroppe"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_v.png"
     },
     {
       "id": "y",
       "words": [
         "yxa",
         "yr"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_y.png"
     },
     {
       "id": "å",
@@ -173,7 +173,7 @@
         "ål",
         "ånga",
         "åra"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_aa.png"
     },
     {
       "id": "ä",
@@ -181,7 +181,7 @@
         "ägg",
         "älg",
         "äng"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_aaa.png"
     },
     {
       "id": "ö",
@@ -189,7 +189,7 @@
         "ödla",
         "ögonbryn",
         "öra"
-      ]
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_oo.png"
     }
   ]
 }
