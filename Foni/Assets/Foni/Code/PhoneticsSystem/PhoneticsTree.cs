@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Foni.Code.Util;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Random = UnityEngine.Random;
 
 namespace Foni.Code.PhoneticsSystem
 {
@@ -47,7 +48,7 @@ namespace Foni.Code.PhoneticsSystem
             foreach (var letterComponent in componentsInRandomizedOrder)
             {
                 coroutines.Add(StartCoroutine(letterComponent.AnimateShow()));
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(Random.Range(0.05f, 0.12f));
             }
 
             foreach (var coroutine in coroutines)
@@ -64,7 +65,7 @@ namespace Foni.Code.PhoneticsSystem
             foreach (var letterComponent in componentsInRandomizedOrder)
             {
                 coroutines.Add(StartCoroutine(letterComponent.AnimateHide()));
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(Random.Range(0.05f, 0.12f));
             }
 
             foreach (var coroutine in coroutines)
