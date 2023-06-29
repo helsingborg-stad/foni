@@ -13,6 +13,7 @@ namespace Foni.Code.PhoneticsSystem
     {
         public string ID;
         public SoftRef<Sprite> Sprite;
+        public SoftRef<AudioClip> SoundClip;
 
         public bool Equals(Word other)
         {
@@ -37,6 +38,7 @@ namespace Foni.Code.PhoneticsSystem
         {
             public string id;
             public string image;
+            public string soundClip;
         }
 
         [Serializable]
@@ -50,7 +52,8 @@ namespace Foni.Code.PhoneticsSystem
             return new Word
             {
                 ID = serializedWord.id,
-                Sprite = new SoftRef<Sprite>(serializedWord.image)
+                Sprite = new SoftRef<Sprite>(serializedWord.image),
+                SoundClip = new SoftRef<AudioClip>(serializedWord.soundClip)
             };
         }
 

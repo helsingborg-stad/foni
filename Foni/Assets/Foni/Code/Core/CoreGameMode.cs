@@ -190,12 +190,18 @@ namespace Foni.Code.Core
             foreach (var word in wordsForRound)
             {
                 yield return new WaitForTask(() => word.Sprite.Load(_assetDataSource));
+                yield return new WaitForTask(() => word.SoundClip.Load(_assetDataSource));
             }
 
             phoneticsTree.SetFromLetters(allLettersToShow);
 
             activeRevealObjects.ForEachWithIndex(
-                (revealObject, index) => revealObject.SetSprite(wordsForRound[index].Sprite.Asset)
+                (revealObject, index) =>
+                {
+                    var word = wordsForRound[index];
+                    revealObject.SetSprite(word.Sprite.Asset);
+                    revealObject.SetSound(word.SoundClip.Asset);
+                }
             );
 
             _gameState.ActiveLetters = lettersForRound;

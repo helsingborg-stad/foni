@@ -8,16 +8,21 @@ namespace Foni.Code.AssetSystem.TypeConverter
     {
         private readonly Dictionary<Type, IAssetTypeConverter<TResultType>> _converterMap = new()
         {
-            { typeof(Sprite), new SpriteAssetTypeConverter() as IAssetTypeConverter<TResultType> }
+            { typeof(Sprite), new SpriteAssetTypeConverter() as IAssetTypeConverter<TResultType> },
+            { typeof(AudioClip), new AudioClipAssetTypeConverter() as IAssetTypeConverter<TResultType> }
         };
 
         public IAssetTypeConverter<TResultType> GetConverter()
         {
             var assetType = typeof(TResultType);
 
-            return _converterMap.TryGetValue(assetType, out var converter)
-                ? converter
-                : new JsonAssetTypeConverter<TResultType>();
+            if (_converterMap.TryGetValue(assetType, out var converter))
+            {
+                return converter;
+            }
+
+            Debug.LogWarningFormat("No asset type converter for type {0} found - using JSON fallback", assetType);
+            return new JsonAssetTypeConverter<TResultType>();
         }
     }
 }

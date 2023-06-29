@@ -7,6 +7,7 @@
   - [Third-Party Notices](#third-party-notices)
     - [Free Cartoon Trees Vectors](#free-cartoon-trees-vectors)
     - [Material Symbols by Google](#material-symbols-by-google)
+    - [Unity Asset Store - OpenWavParser](#unity-asset-store---openwavparser)
 
 Foni is an educational app/game intended to help pre-school children learn
 how to phonetically pronounce alphabetical letters by associating them with
@@ -53,3 +54,8 @@ This project uses external/third-party assets.
 - Usage: Various in-game text-symbols
 - License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
 - Link: https://fonts.google.com/icons
+
+### Unity Asset Store - OpenWavParser
+
+- Usage: Parse .wav files into Unity Engine AudioClips
+- Link: https://assetstore.unity.com/packages/tools/audio/open-wav-parser-90832
