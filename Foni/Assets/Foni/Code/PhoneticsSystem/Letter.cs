@@ -34,7 +34,7 @@ namespace Foni.Code.PhoneticsSystem
     public static class LetterSerialization
     {
         [Serializable]
-        private record SerializedLetter
+        public record SerializedLetter
         {
             public string id;
             public string[] words;
@@ -42,7 +42,7 @@ namespace Foni.Code.PhoneticsSystem
         }
 
         [Serializable]
-        private record SerializedLetterRoot
+        public record SerializedLetterRoot
         {
             public SerializedLetter[] letters;
         }

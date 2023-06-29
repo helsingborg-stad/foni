@@ -34,7 +34,7 @@ namespace Foni.Code.PhoneticsSystem
     public static class WordSerialization
     {
         [Serializable]
-        private record SerializedWord
+        public record SerializedWord
         {
             public string id;
             public string image;
@@ -42,7 +42,7 @@ namespace Foni.Code.PhoneticsSystem
         }
 
         [Serializable]
-        private record SerializedWordRoot
+        public record SerializedWordRoot
         {
             public SerializedWord[] words;
         }
