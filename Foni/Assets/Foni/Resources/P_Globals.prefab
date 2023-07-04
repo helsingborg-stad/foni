@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2677181089707767548}
   - component: {fileID: 5139783341871590649}
   - component: {fileID: 2521874053581664461}
-  - component: {fileID: 3997722351674901927}
   m_Layer: 0
   m_Name: P_Globals
   m_TagString: Untagged
@@ -59,23 +58,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7996ab125a7d4a51818c17ae987ff2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3997722351674901927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579927810847736154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc0c615e4f6a4b0db8684d2a267a2038, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  phoneticsTree: {fileID: 0}
-  revealObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  handGesture: {fileID: 0}
-  gameResultsUI: {fileID: 0}
-  editorRandomSeed: 1337

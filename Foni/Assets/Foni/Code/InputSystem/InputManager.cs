@@ -6,7 +6,7 @@ namespace Foni.Code.InputSystem
 {
     public class InputManager : MonoBehaviour
     {
-        [SerializeField] private Camera raycastCamera;
+        private Camera _raycastCamera;
 
         private void Start()
         {
@@ -22,9 +22,17 @@ namespace Foni.Code.InputSystem
             }
         }
 
+        private void EnsureRaycastCamera()
+        {
+            if (_raycastCamera != null) return;
+
+            _raycastCamera = Camera.main;
+        }
+
         private IInputListener RaycastTouchForListener(Touch touch)
         {
-            var touchWorldPosition = raycastCamera.ScreenToWorldPoint(touch.startScreenPosition);
+            EnsureRaycastCamera();
+            var touchWorldPosition = _raycastCamera.ScreenToWorldPoint(touch.startScreenPosition);
             var raycastHit = Physics2D.Raycast(touchWorldPosition, Vector2.zero);
 
             return !raycastHit.collider ? null : raycastHit.collider.gameObject.GetComponent<IInputListener>();

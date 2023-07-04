@@ -4,6 +4,9 @@ namespace Foni.Code.ServicesSystem
     {
         AssetService,
         AsyncManager,
-        AssetCache
+        AssetCache,
+        DateTimeService,
+        SaveService,
+        ProfileService
     }
 }

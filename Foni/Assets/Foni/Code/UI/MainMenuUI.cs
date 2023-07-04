@@ -7,7 +7,7 @@ namespace Foni.Code.UI
     {
         public void OnClick_Start()
         {
-            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("ProfileMenuScene", LoadSceneMode.Single);
         }
     }
 }

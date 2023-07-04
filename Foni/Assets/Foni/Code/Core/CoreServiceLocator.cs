@@ -1,5 +1,8 @@
 using Foni.Code.AssetSystem;
 using Foni.Code.AsyncSystem;
+using Foni.Code.DateTimeSystem;
+using Foni.Code.ProfileSystem;
+using Foni.Code.SaveSystem;
 using Foni.Code.ServicesSystem;
 using UnityEngine;
 
@@ -32,6 +35,24 @@ namespace Foni.Code.Core
         {
             get => GetAs<IAssetCache>(EService.AssetCache);
             set => RegisterAs(EService.AssetCache, value);
+        }
+
+        public IDateTimeService DateTimeService
+        {
+            get => GetAs<IDateTimeService>(EService.DateTimeService);
+            set => RegisterAs(EService.DateTimeService, value);
+        }
+
+        public ISaveService SaveService
+        {
+            get => GetAs<ISaveService>(EService.SaveService);
+            set => RegisterAs(EService.SaveService, value);
+        }
+
+        public IProfileService ProfileService
+        {
+            get => GetAs<IProfileService>(EService.ProfileService);
+            set => RegisterAs(EService.ProfileService, value);
         }
     }
 }
