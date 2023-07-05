@@ -6,7 +6,9 @@
   - [Unity Setup](#unity-setup)
   - [Third-Party Notices](#third-party-notices)
     - [Free Cartoon Trees Vectors](#free-cartoon-trees-vectors)
+    - [Animal Avatars](#animal-avatars)
     - [Material Symbols by Google](#material-symbols-by-google)
+    - [Inter Font by Rasmus Andersson](#inter-font-by-rasmus-andersson)
     - [Unity Asset Store - OpenWavParser](#unity-asset-store---openwavparser)
 
 Foni is an educational app/game intended to help pre-school children learn
@@ -49,11 +51,23 @@ This project uses external/third-party assets.
 - License: [Free Vector Standard License](https://www.freevector.com/standard-license)
 - Link: https://www.freevector.com/free-cartoon-trees-vectors-18742
 
+### Animal Avatars
+
+- Usage: profile avatar images
+- License: [Freepik](https://www.freepikcompany.com/legal#nav-freepik-license)
+- Link: https://www.freepik.com/free-vector/animal-avatars_766618.htm, https://www.freepik.com/free-vector/variety-animal-avatars_766787.htm
+
 ### Material Symbols by Google
 
 - Usage: Various in-game text-symbols
 - License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
 - Link: https://fonts.google.com/icons
+
+### Inter Font by Rasmus Andersson
+
+- Usage: main font
+- License: [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+- Link: https://fonts.google.com/specimen/Inter/
 
 ### Unity Asset Store - OpenWavParser
 
