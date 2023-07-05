@@ -19,11 +19,18 @@ namespace Foni.Code.UI
 
         [SerializeField] private AvatarIconMapper avatarIconMapper;
         [SerializeField] private AddProfileUI addProfileUI;
+        [SerializeField] private PlayModalUI playModalUI;
 
         private void Start()
         {
             StartCoroutine(StartSetupAllProfiles());
             addProfileUI.OnSubmitProfile += OnSubmitNewProfile;
+            playModalUI.OnStartGame += StartGame;
+        }
+
+        private static void StartGame()
+        {
+            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
         }
 
         private void OnSubmitNewProfile(ProfileData newProfile)
@@ -85,8 +92,9 @@ namespace Foni.Code.UI
 
         private void OnClickProfile(ProfileData profile)
         {
-            // TODO: set profile as active
-            SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+            Globals.ServiceLocator.ProfileService.SetActiveProfile(profile.name);
+            playModalUI.SetFromProfile(profile);
+            playModalUI.Show();
         }
     }
 }

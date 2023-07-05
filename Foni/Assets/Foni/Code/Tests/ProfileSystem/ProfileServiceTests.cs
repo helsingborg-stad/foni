@@ -71,5 +71,44 @@ namespace Foni.Code.Tests.ProfileSystem
             Assert.AreEqual(1, profiles.Count);
             Assert.AreEqual(profiles[0].Serialize(), GetMockProfileJson());
         }
+
+        [Test]
+        public void GetActiveProfile_InitiallyNull()
+        {
+            var profileService = new ProfileService(new MockSaveService());
+
+            var result = profileService.GetActiveProfile();
+
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public async Task SetActiveProfile()
+        {
+            var profileService = new ProfileService(new MockSaveService());
+            var mockProfile = new ProfileData
+            {
+                name = "mock",
+                icon = "test",
+                statistics = new StatisticsData()
+            };
+
+            await profileService.GetAllProfiles();
+            await profileService.UpdateProfile(mockProfile);
+            profileService.SetActiveProfile(mockProfile.name);
+            var result = profileService.GetActiveProfile();
+
+            Assert.AreEqual(mockProfile.Serialize(), result?.Serialize());
+        }
+
+        [Test]
+        public async Task SetActiveProfile_Throws()
+        {
+            var profileService = new ProfileService(new MockSaveService());
+            await profileService.GetAllProfiles();
+            void Func() => profileService.SetActiveProfile("does not exist");
+
+            Assert.Throws(Is.InstanceOf<ArgumentException>(), Func);
+        }
     }
 }

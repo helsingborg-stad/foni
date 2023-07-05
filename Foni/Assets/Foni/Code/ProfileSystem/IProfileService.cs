@@ -10,5 +10,7 @@ namespace Foni.Code.ProfileSystem
         public Task UpdateProfile(ProfileData profileData);
         public Task RemoveProfile(string id);
         public bool ContainsProfile(string id);
+        public void SetActiveProfile(string id);
+        public ProfileData? GetActiveProfile();
     }
 }

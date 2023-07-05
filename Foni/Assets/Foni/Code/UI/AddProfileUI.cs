@@ -92,7 +92,7 @@ namespace Foni.Code.UI
         {
             var backdropAnimation = StartCoroutine(TweenManager.OneShot(showEasing, 0.0f, finalBackdropOpacity,
                 showDuration,
-                TweenAction.SetImageOpacity((backdropImage))));
+                TweenAction.SetImageOpacity(backdropImage)));
             var contentAnimation = StartCoroutine(TweenManager.OneShot(showEasing, 3000.0f, 0.0f, showDuration,
                 TweenAction.TransformAnchoredPositionX(animateRoot)));
 
@@ -104,7 +104,7 @@ namespace Foni.Code.UI
         {
             var backdropAnimation = StartCoroutine(TweenManager.OneShot(hideEasing, finalBackdropOpacity, 0.0f,
                 hideDuration,
-                TweenAction.SetImageOpacity((backdropImage))));
+                TweenAction.SetImageOpacity(backdropImage)));
             var contentAnimation = StartCoroutine(TweenManager.OneShot(hideEasing, 0.0f, 3000.0f, hideDuration,
                 TweenAction.TransformAnchoredPositionX(animateRoot)));
 
@@ -125,8 +125,7 @@ namespace Foni.Code.UI
         private void UpdateAcceptButtonState()
         {
             acceptButton.interactable =
-                _profileData.name != null &&
-                _profileData.icon != null &&
+                _profileData is { name: not null, icon: not null } &&
                 !Globals.ServiceLocator.ProfileService.ContainsProfile(_profileData.name);
         }
 

@@ -17,12 +17,14 @@ namespace Foni.Code.ProfileSystem
 
         private readonly ISaveService _saveService;
         private List<ProfileData> _profileCache;
+        private string _activeProfileId;
         private const string ProfilesSaveID = "profiles";
 
         public ProfileService(ISaveService saveService)
         {
             _saveService = saveService;
             _profileCache = null;
+            _activeProfileId = null;
         }
 
         public async Task<List<ProfileData>> GetAllProfiles()
@@ -74,6 +76,35 @@ namespace Foni.Code.ProfileSystem
         public bool ContainsProfile(string id)
         {
             return _profileCache.FindIndex(profile => profile.name == id) >= 0;
+        }
+
+        public void SetActiveProfile(string id)
+        {
+            var profileIndex = _profileCache.FindIndex(profile => profile.name == id);
+            if (profileIndex < 0)
+            {
+                throw new ArgumentException(
+                    $"profile with id '{id}' does not exist (did you load all profiles first?)");
+            }
+
+            _activeProfileId = id;
+        }
+
+        public ProfileData? GetActiveProfile()
+        {
+            if (_activeProfileId == null)
+            {
+                return null;
+            }
+
+            var profileIndex = _profileCache.FindIndex(profile => profile.name == _activeProfileId);
+
+            if (profileIndex < 0)
+            {
+                return null;
+            }
+
+            return _profileCache[profileIndex];
         }
 
         private Task SaveProfiles()
