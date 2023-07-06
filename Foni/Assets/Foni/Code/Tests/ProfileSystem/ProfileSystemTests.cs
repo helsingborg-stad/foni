@@ -15,7 +15,7 @@ namespace Foni.Code.Tests.ProfileSystem
                 icon = "fox",
                 statistics = new StatisticsData
                 {
-                    rounds = new RoundData[]
+                    sessions = new List<SessionData>
                     {
                         new()
                         {
@@ -36,7 +36,7 @@ namespace Foni.Code.Tests.ProfileSystem
                 }
             };
 
-            profile.statistics.rounds[0].guesses.Add(new SingleGuessData
+            profile.statistics.sessions[0].guesses.Add(new SingleGuessData
             {
                 letter = "i",
                 wrongGuesses = 0,
@@ -50,7 +50,7 @@ namespace Foni.Code.Tests.ProfileSystem
         private static string GetTestProfileJson()
         {
             return
-                "{\"name\":\"Räv\",\"icon\":\"fox\",\"statistics\":{\"rounds\":[{\"timestampStart\":\"2023-06-30T15:30:45.0000000Z\",\"totalSessionTimeS\":195.0,\"guesses\":[{\"letter\":\"s\",\"wrongGuesses\":3,\"durationUntilCorrectS\":30.0,\"timesSoundPlayed\":1},{\"letter\":\"i\",\"wrongGuesses\":0,\"durationUntilCorrectS\":2.0,\"timesSoundPlayed\":0}]}]}}";
+                "{\"name\":\"Räv\",\"icon\":\"fox\",\"statistics\":{\"sessions\":[{\"timestampStart\":\"2023-06-30T15:30:45.0000000Z\",\"totalSessionTimeS\":195.0,\"guesses\":[{\"letter\":\"s\",\"wrongGuesses\":3,\"durationUntilCorrectS\":30.0,\"timesSoundPlayed\":1},{\"letter\":\"i\",\"wrongGuesses\":0,\"durationUntilCorrectS\":2.0,\"timesSoundPlayed\":0}]}]}}";
         }
 
         [Test]

@@ -42,12 +42,17 @@ namespace Foni.Code.PhoneticsSystem
         private Material _materialInstance;
         private static readonly int RevealPropertyId = Shader.PropertyToID("_Reveal");
 
+        public delegate void SoundButtonClickedEvent();
+
+        public SoundButtonClickedEvent OnSoundButtonClickedEvent;
+
         private void Start()
         {
             animateRoot.transform.localScale = Vector3.zero;
             soundButtonAnimateRoot.transform.localScale = Vector3.zero;
             SetupShaderForAnimation();
             soundButton.OnClicked += PlaySound;
+            soundButton.OnClicked += () => OnSoundButtonClickedEvent.Invoke();
         }
 
         private void SetupShaderForAnimation()

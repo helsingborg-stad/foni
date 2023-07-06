@@ -15,7 +15,7 @@ namespace Foni.Code.Tests.ProfileSystem
             icon = "fox",
             statistics = new StatisticsData
             {
-                rounds = new RoundData[]
+                sessions = new List<SessionData>
                 {
                     new()
                     {

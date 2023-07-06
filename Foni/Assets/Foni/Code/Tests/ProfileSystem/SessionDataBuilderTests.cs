@@ -8,7 +8,7 @@ using TimeSpan = System.TimeSpan;
 
 namespace Foni.Code.Tests.ProfileSystem
 {
-    public class RoundDataBuilderTests
+    public class SessionDataBuilderTests
     {
         private class MockDateTimeService : IDateTimeService
         {
@@ -28,28 +28,28 @@ namespace Foni.Code.Tests.ProfileSystem
         public void Initialize()
         {
             var dateTimeService = MockDateTimeService.Get();
-            var builder = new RoundDataBuilder();
+            var builder = new SessionDataBuilder();
             builder.Initialize();
 
             dateTimeService.Now += new TimeSpan(0, 2, 0);
-            var roundData = builder.EndRound();
+            var sessionData = builder.EndSession();
 
-            Assert.AreEqual("2023-06-30T15:30:45.0000000Z", roundData.timestampStart);
-            Assert.AreEqual(120, roundData.totalSessionTimeS);
+            Assert.AreEqual("2023-06-30T15:30:45.0000000Z", sessionData.timestampStart);
+            Assert.AreEqual(120, sessionData.totalSessionTimeS);
         }
 
         [Test]
         public void StartGuess()
         {
             var dateTimeService = MockDateTimeService.Get();
-            var builder = new RoundDataBuilder()
+            var builder = new SessionDataBuilder()
                 .Initialize()
                 .StartGuess("a");
 
             dateTimeService.Now += new TimeSpan(0, 1, 0);
             var guesses = builder
                 .EndGuess()
-                .EndRound()
+                .EndSession()
                 .guesses;
 
             Assert.AreEqual(1, guesses.Count);
@@ -61,7 +61,7 @@ namespace Foni.Code.Tests.ProfileSystem
         public void IncrementWrongGuesses()
         {
             var dateTimeService = MockDateTimeService.Get();
-            var builder = new RoundDataBuilder()
+            var builder = new SessionDataBuilder()
                 .Initialize()
                 .StartGuess("a");
 
@@ -70,7 +70,7 @@ namespace Foni.Code.Tests.ProfileSystem
                 .EndGuess()
                 .IncrementWrongGuesses()
                 .IncrementWrongGuesses()
-                .EndRound()
+                .EndSession()
                 .guesses;
 
             Assert.AreEqual(2, guesses[0].wrongGuesses);
@@ -80,7 +80,7 @@ namespace Foni.Code.Tests.ProfileSystem
         public void IncrementTimesSoundPlayed()
         {
             var dateTimeService = MockDateTimeService.Get();
-            var builder = new RoundDataBuilder()
+            var builder = new SessionDataBuilder()
                 .Initialize()
                 .StartGuess("a");
 
@@ -90,7 +90,7 @@ namespace Foni.Code.Tests.ProfileSystem
                 .IncrementTimesSoundPlayed()
                 .IncrementTimesSoundPlayed()
                 .IncrementTimesSoundPlayed()
-                .EndRound()
+                .EndSession()
                 .guesses;
 
             Assert.AreEqual(3, guesses[0].timesSoundPlayed);

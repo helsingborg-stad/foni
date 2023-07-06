@@ -1,14 +1,11 @@
-using System;
 using Foni.Code.DebugUtils;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Foni.Code.UI
 {
     public class DebugHUD : MonoBehaviour
     {
-        [FormerlySerializedAs("FPSText")]
         [Header("References")] //
         [SerializeField]
         private TextMeshProUGUI fpsText;

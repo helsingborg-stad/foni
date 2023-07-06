@@ -6,6 +6,7 @@ using Foni.Code.AsyncSystem;
 using Foni.Code.DataSourceSystem;
 using Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource;
 using Foni.Code.PhoneticsSystem;
+using Foni.Code.ProfileSystem;
 using Foni.Code.UI;
 using Foni.Code.Util;
 using UnityEngine;
@@ -59,6 +60,7 @@ namespace Foni.Code.Core
         private GameState _gameState;
         private IDataSource _assetDataSource;
         private Random _randomness;
+        private SessionDataBuilder _sessionDataBuilder;
 
         private IEnumerator Start()
         {
@@ -119,6 +121,9 @@ namespace Foni.Code.Core
 
             phoneticsTree.OnLeafClicked += OnPhoneticsTreeLeafClicked;
 
+            _sessionDataBuilder = new SessionDataBuilder()
+                .Initialize();
+
             yield return SetupNextRound();
             yield return DoOpeningAnimation();
             _gameState.IsGameActive = true;
@@ -147,6 +152,7 @@ namespace Foni.Code.Core
             {
                 letterComponent.SetState(ELetterState.Incorrect);
                 handGesture.Show();
+                _sessionDataBuilder.IncrementWrongGuesses();
             }
         }
 
@@ -201,6 +207,7 @@ namespace Foni.Code.Core
                     var word = wordsForRound[index];
                     revealObject.SetSprite(word.Sprite.Asset);
                     revealObject.SetSound(word.SoundClip.Asset);
+                    revealObject.OnSoundButtonClickedEvent += () => _sessionDataBuilder.IncrementTimesSoundPlayed();
                 }
             );
 
@@ -236,6 +243,7 @@ namespace Foni.Code.Core
         {
             // TODO: Play feedback effects
             _gameState.IsGameActive = false;
+            _sessionDataBuilder.EndGuess();
 
             yield return _gameState.RevealObjects[_gameState.CurrentLetter].AnimateHide();
 
@@ -263,6 +271,14 @@ namespace Foni.Code.Core
         private IEnumerator DoGameOver()
         {
             Debug.Log("Game is over");
+            var sessionData = _sessionDataBuilder.EndSession();
+            var activeProfile = Globals.ServiceLocator.ProfileService.GetActiveProfile();
+            if (activeProfile.HasValue)
+            {
+                activeProfile.Value.statistics.sessions.Add(sessionData);
+                Globals.ServiceLocator.ProfileService.UpdateProfile(activeProfile.Value);
+            }
+
             yield return phoneticsTree.AnimateHidingLeaves();
             gameResultsUI.gameObject.EnableIfDisabled();
 
@@ -292,6 +308,7 @@ namespace Foni.Code.Core
             var activeRevealObject = _gameState.RevealObjects[_gameState.CurrentLetter];
             phoneticsTree.ResetAllLeaves();
             handGesture.SetSprite(letter.HandGestureSprite.Asset);
+            _sessionDataBuilder.StartGuess(letter.ID);
             yield return activeRevealObject.AnimateReveal();
         }
     }

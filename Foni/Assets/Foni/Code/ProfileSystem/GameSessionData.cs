@@ -13,7 +13,7 @@ namespace Foni.Code.ProfileSystem
     }
 
     [Serializable]
-    public struct RoundData
+    public struct SessionData
     {
         public string timestampStart;
         public float totalSessionTimeS;
