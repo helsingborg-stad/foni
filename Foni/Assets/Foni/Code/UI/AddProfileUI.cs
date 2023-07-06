@@ -23,7 +23,6 @@ namespace Foni.Code.UI
         [SerializeField] private TextMeshProUGUI errorText;
         [SerializeField] private RectTransform avatarIconRoot;
         [SerializeField] private AvatarIconWidget avatarIconPrefab;
-        [SerializeField] private AvatarIconMapper avatarIconMapper;
 
         [Header("Animation")] //
         [SerializeField]
@@ -118,7 +117,7 @@ namespace Foni.Code.UI
             avatarIconRoot.gameObject.DestroyAllChildren();
 
             _iconNameWidgetMap.Clear();
-            var sprites = avatarIconMapper.GetSprites();
+            var sprites = Globals.AvatarIconMapper.GetSprites();
             sprites.ForEach(CreateAvatarIcon);
         }
 

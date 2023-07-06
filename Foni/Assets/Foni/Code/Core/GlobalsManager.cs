@@ -34,6 +34,7 @@ namespace Foni.Code.Core
             };
             Globals.ServiceLocator = serviceLocator;
             Globals.SettingsManager = gameObject.AddComponent<SettingsManager>();
+            Globals.AvatarIconMapper = gameObject.GetComponent<AvatarIconMapper>();
 
             SettingsManager.ApplySettings();
 

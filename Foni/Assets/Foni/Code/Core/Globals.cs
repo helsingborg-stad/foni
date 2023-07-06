@@ -1,3 +1,4 @@
+using Foni.Code.ProfileSystem;
 using Foni.Code.SettingsSystem;
 using UnityEngine;
 
@@ -39,6 +40,18 @@ namespace Foni.Code.Core
                 return _settingsManager;
             }
             set => _settingsManager = value;
+        }
+
+        private static AvatarIconMapper _avatarIconMapper;
+
+        public static AvatarIconMapper AvatarIconMapper
+        {
+            get
+            {
+                EnsureGlobalsObject();
+                return _avatarIconMapper;
+            }
+            set => _avatarIconMapper = value;
         }
 
         private static void EnsureGlobalsObject()

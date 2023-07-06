@@ -17,7 +17,6 @@ namespace Foni.Code.UI
         [SerializeField] private AvatarWidget avatarPrefab;
         [SerializeField] private Transform addAvatarButtonTransform;
 
-        [SerializeField] private AvatarIconMapper avatarIconMapper;
         [SerializeField] private AddProfileUI addProfileUI;
         [SerializeField] private PlayModalUI playModalUI;
 
@@ -84,7 +83,7 @@ namespace Foni.Code.UI
         {
             var newAvatar = Instantiate(avatarPrefab, avatarContentRoot);
             newAvatar.SetName(inProfile.name);
-            newAvatar.SetAvatarSprite(avatarIconMapper.GetSprite(inProfile.icon));
+            newAvatar.SetAvatarSprite(Globals.AvatarIconMapper.GetSprite(inProfile.icon));
             newAvatar.OnClick += () => OnClickProfile(inProfile);
 
             addAvatarButtonTransform.SetAsLastSibling();

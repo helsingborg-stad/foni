@@ -1,4 +1,5 @@
 using System.Collections;
+using Foni.Code.Core;
 using Foni.Code.ProfileSystem;
 using Foni.Code.TweenSystem;
 using Foni.Code.TweenSystem.Actions;
@@ -16,7 +17,6 @@ namespace Foni.Code.UI
         private TextMeshProUGUI nameText;
 
         [SerializeField] private Image avatarImage;
-        [SerializeField] private AvatarIconMapper avatarIconMapper;
 
         [Header("Animation")] //
         [SerializeField]
@@ -48,7 +48,7 @@ namespace Foni.Code.UI
         public void SetFromProfile(ProfileData profile)
         {
             nameText.SetText(profile.name);
-            avatarImage.sprite = avatarIconMapper.GetSprite(profile.icon);
+            avatarImage.sprite = Globals.AvatarIconMapper.GetSprite(profile.icon);
         }
 
         public void Show()
