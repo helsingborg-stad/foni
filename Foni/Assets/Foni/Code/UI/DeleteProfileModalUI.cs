@@ -1,4 +1,5 @@
 using System.Collections;
+using Foni.Code.AsyncSystem;
 using Foni.Code.Core;
 using Foni.Code.ProfileSystem;
 using Foni.Code.TweenSystem;
@@ -10,15 +11,11 @@ using UnityEngine.UI;
 
 namespace Foni.Code.UI
 {
-    public class PlayModalUI : MonoBehaviour
+    public class DeleteProfileModalUI : MonoBehaviour
     {
         [Header("References")] //
         [SerializeField]
         private TextMeshProUGUI nameText;
-
-        [SerializeField] private Image avatarImage;
-
-        [SerializeField] private DeleteProfileModalUI deleteProfileModalUI;
 
         [Header("Animation")] //
         [SerializeField]
@@ -33,26 +30,35 @@ namespace Foni.Code.UI
         [SerializeField] private EEasing hideEasing;
         [SerializeField] private float hideDuration;
 
-        public delegate void StartGameEvent();
+        public delegate void DeleteActiveProfileEvent();
 
-        public StartGameEvent OnStartGame;
+        public DeleteActiveProfileEvent OnDeleteActiveProfile;
 
         private void Start()
         {
-            deleteProfileModalUI.OnDeleteActiveProfile += Hide;
             HideImmediately();
-        }
-
-        public void StartGame()
-        {
-            OnStartGame?.Invoke();
         }
 
         public void SetFromProfile(ProfileData profile)
         {
             nameText.SetText(profile.name);
-            avatarImage.sprite = Globals.AvatarIconMapper.GetSprite(profile.icon);
-            deleteProfileModalUI.SetFromProfile(profile);
+        }
+
+        public void ConfirmDeleteActiveProfile()
+        {
+            var activeProfile = Globals.ServiceLocator.ProfileService.GetActiveProfile();
+            if (activeProfile.HasValue)
+            {
+                StartCoroutine(DoDeleteProfile(activeProfile.Value.name));
+            }
+        }
+
+        private IEnumerator DoDeleteProfile(string profileId)
+        {
+            yield return new WaitForTask(() =>
+                Globals.ServiceLocator.ProfileService.RemoveProfile(profileId));
+            Hide();
+            OnDeleteActiveProfile.Invoke();
         }
 
         public void Show()

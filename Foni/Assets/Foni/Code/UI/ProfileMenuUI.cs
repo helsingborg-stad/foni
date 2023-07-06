@@ -14,6 +14,8 @@ namespace Foni.Code.UI
         [SerializeField]
         private RectTransform avatarContentRoot;
 
+        [SerializeField] private DeleteProfileModalUI deleteProfileModalUI;
+
         [SerializeField] private AvatarWidget avatarPrefab;
         [SerializeField] private Transform addAvatarButtonTransform;
 
@@ -25,6 +27,12 @@ namespace Foni.Code.UI
             StartCoroutine(StartSetupAllProfiles());
             addProfileUI.OnSubmitProfile += OnSubmitNewProfile;
             playModalUI.OnStartGame += StartGame;
+            deleteProfileModalUI.OnDeleteActiveProfile += SetupAllProfiles;
+        }
+
+        private void SetupAllProfiles()
+        {
+            StartCoroutine(StartSetupAllProfiles());
         }
 
         private static void StartGame()
