@@ -64,7 +64,10 @@ namespace Foni.Code.UI
             {
                 name = null,
                 icon = null,
-                statistics = new StatisticsData()
+                statistics = new StatisticsData
+                {
+                    sessions = new List<SessionData>()
+                }
             };
             gameObject.SetActive(true);
             errorText.text = "";

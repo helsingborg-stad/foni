@@ -90,7 +90,10 @@ namespace Foni.Code.Tests.ProfileSystem
             {
                 name = "mock",
                 icon = "test",
-                statistics = new StatisticsData()
+                statistics = new StatisticsData
+                {
+                    sessions = new List<SessionData>()
+                }
             };
 
             await profileService.GetAllProfiles();
