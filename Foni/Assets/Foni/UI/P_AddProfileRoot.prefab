@@ -194,7 +194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2382c42ebc67f4c0f9fc285a9a9ca823, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -259,7 +259,6 @@ MonoBehaviour:
   errorText: {fileID: 473952959981270661}
   avatarIconRoot: {fileID: 2143249882857617502}
   avatarIconPrefab: {fileID: 4714268463627838627, guid: e4774ac9c4eb749ffac433dcc94db3b1, type: 3}
-  avatarIconMapper: {fileID: 0}
   animateRoot: {fileID: 106864096715715889}
   backdropImage: {fileID: 1747391932468705106}
   finalBackdropOpacity: 0.9
@@ -417,7 +416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2382c42ebc67f4c0f9fc285a9a9ca823, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -551,7 +550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 2382c42ebc67f4c0f9fc285a9a9ca823, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
