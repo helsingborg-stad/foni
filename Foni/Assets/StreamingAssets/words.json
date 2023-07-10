@@ -2,12 +2,12 @@
   "words": [
     {
       "id": "apelsin",
-      "image": "Phonetics/WordObjects/T_Object_apelsin.png",
+      "image": "Phonetics/WordObjects/orange.png",
       "soundClip": "Phonetics/Sounds/S_Word_Apelsin.wav"
     },
     {
       "id": "avokado",
-      "image": "Phonetics/WordObjects/T_Object_avokado.png",
+      "image": "Phonetics/WordObjects/avocado.png",
       "soundClip": "Phonetics/Sounds/S_Word_Avokado.wav"
     },
     {
@@ -27,12 +27,12 @@
     },
     {
       "id": "byxor",
-      "image": "Phonetics/WordObjects/T_Object_byxor.png",
+      "image": "Phonetics/WordObjects/pants.png",
       "soundClip": "Phonetics/Sounds/S_Word_Byxor.wav"
     },
     {
       "id": "drake",
-      "image": "Phonetics/WordObjects/T_Object_drake.png",
+      "image": "Phonetics/WordObjects/dragon.png",
       "soundClip": "Phonetics/Sounds/S_Word_Drake.wav"
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "id": "ekorre",
-      "image": "Phonetics/WordObjects/T_Object_ekorre.png",
+      "image": "Phonetics/WordObjects/squirrel.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ekorre.wav"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "id": "eld",
-      "image": "Phonetics/WordObjects/T_Object_eld.png",
+      "image": "Phonetics/WordObjects/fire.png",
       "soundClip": "Phonetics/Sounds/S_Word_Eld.wav"
     },
     {
@@ -77,17 +77,17 @@
     },
     {
       "id": "gris",
-      "image": "Phonetics/WordObjects/T_Object_gris.png",
+      "image": "Phonetics/WordObjects/pig.png",
       "soundClip": "Phonetics/Sounds/S_Word_Gris.wav"
     },
     {
       "id": "groda",
-      "image": "Phonetics/WordObjects/T_Object_groda.png",
+      "image": "Phonetics/WordObjects/frog.png",
       "soundClip": "Phonetics/Sounds/S_Word_Groda.wav"
     },
     {
       "id": "gaffel",
-      "image": "Phonetics/WordObjects/T_Object_gaffel.png",
+      "image": "Phonetics/WordObjects/fork.png",
       "soundClip": "Phonetics/Sounds/S_Word_Gaffel.wav"
     },
     {
@@ -102,17 +102,17 @@
     },
     {
       "id": "halsduk",
-      "image": "Phonetics/WordObjects/T_Object_halsduk.png",
+      "image": "Phonetics/WordObjects/halsduk.png",
       "soundClip": "Phonetics/Sounds/S_Word_Halsduk.wav"
     },
     {
       "id": "igelkott",
-      "image": "Phonetics/WordObjects/T_Object_igelkott.png",
+      "image": "Phonetics/WordObjects/hedgehog.png",
       "soundClip": "Phonetics/Sounds/S_Word_Igelkotte.wav"
     },
     {
       "id": "isbit",
-      "image": "Phonetics/WordObjects/T_Object_isbit.png",
+      "image": "Phonetics/WordObjects/icecube.png",
       "soundClip": "Phonetics/Sounds/S_Word_Is.wav"
     },
     {
@@ -122,12 +122,12 @@
     },
     {
       "id": "julgran",
-      "image": "Phonetics/WordObjects/T_Object_julgran.png",
+      "image": "Phonetics/WordObjects/julgran.png",
       "soundClip": "Phonetics/Sounds/S_Word_Julgran.wav"
     },
     {
       "id": "jacka",
-      "image": "Phonetics/WordObjects/T_Object_jacka.png",
+      "image": "Phonetics/WordObjects/jacket.png",
       "soundClip": "Phonetics/Sounds/S_Word_Jacka.wav"
     },
     {
@@ -137,12 +137,12 @@
     },
     {
       "id": "kiwi",
-      "image": "Phonetics/WordObjects/T_Object_kiwi.png",
+      "image": "Phonetics/WordObjects/kiwi.png",
       "soundClip": "Phonetics/Sounds/S_Word_Kiwi.wav"
     },
     {
       "id": "kniv",
-      "image": "Phonetics/WordObjects/T_Object_kniv.png",
+      "image": "Phonetics/WordObjects/knife.png",
       "soundClip": "Phonetics/Sounds/S_Word_Kniv.wav"
     },
     {
@@ -152,7 +152,7 @@
     },
     {
       "id": "lime",
-      "image": "Phonetics/WordObjects/T_Object_lime.png",
+      "image": "Phonetics/WordObjects/lime.png",
       "soundClip": "Phonetics/Sounds/S_Word_Lime.wav"
     },
     {
@@ -172,17 +172,17 @@
     },
     {
       "id": "moln",
-      "image": "Phonetics/WordObjects/T_Object_moln.png",
+      "image": "Phonetics/WordObjects/cloud.png",
       "soundClip": "Phonetics/Sounds/S_Word_Moln.wav"
     },
     {
       "id": "motorcykel",
-      "image": "Phonetics/WordObjects/T_Object_motorcykel.png",
+      "image": "Phonetics/WordObjects/motorcycle.png",
       "soundClip": "Phonetics/Sounds/S_Word_Motorcykel.wav"
     },
     {
       "id": "nyckelpiga",
-      "image": "Phonetics/WordObjects/T_Object_nyckelpiga.png",
+      "image": "Phonetics/WordObjects/ladybug.png",
       "soundClip": "Phonetics/Sounds/S_Word_Nyckelpiga.wav"
     },
     {
@@ -207,7 +207,7 @@
     },
     {
       "id": "ost",
-      "image": "Phonetics/WordObjects/T_Object_ost.png",
+      "image": "Phonetics/WordObjects/ost.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ost.wav"
     },
     {
@@ -222,7 +222,7 @@
     },
     {
       "id": "paraply",
-      "image": "Phonetics/WordObjects/T_Object_paraply.png",
+      "image": "Phonetics/WordObjects/umbrella.png",
       "soundClip": "Phonetics/Sounds/S_Word_Paraply.wav"
     },
     {
@@ -237,7 +237,7 @@
     },
     {
       "id": "ryggsäck",
-      "image": "Phonetics/WordObjects/T_Object_ryggsack.png",
+      "image": "Phonetics/WordObjects/ryggsäck.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ryggsäck.wav"
     },
     {
@@ -272,7 +272,7 @@
     },
     {
       "id": "ubåt",
-      "image": "Phonetics/WordObjects/T_Object_ubat.png",
+      "image": "Phonetics/WordObjects/submarine.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ubåt.wav"
     },
     {
@@ -297,7 +297,7 @@
     },
     {
       "id": "vattendroppe",
-      "image": "Phonetics/WordObjects/T_Object_vattendroppe.png",
+      "image": "Phonetics/WordObjects/droplet.png",
       "soundClip": "Phonetics/Sounds/S_Word_Vattendroppe.wav"
     },
     {
@@ -312,7 +312,7 @@
     },
     {
       "id": "ål",
-      "image": "Phonetics/WordObjects/T_Object_al.png",
+      "image": "Phonetics/WordObjects/eel.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ål.wav"
     },
     {
@@ -327,12 +327,12 @@
     },
     {
       "id": "ägg",
-      "image": "Phonetics/WordObjects/T_Object_agg.png",
+      "image": "Phonetics/WordObjects/egg.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ägg.wav"
     },
     {
       "id": "älg",
-      "image": "Phonetics/WordObjects/T_Object_alg.png",
+      "image": "Phonetics/WordObjects/moose.png",
       "soundClip": "Phonetics/Sounds/S_Word_Älg.wav"
     },
     {

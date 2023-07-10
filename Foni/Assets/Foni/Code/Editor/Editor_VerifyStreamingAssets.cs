@@ -30,6 +30,12 @@ namespace Foni.Code.Editor
             letters.ForEach(letter => LogVerifyLetter(letter, wordList));
             wordList.ForEach(LogVerifyWord);
 
+            var assetFiles = Directory.GetFiles(Application.streamingAssetsPath, "*", SearchOption.AllDirectories)
+                .Where(file => file.EndsWith(".png") || file.EndsWith(".wav"))
+                .ToList()
+                .ConvertAll(fullPath => Path.GetRelativePath(Application.streamingAssetsPath, fullPath));
+            assetFiles.ForEach(path => LogPossiblyUnusedAsset(path, letters, wordList));
+
             Debug.Log("Verify done!");
         }
 
@@ -74,6 +80,19 @@ namespace Foni.Code.Editor
             {
                 Debug.LogWarningFormat("Word '{0}' missing sound '{1}'", word.id,
                     word.soundClip);
+            }
+        }
+
+        private static void LogPossiblyUnusedAsset(string partialAssetPath,
+            IEnumerable<LetterSerialization.SerializedLetter> letters,
+            IEnumerable<WordSerialization.SerializedWord> words)
+        {
+            var isInLetter = letters.Any(letter => letter.handGestureImage == partialAssetPath);
+            var isInWord = words.Any(word => word.image == partialAssetPath || word.soundClip == partialAssetPath);
+
+            if (!isInLetter && !isInWord)
+            {
+                Debug.LogWarningFormat("Asset '{0}' not used by any letter/word", partialAssetPath);
             }
         }
     }
