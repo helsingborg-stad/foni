@@ -2,7 +2,6 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Foni.Code.Util;
-using UnityEngine;
 
 namespace Foni.Code.SaveSystem.Implementation
 {
@@ -18,7 +17,6 @@ namespace Foni.Code.SaveSystem.Implementation
         {
             var dataPath = await PathUtils.GetPersistentDataPath();
             var savePath = Path.Join(dataPath, id);
-            Debug.LogFormat("Saving {0}: {1}", savePath, content);
             await File.WriteAllTextAsync(savePath, content, Encoding.UTF8);
         }
     }

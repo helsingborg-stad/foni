@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Foni.Code.Core;
-using UnityEngine;
 
 namespace Foni.Code.ProfileSystem
 {
@@ -17,8 +16,6 @@ namespace Foni.Code.ProfileSystem
             _sessionData.timestampStart = Globals.ServiceLocator.DateTimeService.Now.ToString("O");
             _sessionData.guesses = new List<SingleGuessData>();
             _roundStartTimestamp = Globals.ServiceLocator.DateTimeService.Now;
-
-            Debug.LogFormat("[SessionData] Initialize {0}", _sessionData.timestampStart);
             return this;
         }
 
@@ -34,8 +31,6 @@ namespace Foni.Code.ProfileSystem
                 timesSoundPlayed = 0,
                 durationUntilCorrectS = -1
             });
-
-            Debug.LogFormat("[SessionData] StartGuess {0:O}", _guessStartTimestamp);
             return this;
         }
 
@@ -44,8 +39,6 @@ namespace Foni.Code.ProfileSystem
             var singleGuessData = _sessionData.guesses[_currentGuessIndex];
             singleGuessData.wrongGuesses += 1;
             _sessionData.guesses[_currentGuessIndex] = singleGuessData;
-            
-            Debug.LogFormat("[SessionData] IncrementWrongGuesses {0}", singleGuessData.wrongGuesses);
             return this;
         }
 
@@ -54,8 +47,6 @@ namespace Foni.Code.ProfileSystem
             var singleGuessData = _sessionData.guesses[_currentGuessIndex];
             singleGuessData.timesSoundPlayed += 1;
             _sessionData.guesses[_currentGuessIndex] = singleGuessData;
-            
-            Debug.LogFormat("[SessionData] IncrementTimesSoundPlayed {0}", singleGuessData.timesSoundPlayed);
             return this;
         }
 
@@ -65,8 +56,6 @@ namespace Foni.Code.ProfileSystem
             var singleGuessData = _sessionData.guesses[_currentGuessIndex];
             singleGuessData.durationUntilCorrectS = (float)endTimeSpan.TotalSeconds;
             _sessionData.guesses[_currentGuessIndex] = singleGuessData;
-
-            Debug.LogFormat("[SessionData] EndGuess {0}s", singleGuessData.durationUntilCorrectS);
             return this;
         }
 
@@ -74,8 +63,6 @@ namespace Foni.Code.ProfileSystem
         {
             var sessionTimeSpan = Globals.ServiceLocator.DateTimeService.Now - _roundStartTimestamp;
             _sessionData.totalSessionTimeS = (float)sessionTimeSpan.TotalSeconds;
-
-            Debug.LogFormat("[SessionData] EndSession {0}s", _sessionData.totalSessionTimeS);
             return _sessionData;
         }
     }

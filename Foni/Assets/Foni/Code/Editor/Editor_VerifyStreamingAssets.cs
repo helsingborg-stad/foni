@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using Foni.Code.PhoneticsSystem;
 using UnityEditor;
 using UnityEngine;
@@ -16,25 +15,17 @@ namespace Foni.Code.Editor
             var assetsPath = Application.streamingAssetsPath;
             Debug.LogFormat("Streaming assets path: {0}", assetsPath);
 
-            var letters =
-                JsonUtility.FromJson<LetterSerialization.SerializedLetterRoot>(
-                        File.ReadAllText(Path.Join(assetsPath, "letters.json"), Encoding.UTF8))
-                    .letters
-                    .ToList();
+            var letters = Utilities.GetLetters();
+            var words = Utilities.GetWords();
 
-            var wordList = JsonUtility.FromJson<WordSerialization.SerializedWordRoot>(
-                    File.ReadAllText(Path.Join(assetsPath, "words.json"), Encoding.UTF8))
-                .words
-                .ToList();
+            void CurriedLogVerifyLetter(LetterSerialization.SerializedLetter letter) => LogVerifyLetter(letter, words);
 
-            letters.ForEach(letter => LogVerifyLetter(letter, wordList));
-            wordList.ForEach(LogVerifyWord);
+            letters.ForEach(CurriedLogVerifyLetter);
+            words.ForEach(LogVerifyWord);
 
-            var assetFiles = Directory.GetFiles(Application.streamingAssetsPath, "*", SearchOption.AllDirectories)
-                .Where(file => file.EndsWith(".png") || file.EndsWith(".wav"))
-                .ToList()
-                .ConvertAll(fullPath => Path.GetRelativePath(Application.streamingAssetsPath, fullPath));
-            assetFiles.ForEach(path => LogPossiblyUnusedAsset(path, letters, wordList));
+            Utilities.GetUnusedAssets()
+                .ForEach(assetPath =>
+                    Debug.LogWarningFormat("Asset '{0}' not used by any letter/word", assetPath));
 
             Debug.Log("Verify done!");
         }
@@ -80,19 +71,6 @@ namespace Foni.Code.Editor
             {
                 Debug.LogWarningFormat("Word '{0}' missing sound '{1}'", word.id,
                     word.soundClip);
-            }
-        }
-
-        private static void LogPossiblyUnusedAsset(string partialAssetPath,
-            IEnumerable<LetterSerialization.SerializedLetter> letters,
-            IEnumerable<WordSerialization.SerializedWord> words)
-        {
-            var isInLetter = letters.Any(letter => letter.handGestureImage == partialAssetPath);
-            var isInWord = words.Any(word => word.image == partialAssetPath || word.soundClip == partialAssetPath);
-
-            if (!isInLetter && !isInWord)
-            {
-                Debug.LogWarningFormat("Asset '{0}' not used by any letter/word", partialAssetPath);
             }
         }
     }
