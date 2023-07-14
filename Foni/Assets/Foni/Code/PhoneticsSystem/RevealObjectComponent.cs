@@ -51,7 +51,7 @@ namespace Foni.Code.PhoneticsSystem
             animateRoot.transform.localScale = Vector3.zero;
             soundButtonAnimateRoot.transform.localScale = Vector3.zero;
             SetupShaderForAnimation();
-            soundButton.OnClicked += PlaySound;
+            soundButton.OnClicked = PlaySound;
             soundButton.OnClicked += () => OnSoundButtonClickedEvent.Invoke();
         }
 

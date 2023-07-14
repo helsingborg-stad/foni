@@ -207,7 +207,7 @@ namespace Foni.Code.Core
                     var word = wordsForRound[index];
                     revealObject.SetSprite(word.Sprite.Asset);
                     revealObject.SetSound(word.SoundClip.Asset);
-                    revealObject.OnSoundButtonClickedEvent += () => _sessionDataBuilder.IncrementTimesSoundPlayed();
+                    revealObject.OnSoundButtonClickedEvent = () => _sessionDataBuilder.IncrementTimesSoundPlayed();
                 }
             );
 
