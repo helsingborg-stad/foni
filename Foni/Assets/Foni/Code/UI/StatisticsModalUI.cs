@@ -1,25 +1,28 @@
+using System;
 using System.Collections;
 using Foni.Code.Core;
 using Foni.Code.ProfileSystem;
 using Foni.Code.TweenSystem;
 using Foni.Code.TweenSystem.Actions;
 using Foni.Code.TweenSystem.Easing;
+using Foni.Code.Util;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Foni.Code.UI
 {
-    public class PlayModalUI : MonoBehaviour
+    public class StatisticsModalUI : MonoBehaviour
     {
         [Header("References")] //
         [SerializeField]
-        private TextMeshProUGUI nameText;
+        private Image avatarImage;
 
-        [SerializeField] private Image avatarImage;
+        [SerializeField] private TextMeshProUGUI nameText;
 
-        [SerializeField] private DeleteProfileModalUI deleteProfileModalUI;
-        [SerializeField] private StatisticsModalUI statisticsModalUI;
+        [SerializeField] private StatisticsRowWidget rowWidgetPrefab;
+
+        [SerializeField] private Transform rowRoot;
 
         [Header("Animation")] //
         [SerializeField]
@@ -34,27 +37,24 @@ namespace Foni.Code.UI
         [SerializeField] private EEasing hideEasing;
         [SerializeField] private float hideDuration;
 
-        public delegate void StartGameEvent();
-
-        public StartGameEvent OnStartGame;
-
-        private void Start()
-        {
-            deleteProfileModalUI.OnDeleteActiveProfile += Hide;
-            HideImmediately();
-        }
-
-        public void StartGame()
-        {
-            OnStartGame?.Invoke();
-        }
-
         public void SetFromProfile(ProfileData profile)
         {
             nameText.SetText(profile.name);
             avatarImage.sprite = Globals.AvatarIconMapper.GetSprite(profile.icon);
-            deleteProfileModalUI.SetFromProfile(profile);
-            statisticsModalUI.SetFromProfile(profile);
+            rowRoot.gameObject.DestroyAllChildren();
+            profile.statistics.sessions.Sorted((a, b) =>
+                string.Compare(b.timestampStart, a.timestampStart, StringComparison.Ordinal)).ForEach(CreateRow);
+        }
+
+        private void CreateRow(SessionData session)
+        {
+            var newRow = Instantiate(rowWidgetPrefab, rowRoot);
+            newRow.SetFromSession(session);
+        }
+
+        private void Start()
+        {
+            HideImmediately();
         }
 
         public void Show()

@@ -21,6 +21,13 @@ namespace Foni.Code.Util
             return randomOrderList;
         }
 
+        public static List<T> Sorted<T>(this IEnumerable<T> inputList, Comparison<T> comparer)
+        {
+            var newList = new List<T>(inputList);
+            newList.Sort(comparer);
+            return newList;
+        }
+
         public static T PickRandom<T>(this List<T> inputList, Random random = null)
         {
             var randomToUse = random ?? new Random();

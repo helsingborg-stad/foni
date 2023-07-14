@@ -7,9 +7,12 @@
   - [Third-Party Notices](#third-party-notices)
     - [Free Cartoon Trees Vectors](#free-cartoon-trees-vectors)
     - [Animal Avatars](#animal-avatars)
+    - ["Wrong" icon by Cuputo](#wrong-icon-by-cuputo)
+    - ["Timer" icon by fjstudio](#timer-icon-by-fjstudio)
+    - ["Audio Speaker On" icon by Freepik](#audio-speaker-on-icon-by-freepik)
     - [Material Symbols by Google](#material-symbols-by-google)
     - [Inter Font by Rasmus Andersson](#inter-font-by-rasmus-andersson)
-    - [Unity Asset Store - OpenWavParser](#unity-asset-store---openwavparser)
+    - [Unity Asset Store - OpenWavParser by eToile](#unity-asset-store---openwavparser-by-etoile)
 
 Foni is an educational app/game intended to help pre-school children learn
 how to phonetically pronounce alphabetical letters by associating them with
@@ -57,6 +60,24 @@ This project uses external/third-party assets.
 - License: [Freepik](https://www.freepikcompany.com/legal#nav-freepik-license)
 - Link: https://www.freepik.com/free-vector/animal-avatars_766618.htm, https://www.freepik.com/free-vector/variety-animal-avatars_766787.htm
 
+### "Wrong" icon by Cuputo
+
+- Usage: UI
+- License: [Flaticon License](https://www.freepikcompany.com/legal#nav-flaticon)
+- Link: https://www.flaticon.com/free-icon/wrong_4196790
+
+### "Timer" icon by fjstudio
+
+- Usage: UI
+- License: [Flaticon License](https://www.freepikcompany.com/legal#nav-flaticon)
+- Link: https://www.flaticon.com/free-icon/timer_2421935
+
+### "Audio Speaker On" icon by Freepik
+
+- Usage: UI
+- License: [Flaticon License](https://www.freepikcompany.com/legal#nav-flaticon)
+- Link: https://www.flaticon.com/free-icon/audio-speaker-on_56769
+
 ### Material Symbols by Google
 
 - Usage: Various in-game text-symbols
@@ -69,7 +90,7 @@ This project uses external/third-party assets.
 - License: [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 - Link: https://fonts.google.com/specimen/Inter/
 
-### Unity Asset Store - OpenWavParser
+### Unity Asset Store - OpenWavParser by eToile
 
-- Usage: Parse .wav files into Unity Engine AudioClips
+- Usage: Parse raw .wav bytes into Unity Engine AudioClips
 - Link: https://assetstore.unity.com/packages/tools/audio/open-wav-parser-90832

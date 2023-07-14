@@ -4,6 +4,6 @@ namespace Foni.Code.DateTimeSystem
 {
     public class DefaultDateTimeService : IDateTimeService
     {
-        public DateTime Now => DateTime.Now;
+        public DateTime Now => DateTime.Now.ToUniversalTime();
     }
 }
