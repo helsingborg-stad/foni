@@ -27,12 +27,12 @@
     },
     {
       "id": "byxor",
-      "image": "Phonetics/WordObjects/pants.png",
+      "image": "Phonetics/WordObjects/byxa.png",
       "soundClip": "Phonetics/Sounds/S_Word_Byxor.wav"
     },
     {
       "id": "drake",
-      "image": "Phonetics/WordObjects/dragon.png",
+      "image": "Phonetics/WordObjects/drake.png",
       "soundClip": "Phonetics/Sounds/S_Word_Drake.wav"
     },
     {
@@ -47,7 +47,7 @@
     },
     {
       "id": "ekorre",
-      "image": "Phonetics/WordObjects/squirrel.png",
+      "image": "Phonetics/WordObjects/ekorre.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ekorre.wav"
     },
     {
@@ -57,7 +57,7 @@
     },
     {
       "id": "eld",
-      "image": "Phonetics/WordObjects/fire.png",
+      "image": "Phonetics/WordObjects/eld.png",
       "soundClip": "Phonetics/Sounds/S_Word_Eld.wav"
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "id": "fingrar",
-      "image": "Phonetics/WordObjects/T_Object_fingrar.png",
+      "image": "Phonetics/WordObjects/fingrar.png",
       "soundClip": "Phonetics/Sounds/S_Word_Fingrar.wav"
     },
     {
@@ -77,17 +77,17 @@
     },
     {
       "id": "gris",
-      "image": "Phonetics/WordObjects/pig.png",
+      "image": "Phonetics/WordObjects/gris.png",
       "soundClip": "Phonetics/Sounds/S_Word_Gris.wav"
     },
     {
       "id": "groda",
-      "image": "Phonetics/WordObjects/frog.png",
+      "image": "Phonetics/WordObjects/groda.png",
       "soundClip": "Phonetics/Sounds/S_Word_Groda.wav"
     },
     {
       "id": "gaffel",
-      "image": "Phonetics/WordObjects/fork.png",
+      "image": "Phonetics/WordObjects/gaffel.png",
       "soundClip": "Phonetics/Sounds/S_Word_Gaffel.wav"
     },
     {
@@ -107,12 +107,12 @@
     },
     {
       "id": "igelkott",
-      "image": "Phonetics/WordObjects/hedgehog.png",
+      "image": "Phonetics/WordObjects/igelkott.png",
       "soundClip": "Phonetics/Sounds/S_Word_Igelkotte.wav"
     },
     {
       "id": "isbit",
-      "image": "Phonetics/WordObjects/icecube.png",
+      "image": "Phonetics/WordObjects/isbit.png",
       "soundClip": "Phonetics/Sounds/S_Word_Is.wav"
     },
     {
@@ -127,7 +127,7 @@
     },
     {
       "id": "jacka",
-      "image": "Phonetics/WordObjects/jacket.png",
+      "image": "Phonetics/WordObjects/jacka.png",
       "soundClip": "Phonetics/Sounds/S_Word_Jacka.wav"
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "id": "kniv",
-      "image": "Phonetics/WordObjects/knife.png",
+      "image": "Phonetics/WordObjects/kniv.png",
       "soundClip": "Phonetics/Sounds/S_Word_Kniv.wav"
     },
     {
@@ -172,17 +172,17 @@
     },
     {
       "id": "moln",
-      "image": "Phonetics/WordObjects/cloud.png",
+      "image": "Phonetics/WordObjects/moln.png",
       "soundClip": "Phonetics/Sounds/S_Word_Moln.wav"
     },
     {
       "id": "motorcykel",
-      "image": "Phonetics/WordObjects/motorcycle.png",
+      "image": "Phonetics/WordObjects/motorcykel.png",
       "soundClip": "Phonetics/Sounds/S_Word_Motorcykel.wav"
     },
     {
       "id": "nyckelpiga",
-      "image": "Phonetics/WordObjects/ladybug.png",
+      "image": "Phonetics/WordObjects/nyckelpiga.png",
       "soundClip": "Phonetics/Sounds/S_Word_Nyckelpiga.wav"
     },
     {
@@ -197,7 +197,7 @@
     },
     {
       "id": "orange",
-      "image": "Phonetics/WordObjects/T_Object_orange.png",
+      "image": "Phonetics/WordObjects/orange.png",
       "soundClip": "Phonetics/Sounds/S_Word_Orange.wav"
     },
     {
@@ -222,7 +222,7 @@
     },
     {
       "id": "paraply",
-      "image": "Phonetics/WordObjects/umbrella.png",
+      "image": "Phonetics/WordObjects/paraply.png",
       "soundClip": "Phonetics/Sounds/S_Word_Paraply.wav"
     },
     {
@@ -272,7 +272,7 @@
     },
     {
       "id": "ubåt",
-      "image": "Phonetics/WordObjects/submarine.png",
+      "image": "Phonetics/WordObjects/ubat.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ubåt.wav"
     },
     {
@@ -287,32 +287,32 @@
     },
     {
       "id": "vindruva",
-      "image": "Phonetics/WordObjects/T_Object_vindruva.png",
+      "image": "Phonetics/WordObjects/vindruvor.png",
       "soundClip": "Phonetics/Sounds/S_Word_Vindruva.wav"
     },
     {
       "id": "vas",
-      "image": "Phonetics/WordObjects/T_Object_vas.png",
+      "image": "Phonetics/WordObjects/vas.png",
       "soundClip": "Phonetics/Sounds/S_Word_Vas.wav"
     },
     {
       "id": "vattendroppe",
-      "image": "Phonetics/WordObjects/droplet.png",
+      "image": "Phonetics/WordObjects/vattendroppe.png",
       "soundClip": "Phonetics/Sounds/S_Word_Vattendroppe.wav"
     },
     {
       "id": "yxa",
-      "image": "Phonetics/WordObjects/T_Object_yxa.png",
+      "image": "Phonetics/WordObjects/yxa.png",
       "soundClip": "Phonetics/Sounds/S_Word_Yxa.wav"
     },
     {
       "id": "yr",
-      "image": "Phonetics/WordObjects/T_Object_yr.png",
+      "image": "Phonetics/WordObjects/yr.png",
       "soundClip": "Phonetics/Sounds/S_Word_Yr.wav"
     },
     {
       "id": "ål",
-      "image": "Phonetics/WordObjects/eel.png",
+      "image": "Phonetics/WordObjects/al.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ål.wav"
     },
     {
@@ -327,12 +327,12 @@
     },
     {
       "id": "ägg",
-      "image": "Phonetics/WordObjects/egg.png",
+      "image": "Phonetics/WordObjects/stekt_agg.png",
       "soundClip": "Phonetics/Sounds/S_Word_Ägg.wav"
     },
     {
       "id": "älg",
-      "image": "Phonetics/WordObjects/moose.png",
+      "image": "Phonetics/WordObjects/alg.png",
       "soundClip": "Phonetics/Sounds/S_Word_Älg.wav"
     },
     {
