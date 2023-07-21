@@ -28,7 +28,7 @@ namespace Foni.Code.UI
 
         private void Start()
         {
-            GameObjectUtils.DisableIfEnabled(gameObject);
+            gameObject.DisableIfEnabled();
         }
 
         public IEnumerator AnimateShow()
@@ -55,7 +55,7 @@ namespace Foni.Code.UI
 
         public void OnClick_Home()
         {
-            SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("ProfileMenuScene", LoadSceneMode.Single);
         }
     }
 }
