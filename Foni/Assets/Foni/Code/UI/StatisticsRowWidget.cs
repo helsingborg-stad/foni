@@ -15,15 +15,13 @@ namespace Foni.Code.UI
 
         public void SetFromSession(SessionData session)
         {
-            var swedishDateTimeOffset = TimeZoneInfo.ConvertTime(DateTimeOffset
-                .Parse(session.timestampStart)
-                .ToLocalTime(), TimeZoneInfo.FindSystemTimeZoneById("Europe/Stockholm"));
-            var dateString = swedishDateTimeOffset.ToString("yyyy-MM-dd HH:mm:ss");
+            dateText.SetText(
+                DateTimeUtils.DateTimeToFriendlyString(
+                    DateTimeUtils.TimestampToDateTime(session.timestampStart)));
 
-            dateText.SetText(dateString);
-
-            var newDurationSpan = TimeSpan.FromSeconds(session.totalSessionTimeS);
-            durationText.SetText($"{newDurationSpan.Minutes}m {newDurationSpan.Seconds}s");
+            durationText.SetText(
+                DateTimeUtils.TimeSpanToFriendlyString(
+                    TimeSpan.FromSeconds(session.totalSessionTimeS)));
 
             guessesRoot.gameObject.DestroyAllChildren();
             session.guesses.ForEach(CreateGuessWidget);

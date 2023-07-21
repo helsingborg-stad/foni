@@ -1,8 +1,5 @@
-using System;
-using Foni.Code.Core;
-using Foni.Code.DateTimeSystem;
 using Foni.Code.ProfileSystem;
-using Foni.Code.ServicesSystem;
+using Foni.Code.Tests.Mocks;
 using NUnit.Framework;
 using TimeSpan = System.TimeSpan;
 
@@ -10,20 +7,6 @@ namespace Foni.Code.Tests.ProfileSystem
 {
     public class SessionDataBuilderTests
     {
-        private class MockDateTimeService : IDateTimeService
-        {
-            public DateTime Now { get; set; }
-
-            public static MockDateTimeService Get()
-            {
-                var dateTimeService = new MockDateTimeService();
-                Globals.ServiceLocator = new CoreServiceLocator();
-                Globals.ServiceLocator.Register(EService.DateTimeService, dateTimeService);
-                dateTimeService.Now = new DateTime(2023, 06, 30, 15, 30, 45, DateTimeKind.Utc);
-                return dateTimeService;
-            }
-        }
-
         [Test]
         public void Initialize()
         {
