@@ -13,6 +13,7 @@
     - [Material Symbols by Google](#material-symbols-by-google)
     - [Inter Font by Rasmus Andersson](#inter-font-by-rasmus-andersson)
     - [Unity Asset Store - OpenWavParser by eToile](#unity-asset-store---openwavparser-by-etoile)
+    - [PlistCS by Animetrics](#plistcs-by-animetrics)
 
 Foni is an educational app/game intended to help pre-school children learn
 how to phonetically pronounce alphabetical letters by associating them with
@@ -94,3 +95,9 @@ This project uses external/third-party assets.
 
 - Usage: Parse raw .wav bytes into Unity Engine AudioClips
 - Link: https://assetstore.unity.com/packages/tools/audio/open-wav-parser-90832
+
+### PlistCS by Animetrics
+
+- Usage: parse Plist files for displaying metadata in-app
+- License: [MIT](https://opensource.org/license/MIT/)
+- Link: https://github.com/animetrics/PlistCS

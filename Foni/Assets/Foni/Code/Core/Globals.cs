@@ -54,7 +54,7 @@ namespace Foni.Code.Core
             set => _avatarIconMapper = value;
         }
 
-        private static void EnsureGlobalsObject()
+        public static void EnsureGlobalsObject()
         {
             if (_globalsManager != null) return;
 
