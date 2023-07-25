@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Foni.Code.AssetSystem;
 using Foni.Code.DataSourceSystem;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Foni.Code.PhoneticsSystem
@@ -14,6 +15,7 @@ namespace Foni.Code.PhoneticsSystem
         public string ID;
         public List<Word> Words;
         public SoftRef<Sprite> HandGestureSprite;
+        [CanBeNull] public SoftRef<Sprite> AltImage;
 
         public bool Equals(Letter other)
         {
@@ -39,6 +41,7 @@ namespace Foni.Code.PhoneticsSystem
             public string id;
             public string[] words;
             public string handGestureImage;
+            [CanBeNull] public string altImage;
         }
 
         [Serializable]
@@ -68,7 +71,8 @@ namespace Foni.Code.PhoneticsSystem
             {
                 ID = serializedLetter.id,
                 Words = letterWords,
-                HandGestureSprite = new SoftRef<Sprite>(serializedLetter.handGestureImage)
+                HandGestureSprite = new SoftRef<Sprite>(serializedLetter.handGestureImage),
+                AltImage = (serializedLetter.altImage != null) ? new SoftRef<Sprite>(serializedLetter.altImage) : null
             };
         }
 

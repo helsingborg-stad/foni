@@ -9,6 +9,7 @@ using Foni.Code.TweenSystem.Easing;
 using Foni.Code.Util;
 using TMPro;
 using UnityEngine;
+using Random = System.Random;
 
 namespace Foni.Code.PhoneticsSystem
 {
@@ -33,6 +34,8 @@ namespace Foni.Code.PhoneticsSystem
         [SerializeField]
         private TextMeshProUGUI text;
 
+        [SerializeField] private SpriteRenderer altImageRenderer;
+
         [SerializeField] private SpriteRenderer innerCircle;
         [SerializeField] private GameObject animateRoot;
 
@@ -54,10 +57,17 @@ namespace Foni.Code.PhoneticsSystem
 
         public event EventHandler OnClicked;
 
-        public void UpdateFromLetter(Letter newLetter)
+        public void UpdateFromLetter(Letter newLetter, Random randomness)
         {
             Letter = newLetter;
+
+            var useAltImage = newLetter.AltImage != null && randomness.Next(2) == 0;
+
+            text.enabled = !useAltImage;
             text.SetText(newLetter.ID);
+
+            altImageRenderer.enabled = useAltImage;
+            altImageRenderer.sprite = newLetter.AltImage?.Asset;
         }
 
         public void HideImmediately()

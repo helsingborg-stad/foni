@@ -25,13 +25,13 @@ namespace Foni.Code.PhoneticsSystem
             letterComponents.ForEach(BindClickEvent);
         }
 
-        public void SetFromLetters(List<Letter> letters)
+        public void SetFromLetters(List<Letter> letters, System.Random randomness)
         {
             Assert.IsTrue(letters.Count == letterComponents.Count);
 
             for (var i = 0; i < letterComponents.Count; i++)
             {
-                letterComponents[i].UpdateFromLetter(letters[i]);
+                letterComponents[i].UpdateFromLetter(letters[i], randomness);
             }
         }
 

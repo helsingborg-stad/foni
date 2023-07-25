@@ -6,7 +6,8 @@
         "apelsin",
         "avokado",
         "armar"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_a.png"
+      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_a.png",
+      "altImage": "Phonetics/AltImages/T_a.png"
     },
     {
       "id": "b",
