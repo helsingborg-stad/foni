@@ -61,7 +61,7 @@ namespace Foni.Code.PhoneticsSystem
         {
             Letter = newLetter;
 
-            var useAltImage = newLetter.AltImage != null && randomness.Next(2) == 0;
+            var useAltImage = newLetter.AltImage?.Asset != null && randomness.Next(2) == 0;
 
             text.enabled = !useAltImage;
             text.SetText(newLetter.ID);

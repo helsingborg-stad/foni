@@ -191,11 +191,11 @@ namespace Foni.Code.Core
             foreach (var letter in lettersForRound)
             {
                 yield return new WaitForTask(() => letter.HandGestureSprite.Load(_assetDataSource));
+            }
 
-                if (letter.AltImage != null)
-                {
-                    yield return new WaitForTask(() => letter.AltImage.Load(_assetDataSource));
-                }
+            foreach (var letter in allLettersToShow.Where(letter => letter.AltImage != null))
+            {
+                yield return new WaitForTask(() => letter.AltImage.Load(_assetDataSource));
             }
 
             foreach (var word in wordsForRound)
@@ -203,6 +203,8 @@ namespace Foni.Code.Core
                 yield return new WaitForTask(() => word.Sprite.Load(_assetDataSource));
                 yield return new WaitForTask(() => word.SoundClip.Load(_assetDataSource));
             }
+
+            yield return new WaitForSeconds(1.0f);
 
             phoneticsTree.SetFromLetters(allLettersToShow, _randomness);
 
@@ -302,7 +304,9 @@ namespace Foni.Code.Core
             return historyEntry.Letters.Select((letter, index) => new ResultCardInfo
             {
                 Title = letter.ID,
-                Sprite = historyEntry.Words[index].Sprite.Asset
+                Sprite = historyEntry.Words[index].Sprite.Asset,
+                AltImage = letter.AltImage?.Asset,
+                AudioClip = historyEntry.Words[index].SoundClip.Asset
             }).ToList();
         }
 
