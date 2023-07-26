@@ -12,6 +12,7 @@
     - ["Audio Speaker On" icon by Freepik](#audio-speaker-on-icon-by-freepik)
     - [Material Symbols by Google](#material-symbols-by-google)
     - [Inter Font by Rasmus Andersson](#inter-font-by-rasmus-andersson)
+    - [Comic Neue Font by Craig Rozynski, Hrant Papazian](#comic-neue-font-by-craig-rozynski-hrant-papazian)
     - [Unity Asset Store - OpenWavParser by eToile](#unity-asset-store---openwavparser-by-etoile)
     - [PlistCS by Animetrics](#plistcs-by-animetrics)
 
@@ -90,6 +91,12 @@ This project uses external/third-party assets.
 - Usage: main font
 - License: [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 - Link: https://fonts.google.com/specimen/Inter/
+
+### Comic Neue Font by Craig Rozynski, Hrant Papazian
+
+- Usage: title font
+- License: [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+- Link: https://fonts.google.com/specimen/Comic+Neue/
 
 ### Unity Asset Store - OpenWavParser by eToile
 
