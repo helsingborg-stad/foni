@@ -9,7 +9,7 @@ on:
 jobs:
   unity_tests:
     name: Unity Tests
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
