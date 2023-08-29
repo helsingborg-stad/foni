@@ -1,5 +1,6 @@
 using Foni.Code.AssetSystem;
 using Foni.Code.AsyncSystem;
+using Foni.Code.AudioSystem;
 using Foni.Code.DateTimeSystem;
 using Foni.Code.ProfileSystem;
 using Foni.Code.SaveSystem.Implementation;
@@ -35,6 +36,7 @@ namespace Foni.Code.Core
             Globals.ServiceLocator = serviceLocator;
             Globals.SettingsManager = gameObject.AddComponent<SettingsManager>();
             Globals.AvatarIconMapper = gameObject.GetComponent<AvatarIconMapper>();
+            Globals.ExclusiveUIAudio = new ExclusiveAudioManager(gameObject.GetComponent<AudioSource>());
 
             SettingsManager.ApplySettings();
 

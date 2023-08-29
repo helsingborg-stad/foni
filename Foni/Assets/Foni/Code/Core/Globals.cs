@@ -1,3 +1,4 @@
+using Foni.Code.AudioSystem;
 using Foni.Code.ProfileSystem;
 using Foni.Code.SettingsSystem;
 using UnityEngine;
@@ -52,6 +53,18 @@ namespace Foni.Code.Core
                 return _avatarIconMapper;
             }
             set => _avatarIconMapper = value;
+        }
+
+        private static ExclusiveAudioManager _exclusiveUIAudio;
+
+        public static ExclusiveAudioManager ExclusiveUIAudio
+        {
+            get
+            {
+                EnsureGlobalsObject();
+                return _exclusiveUIAudio;
+            }
+            set => _exclusiveUIAudio = value;
         }
 
         public static void EnsureGlobalsObject()

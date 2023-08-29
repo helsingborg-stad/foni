@@ -1,4 +1,5 @@
 using System.Collections;
+using Foni.Code.Core;
 using Foni.Code.InputSystem;
 using Foni.Code.TweenSystem;
 using Foni.Code.TweenSystem.Easing;
@@ -18,7 +19,6 @@ namespace Foni.Code.PhoneticsSystem
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private WorldSpaceButtonComponent soundButton;
         [SerializeField] private GameObject soundButtonAnimateRoot;
-        [SerializeField] private AudioSource audioSource;
 
         [Header("Config/Animation")] //
         [SerializeField]
@@ -40,6 +40,7 @@ namespace Foni.Code.PhoneticsSystem
         [SerializeField] private float bounceDuration;
 
         private Material _materialInstance;
+        private AudioClip _relatedAudioClip;
         private static readonly int RevealPropertyId = Shader.PropertyToID("_Reveal");
 
         public delegate void SoundButtonClickedEvent();
@@ -69,7 +70,7 @@ namespace Foni.Code.PhoneticsSystem
 
         public void SetSound(AudioClip newClip)
         {
-            audioSource.clip = newClip;
+            _relatedAudioClip = newClip;
             newClip.LoadAudioData();
         }
 
@@ -110,7 +111,7 @@ namespace Foni.Code.PhoneticsSystem
 
         private void PlaySound()
         {
-            audioSource.PlayOneShot(audioSource.clip);
+            Globals.ExclusiveUIAudio.PlayIfCurrentlySilent(_relatedAudioClip);
         }
 
         private IEnumerator AnimateMaterialReveal()

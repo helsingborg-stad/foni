@@ -50,9 +50,12 @@ namespace Foni.Code.Core
         [SerializeField] private GameResultsUI gameResultsUI;
 
         [Header("Config")] //
-#if UNITY_EDITOR
-        [Tooltip("Not used in builds. Negative values are ignored and will use default/no seed.")]
         [SerializeField]
+        private AudioClip guessSuccessSound;
+
+        [SerializeField] private AudioClip guessFailSound;
+#if UNITY_EDITOR
+        [Tooltip("Not used in builds. Negative values are ignored and will use default/no seed.")] [SerializeField]
         private int editorRandomSeed = -1;
 #endif
 
@@ -153,6 +156,7 @@ namespace Foni.Code.Core
                 letterComponent.SetState(ELetterState.Incorrect);
                 handGesture.Show();
                 _sessionDataBuilder.IncrementWrongGuesses();
+                Globals.ExclusiveUIAudio.PlayOverride(guessFailSound);
             }
         }
 
@@ -248,7 +252,8 @@ namespace Foni.Code.Core
 
         private IEnumerator DoGuessedCorrectly()
         {
-            // TODO: Play feedback effects
+            Globals.ExclusiveUIAudio.PlayOverride(guessSuccessSound);
+
             _gameState.IsGameActive = false;
             _sessionDataBuilder.EndGuess();
 

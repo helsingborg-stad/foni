@@ -15,6 +15,7 @@
     - [Comic Neue Font by Craig Rozynski, Hrant Papazian](#comic-neue-font-by-craig-rozynski-hrant-papazian)
     - [Unity Asset Store - OpenWavParser by eToile](#unity-asset-store---openwavparser-by-etoile)
     - [PlistCS by Animetrics](#plistcs-by-animetrics)
+    - ["Success" sound fx by Pixabay](#success-sound-fx-by-pixabay)
 
 Foni is an educational app/game intended to help pre-school children learn
 how to phonetically pronounce alphabetical letters by associating them with
@@ -108,3 +109,9 @@ This project uses external/third-party assets.
 - Usage: parse Plist files for displaying metadata in-app
 - License: [MIT](https://opensource.org/license/MIT/)
 - Link: https://github.com/animetrics/PlistCS
+
+### "Success" sound fx by Pixabay
+
+- Usage: "success" sound fx when guessing correctly
+- License: [Pixabay Content License](https://pixabay.com/service/license-summary/)
+- Link: https://pixabay.com/sound-effects/success-1-6297/
