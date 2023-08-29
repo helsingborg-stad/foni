@@ -42,7 +42,8 @@ namespace Foni.Code.Editor
             IEnumerable<LetterSerialization.SerializedLetter> letters,
             IEnumerable<WordSerialization.SerializedWord> words)
         {
-            return letters.Any(letter => letter.handGestureImage == partialAssetPath) ||
+            return letters.Any(letter =>
+                       letter.handGestureImage == partialAssetPath || letter.altImage == partialAssetPath) ||
                    words.Any(word => word.image == partialAssetPath || word.soundClip == partialAssetPath);
         }
 

@@ -118,7 +118,7 @@
     {
       "id": "insekter",
       "image": "Phonetics/WordObjects/insekter.png",
-      "soundClip": "Phonetics/Sounds/S_Word_Insekt.wav"
+      "soundClip": "Phonetics/Sounds/Insekt.wav"
     },
     {
       "id": "julgran",
@@ -173,7 +173,7 @@
     {
       "id": "moln",
       "image": "Phonetics/WordObjects/moln.png",
-      "soundClip": "Phonetics/Sounds/S_Word_Moln.wav"
+      "soundClip": "Phonetics/Sounds/Moln.wav"
     },
     {
       "id": "motorcykel",
@@ -246,11 +246,6 @@
       "soundClip": "Phonetics/Sounds/Smultron.wav"
     },
     {
-      "id": "sked",
-      "image": "Phonetics/WordObjects/sked.png",
-      "soundClip": "Phonetics/Sounds/S_Word_Sked.wav"
-    },
-    {
       "id": "segelbåt",
       "image": "Phonetics/WordObjects/segelbat.png",
       "soundClip": "Phonetics/Sounds/Segelbat.wav"
@@ -278,7 +273,7 @@
     {
       "id": "ugn",
       "image": "Phonetics/WordObjects/ugn.png",
-      "soundClip": "Phonetics/Sounds/S_Word_Ugn.wav"
+      "soundClip": "Phonetics/Sounds/Ugn.wav"
     },
     {
       "id": "undulat",
@@ -328,22 +323,22 @@
     {
       "id": "ägg",
       "image": "Phonetics/WordObjects/stekt_agg.png",
-      "soundClip": "Phonetics/Sounds/S_Word_Ägg.wav"
+      "soundClip": "Phonetics/Sounds/Ägg.wav"
     },
     {
       "id": "älg",
       "image": "Phonetics/WordObjects/alg.png",
-      "soundClip": "Phonetics/Sounds/S_Word_Älg.wav"
+      "soundClip": "Phonetics/Sounds/Älg.wav"
     },
     {
       "id": "äng",
       "image": "Phonetics/WordObjects/ang.png",
-      "soundClip": "Phonetics/Sounds/S_Word_Äng.wav"
+      "soundClip": "Phonetics/Sounds/Äng.wav"
     },
     {
       "id": "ödla",
       "image": "Phonetics/WordObjects/odla.png",
-      "soundClip": "Phonetics/Sounds/S_Word_Ödla.wav"
+      "soundClip": "Phonetics/Sounds/Ödla.wav"
     },
     {
       "id": "ögonbryn",
