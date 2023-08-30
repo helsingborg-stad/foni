@@ -51,6 +51,7 @@ MonoBehaviour:
   - {fileID: 0}
   handGesture: {fileID: 0}
   gameResultsUI: {fileID: 0}
+  maxWrongGuesses: 3
   guessSuccessSound: {fileID: 8300000, guid: 7f8e4f745acf84fd5a24386974c81a8b, type: 3}
   guessFailSound: {fileID: 8300000, guid: 45a46c4c82e4d4b90bd788cdd1d864b3, type: 3}
   editorRandomSeed: -1

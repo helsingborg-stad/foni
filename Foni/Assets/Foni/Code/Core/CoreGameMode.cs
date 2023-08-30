@@ -10,6 +10,7 @@ using Foni.Code.ProfileSystem;
 using Foni.Code.UI;
 using Foni.Code.Util;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 namespace Foni.Code.Core
@@ -29,9 +30,10 @@ namespace Foni.Code.Core
 
     public struct GameState
     {
-        public bool IsGameActive;
+        public bool IsGameInteractive;
         public int CurrentRound;
         public int CurrentLetter;
+        public int CurrentWrongGuesses;
         public List<Letter> ActiveLetters;
         public List<RevealObjectComponent> RevealObjects;
         public List<RoundHistoryEntry> History;
@@ -51,7 +53,9 @@ namespace Foni.Code.Core
 
         [Header("Config")] //
         [SerializeField]
-        private AudioClip guessSuccessSound;
+        private int maxWrongGuesses;
+
+        [SerializeField] private AudioClip guessSuccessSound;
 
         [SerializeField] private AudioClip guessFailSound;
 #if UNITY_EDITOR
@@ -114,9 +118,10 @@ namespace Foni.Code.Core
 
             _gameState = new GameState
             {
-                IsGameActive = false,
+                IsGameInteractive = false,
                 CurrentRound = -1,
                 CurrentLetter = -1,
+                CurrentWrongGuesses = 0,
                 ActiveLetters = new List<Letter>(),
                 RevealObjects = new List<RevealObjectComponent>(),
                 History = Enumerable.Repeat(new RoundHistoryEntry(), _loadedAssets.RoundConfig.Rounds.Count).ToList()
@@ -129,13 +134,13 @@ namespace Foni.Code.Core
 
             yield return SetupNextRound();
             yield return DoOpeningAnimation();
-            _gameState.IsGameActive = true;
+            _gameState.IsGameInteractive = true;
             yield return StartNextGuess();
         }
 
         private void OnPhoneticsTreeLeafClicked(object sender, LetterComponent letterComponent)
         {
-            if (!_gameState.IsGameActive)
+            if (!_gameState.IsGameInteractive)
             {
                 return;
             }
@@ -144,19 +149,15 @@ namespace Foni.Code.Core
             var correctLetter = _gameState.ActiveLetters[_gameState.CurrentLetter];
             var guessedCorrectly = guessedLetter.ID == correctLetter.ID;
 
+            letterComponent.SetState(guessedCorrectly ? ELetterState.Correct : ELetterState.Incorrect);
+
             if (guessedCorrectly)
             {
-                letterComponent.SetState(ELetterState.Correct);
-                handGesture.Hide();
-
-                StartCoroutine(DoGuessedCorrectly());
+                HandleCorrectGuess();
             }
             else
             {
-                letterComponent.SetState(ELetterState.Incorrect);
-                handGesture.Show();
-                _sessionDataBuilder.IncrementWrongGuesses();
-                Globals.ExclusiveUIAudio.PlayOverride(guessFailSound);
+                HandleIncorrectGuess();
             }
         }
 
@@ -250,11 +251,33 @@ namespace Foni.Code.Core
             yield return phoneticsTree.AnimateShowingLeaves();
         }
 
+        private void HandleCorrectGuess()
+        {
+            handGesture.Hide();
+            StartCoroutine(DoGuessedCorrectly());
+        }
+
+        private void HandleIncorrectGuess()
+        {
+            _gameState.CurrentWrongGuesses++;
+            _sessionDataBuilder.IncrementWrongGuesses();
+
+            if (_gameState.CurrentWrongGuesses >= maxWrongGuesses)
+            {
+                handGesture.Hide();
+                StartCoroutine(DoGameOverLose());
+                return;
+            }
+
+            Globals.ExclusiveUIAudio.PlayOverride(guessFailSound);
+            handGesture.Show();
+        }
+
         private IEnumerator DoGuessedCorrectly()
         {
             Globals.ExclusiveUIAudio.PlayOverride(guessSuccessSound);
 
-            _gameState.IsGameActive = false;
+            _gameState.IsGameInteractive = false;
             _sessionDataBuilder.EndGuess();
 
             yield return _gameState.RevealObjects[_gameState.CurrentLetter].AnimateHide();
@@ -265,7 +288,7 @@ namespace Foni.Code.Core
                 var isLastRound = _gameState.CurrentRound == _loadedAssets.RoundConfig.Rounds.Count - 1;
                 if (isLastRound)
                 {
-                    yield return DoGameOver();
+                    yield return DoGameOverWin();
                     yield break;
                 }
 
@@ -276,13 +299,13 @@ namespace Foni.Code.Core
                 yield return DoOpeningAnimation();
             }
 
-            _gameState.IsGameActive = true;
+            _gameState.IsGameInteractive = true;
             yield return StartNextGuess();
         }
 
-        private IEnumerator DoGameOver()
+        private IEnumerator DoGameOverWin()
         {
-            Debug.Log("Game is over");
+            Debug.Log("Game is over (win)");
             var sessionData = _sessionDataBuilder.EndSession();
             var activeProfile = Globals.ServiceLocator.ProfileService.GetActiveProfile();
             if (activeProfile.HasValue)
@@ -304,6 +327,25 @@ namespace Foni.Code.Core
             yield return gameResultsUI.AnimateShow();
         }
 
+        private IEnumerator DoGameOverLose()
+        {
+            Debug.Log("Game is over (lose)");
+            _gameState.IsGameInteractive = false;
+
+            var animations = new List<Coroutine>();
+            animations.AddRange(
+                _gameState.RevealObjects.Select(revealObject => StartCoroutine(revealObject.AnimateHide())));
+            animations.Add(StartCoroutine(phoneticsTree.AnimateHidingLeaves()));
+
+            foreach (var coroutine in animations)
+            {
+                yield return coroutine;
+            }
+
+            // TODO: show UI instead prompting to retry
+            SceneManager.LoadScene("ProfileMenuScene", LoadSceneMode.Single);
+        }
+
         private static List<ResultCardInfo> RoundHistoryEntryToResultCardInfo(RoundHistoryEntry historyEntry)
         {
             return historyEntry.Letters.Select((letter, index) => new ResultCardInfo
@@ -318,6 +360,7 @@ namespace Foni.Code.Core
         private IEnumerator StartNextGuess()
         {
             _gameState.CurrentLetter++;
+            _gameState.CurrentWrongGuesses = 0;
             var letter = _gameState.ActiveLetters[_gameState.CurrentLetter];
             var activeRevealObject = _gameState.RevealObjects[_gameState.CurrentLetter];
             phoneticsTree.ResetAllLeaves();
