@@ -70,5 +70,17 @@ namespace Foni.Code.PhoneticsSystem
                 hideDuration,
                 TweenAction.TransformPositionY(animateRoot)));
         }
+
+        public void Toggle()
+        {
+            if (_state == EState.Shown)
+            {
+                Hide();
+            }
+            else
+            {
+                Show();
+            }
+        }
     }
 }

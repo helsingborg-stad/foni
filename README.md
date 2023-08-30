@@ -10,6 +10,7 @@
     - ["Wrong" icon by Cuputo](#wrong-icon-by-cuputo)
     - ["Timer" icon by fjstudio](#timer-icon-by-fjstudio)
     - ["Audio Speaker On" icon by Freepik](#audio-speaker-on-icon-by-freepik)
+    - ["Hello" icon by Vitaly Gorbachev](#hello-icon-by-vitaly-gorbachev)
     - [Material Symbols by Google](#material-symbols-by-google)
     - [Inter Font by Rasmus Andersson](#inter-font-by-rasmus-andersson)
     - [Comic Neue Font by Craig Rozynski, Hrant Papazian](#comic-neue-font-by-craig-rozynski-hrant-papazian)
@@ -80,6 +81,12 @@ This project uses external/third-party assets.
 - Usage: UI
 - License: [Flaticon License](https://www.freepikcompany.com/legal#nav-flaticon)
 - Link: https://www.flaticon.com/free-icon/audio-speaker-on_56769
+
+### "Hello" icon by Vitaly Gorbachev
+
+- Usage: UI
+- License: [Flaticon License](https://www.freepikcompany.com/legal#nav-flaticon)
+- Link: https://www.flaticon.com/free-icon/hello_2165920
 
 ### Material Symbols by Google
 

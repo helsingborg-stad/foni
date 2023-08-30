@@ -8,6 +8,9 @@ namespace Foni.Code.UI
     {
         [Header("References")] //
         [SerializeField]
+        private CoreGameMode gameMode;
+        
+        [SerializeField]
         private ProfileInfoWidget profileInfoWidget;
 
         private void Start()
@@ -22,6 +25,11 @@ namespace Foni.Code.UI
         public void OnClick_Home()
         {
             SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Single);
+        }
+
+        public void OnClick_HandGesture()
+        {
+            gameMode.ToggleHandGesture();
         }
     }
 }

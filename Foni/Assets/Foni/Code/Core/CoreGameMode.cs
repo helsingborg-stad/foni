@@ -69,6 +69,14 @@ namespace Foni.Code.Core
         private Random _randomness;
         private SessionDataBuilder _sessionDataBuilder;
 
+        public void ToggleHandGesture()
+        {
+            if (_gameState.IsGameInteractive)
+            {
+                handGesture.Toggle();
+            }
+        }
+
         private IEnumerator Start()
         {
             _assetDataSource = new StreamingAssetsDataSource();
@@ -270,7 +278,6 @@ namespace Foni.Code.Core
             }
 
             Globals.ExclusiveUIAudio.PlayOverride(guessFailSound);
-            handGesture.Show();
         }
 
         private IEnumerator DoGuessedCorrectly()

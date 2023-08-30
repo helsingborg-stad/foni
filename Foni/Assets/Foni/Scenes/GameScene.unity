@@ -982,6 +982,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eccb7864582814e08a9ec1f7ef62e850, type: 3}
+--- !u!114 &2728786293661218518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9196159839267228935, guid: eccb7864582814e08a9ec1f7ef62e850, type: 3}
+  m_PrefabInstance: {fileID: 2728786293661218517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc0c615e4f6a4b0db8684d2a267a2038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5493417365725148016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1203,6 +1214,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 333655322427994776, guid: 095987da7b9b64176b9a86bafbd0daef, type: 3}
+      propertyPath: gameMode
+      value: 
+      objectReference: {fileID: 2728786293661218518}
     - target: {fileID: 8079166338591417082, guid: 095987da7b9b64176b9a86bafbd0daef, type: 3}
       propertyPath: m_Name
       value: P_HUD
