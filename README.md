@@ -50,11 +50,13 @@ latest Unity 2022 version. Unity editor versions are easily managed using
 
 ## Third-Party Notices
 
-This project uses external/third-party assets.
+This project uses external/third-party assets. Some assets may have been modified
+for design purposes and the formats of the assets contained in this repo may
+not be the same as their original format.
 
 ### Free Cartoon Trees Vectors
 
-- Usage: In-game tree image (modified)
+- Usage: In-game tree image
 - License: [Free Vector Standard License](https://www.freevector.com/standard-license)
 - Link: https://www.freevector.com/free-cartoon-trees-vectors-18742
 
