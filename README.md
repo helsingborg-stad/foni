@@ -11,6 +11,7 @@
     - ["Timer" icon by fjstudio](#timer-icon-by-fjstudio)
     - ["Audio Speaker On" icon by Freepik](#audio-speaker-on-icon-by-freepik)
     - ["Hello" icon by Vitaly Gorbachev](#hello-icon-by-vitaly-gorbachev)
+    - ["Right Arrow" icon by Roundicons](#right-arrow-icon-by-roundicons)
     - [Material Symbols by Google](#material-symbols-by-google)
     - [Inter Font by Rasmus Andersson](#inter-font-by-rasmus-andersson)
     - [Comic Neue Font by Craig Rozynski, Hrant Papazian](#comic-neue-font-by-craig-rozynski-hrant-papazian)
@@ -89,6 +90,12 @@ not be the same as their original format.
 - Usage: UI
 - License: [Flaticon License](https://www.freepikcompany.com/legal#nav-flaticon)
 - Link: https://www.flaticon.com/free-icon/hello_2165920
+
+### "Right Arrow" icon by Roundicons
+
+- Usage: UI
+- License: [Flaticon License](https://www.freepikcompany.com/legal#nav-flaticon)
+- Link: https://www.flaticon.com/free-icon/right-arrow_271226
 
 ### Material Symbols by Google
 

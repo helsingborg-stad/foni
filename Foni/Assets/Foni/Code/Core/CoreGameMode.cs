@@ -49,6 +49,7 @@ namespace Foni.Code.Core
 
         [SerializeField] private HandGesture handGesture;
 
+        [SerializeField] private RoundResultsUI roundResultsUI;
         [SerializeField] private GameResultsUI gameResultsUI;
 
         [Header("Config")] //
@@ -301,6 +302,7 @@ namespace Foni.Code.Core
 
                 _gameState.RevealObjects.ForEach(revealObject => revealObject.ShroudImmediately());
                 yield return phoneticsTree.AnimateHidingLeaves();
+                yield return ShowAndWaitForRoundResultUI();
                 phoneticsTree.ResetAllLeaves();
                 yield return SetupNextRound();
                 yield return DoOpeningAnimation();
@@ -308,6 +310,25 @@ namespace Foni.Code.Core
 
             _gameState.IsGameInteractive = true;
             yield return StartNextGuess();
+        }
+
+        private IEnumerator ShowAndWaitForRoundResultUI()
+        {
+            var waiting = true;
+
+            void ContinueCallback()
+            {
+                waiting = false;
+            }
+
+            roundResultsUI.OnContinue = ContinueCallback;
+
+            var cards = RoundHistoryEntryToResultCardInfo(_gameState.History[_gameState.CurrentRound]);
+            roundResultsUI.SetCards(cards);
+
+            yield return roundResultsUI.AnimateShow();
+
+            while (waiting) yield return null;
         }
 
         private IEnumerator DoGameOverWin()
