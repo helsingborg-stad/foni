@@ -9,9 +9,8 @@ namespace Foni.Code.UI
         [Header("References")] //
         [SerializeField]
         private CoreGameMode gameMode;
-        
-        [SerializeField]
-        private ProfileInfoWidget profileInfoWidget;
+
+        [SerializeField] private ProfileInfoWidget profileInfoWidget;
 
         private void Start()
         {
@@ -24,6 +23,7 @@ namespace Foni.Code.UI
 
         public void OnClick_Home()
         {
+            gameMode.EndAndSaveProfileStatistics(false);
             SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Single);
         }
 

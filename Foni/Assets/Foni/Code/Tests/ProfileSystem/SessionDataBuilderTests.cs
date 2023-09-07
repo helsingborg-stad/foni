@@ -78,5 +78,19 @@ namespace Foni.Code.Tests.ProfileSystem
 
             Assert.AreEqual(3, guesses[0].timesSoundPlayed);
         }
+
+        [Test]
+        public void RemovesIncompleteGuesses()
+        {
+            var data = new SessionDataBuilder()
+                .Initialize()
+                .StartGuess("a")
+                .EndGuess()
+                .StartGuess("b")
+                .EndSession();
+
+            Assert.AreEqual(1, data.guesses.Count);
+            Assert.AreEqual("a", data.guesses[0].letter);
+        }
     }
 }

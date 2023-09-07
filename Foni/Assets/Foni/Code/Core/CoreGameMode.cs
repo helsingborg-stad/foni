@@ -334,13 +334,7 @@ namespace Foni.Code.Core
         private IEnumerator DoGameOverWin()
         {
             Debug.Log("Game is over (win)");
-            var sessionData = _sessionDataBuilder.EndSession();
-            var activeProfile = Globals.ServiceLocator.ProfileService.GetActiveProfile();
-            if (activeProfile.HasValue)
-            {
-                activeProfile.Value.statistics.sessions.Add(sessionData);
-                Globals.ServiceLocator.ProfileService.UpdateProfile(activeProfile.Value);
-            }
+            EndAndSaveProfileStatistics(false);
 
             yield return phoneticsTree.AnimateHidingLeaves();
             gameResultsUI.gameObject.EnableIfDisabled();
@@ -355,9 +349,26 @@ namespace Foni.Code.Core
             yield return gameResultsUI.AnimateShow();
         }
 
+        public void EndAndSaveProfileStatistics(bool endActiveGuess)
+        {
+            if (endActiveGuess)
+            {
+                _sessionDataBuilder.EndGuess();
+            }
+
+            var sessionData = _sessionDataBuilder.EndSession();
+            var activeProfile = Globals.ServiceLocator.ProfileService.GetActiveProfile();
+            if (!activeProfile.HasValue) return;
+
+            activeProfile.Value.statistics.sessions.Add(sessionData);
+            Globals.ServiceLocator.ProfileService.UpdateProfile(activeProfile.Value);
+        }
+
         private IEnumerator DoGameOverLose()
         {
             Debug.Log("Game is over (lose)");
+            EndAndSaveProfileStatistics(true);
+
             _gameState.IsGameInteractive = false;
 
             var animations = new List<Coroutine>();

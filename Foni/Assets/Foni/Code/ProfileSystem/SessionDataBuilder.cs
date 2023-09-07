@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Foni.Code.Core;
 
 namespace Foni.Code.ProfileSystem
@@ -63,6 +64,7 @@ namespace Foni.Code.ProfileSystem
         {
             var sessionTimeSpan = Globals.ServiceLocator.DateTimeService.Now - _roundStartTimestamp;
             _sessionData.totalSessionTimeS = (float)sessionTimeSpan.TotalSeconds;
+            _sessionData.guesses = _sessionData.guesses.Where(guess => guess.durationUntilCorrectS >= 0).ToList();
             return _sessionData;
         }
     }
