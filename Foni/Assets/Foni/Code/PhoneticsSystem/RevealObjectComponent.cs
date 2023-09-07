@@ -18,6 +18,7 @@ namespace Foni.Code.PhoneticsSystem
         [SerializeField] private Renderer animateRenderer;
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private WorldSpaceButtonComponent soundButton;
+        [SerializeField] private WorldSpaceButtonComponent spriteButton;
         [SerializeField] private GameObject soundButtonAnimateRoot;
 
         [Header("Config/Animation")] //
@@ -51,9 +52,16 @@ namespace Foni.Code.PhoneticsSystem
         {
             animateRoot.transform.localScale = Vector3.zero;
             soundButtonAnimateRoot.transform.localScale = Vector3.zero;
+            spriteButton.enabled = false;
             SetupShaderForAnimation();
-            soundButton.OnClicked = PlaySound;
-            soundButton.OnClicked += () => OnSoundButtonClickedEvent.Invoke();
+            spriteButton.OnClicked = TryPlaySound;
+            soundButton.OnClicked = TryPlaySound;
+        }
+
+        private void TryPlaySound()
+        {
+            PlaySound();
+            OnSoundButtonClickedEvent.Invoke();
         }
 
         private void SetupShaderForAnimation()
@@ -82,6 +90,7 @@ namespace Foni.Code.PhoneticsSystem
 
         public IEnumerator AnimateHide()
         {
+            spriteButton.enabled = false;
             yield return TweenManager.OneShot(hideEasing, 1.0f, 0.0f, hideDuration,
                 TweenAction.TransformScale(animateRoot));
             soundButtonAnimateRoot.transform.localScale = Vector3.zero;
@@ -96,6 +105,8 @@ namespace Foni.Code.PhoneticsSystem
             yield return bounceAnimation;
             yield return materialAnimation;
             yield return soundButtonAnimation;
+
+            spriteButton.enabled = true;
         }
 
         private IEnumerator AnimateSoundButtonShow()

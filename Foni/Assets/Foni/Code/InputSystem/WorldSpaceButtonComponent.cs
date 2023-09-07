@@ -1,3 +1,4 @@
+using System;
 using Foni.Code.TweenSystem;
 using Foni.Code.TweenSystem.Actions;
 using Foni.Code.TweenSystem.Easing;
@@ -23,17 +24,30 @@ namespace Foni.Code.InputSystem
 
         private Coroutine _activeAnimationCoroutine;
 
+        private float _animStartScale;
+
+        private void Start()
+        {
+            _animStartScale = gameObject.transform.localScale.x;
+        }
+
         public void OnPressDown()
         {
+            if (!enabled) return;
+
             StopAnimation();
-            _activeAnimationCoroutine = StartCoroutine(TweenManager.OneShot(pressDownEasing, 1.0f, pressedScale,
+            _activeAnimationCoroutine = StartCoroutine(TweenManager.OneShot(pressDownEasing, _animStartScale,
+                pressedScale,
                 pressDownDuration, TweenAction.TransformScale(gameObject)));
         }
 
         public void OnPressUp()
         {
+            if (!enabled) return;
+
             StopAnimation();
-            _activeAnimationCoroutine = StartCoroutine(TweenManager.OneShot(pressUpEasing, pressedScale, 1.0f,
+            _activeAnimationCoroutine = StartCoroutine(TweenManager.OneShot(pressUpEasing, pressedScale,
+                _animStartScale,
                 pressUpDuration, TweenAction.TransformScale(gameObject)));
 
             OnClicked();

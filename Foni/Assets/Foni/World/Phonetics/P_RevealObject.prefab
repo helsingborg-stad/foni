@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 489823520163863689}
   - component: {fileID: 523548694611030194}
+  - component: {fileID: 2832057143485944668}
+  - component: {fileID: 4058677123988412851}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -84,6 +86,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2832057143485944668
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350923062390391228}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 5.12}
+  m_EdgeRadius: 0
+--- !u!114 &4058677123988412851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350923062390391228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927c5e16fb244f5690189094453317d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressedScale: 0.3
+  pressDownEasing: 0
+  pressDownDuration: 0.1
+  pressUpEasing: 0
+  pressUpDuration: 0.1
 --- !u!1 &3828062846679941647
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +179,7 @@ Transform:
   m_Children:
   - {fileID: 5283152568402172886}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4449430065462514430
 MonoBehaviour:
@@ -133,6 +197,7 @@ MonoBehaviour:
   animateRenderer: {fileID: 523548694611030194}
   spriteRenderer: {fileID: 523548694611030194}
   soundButton: {fileID: 7184046753783203256}
+  spriteButton: {fileID: 4058677123988412851}
   soundButtonAnimateRoot: {fileID: 6904593750136032838}
   showEasing: 30
   hideEasing: 29
