@@ -5,7 +5,7 @@
       "words": [
         "apelsin",
         "avokado",
-        "armar"
+        "arm"
       ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_a.png",
       "altImage": "Phonetics/AltImages/T_a.png"
     },
@@ -61,7 +61,7 @@
       "id": "i",
       "words": [
         "igelkott",
-        "isbit",
+        "isbitar",
         "insekter"
       ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_i.png"
     },
@@ -157,7 +157,7 @@
       "words": [
         "vindruva",
         "vas",
-        "vattendroppe"
+        "vattendroppar"
       ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_v.png"
     },
     {

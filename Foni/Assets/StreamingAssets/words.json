@@ -11,9 +11,9 @@
       "soundClip": "Phonetics/Sounds/Avokado.wav"
     },
     {
-      "id": "armar",
+      "id": "arm",
       "image": "Phonetics/WordObjects/arm.png",
-      "soundClip": "Phonetics/Sounds/Armar.wav"
+      "soundClip": "Phonetics/Sounds/Arm.wav"
     },
     {
       "id": "blåbär",
@@ -111,14 +111,14 @@
       "soundClip": "Phonetics/Sounds/Igelkott.wav"
     },
     {
-      "id": "isbit",
+      "id": "isbitar",
       "image": "Phonetics/WordObjects/isbit.png",
-      "soundClip": "Phonetics/Sounds/Isbit.wav"
+      "soundClip": "Phonetics/Sounds/Isbitar.wav"
     },
     {
       "id": "insekter",
       "image": "Phonetics/WordObjects/insekter.png",
-      "soundClip": "Phonetics/Sounds/Insekt.wav"
+      "soundClip": "Phonetics/Sounds/Insekter.wav"
     },
     {
       "id": "julgran",
@@ -248,7 +248,7 @@
     {
       "id": "segelbåt",
       "image": "Phonetics/WordObjects/segelbat.png",
-      "soundClip": "Phonetics/Sounds/Segelbat.wav"
+      "soundClip": "Phonetics/Sounds/Segelbåt.wav"
     },
     {
       "id": "tröja",
@@ -291,9 +291,9 @@
       "soundClip": "Phonetics/Sounds/Vas.wav"
     },
     {
-      "id": "vattendroppe",
+      "id": "vattendroppar",
       "image": "Phonetics/WordObjects/vattendroppe.png",
-      "soundClip": "Phonetics/Sounds/Vattendroppe.wav"
+      "soundClip": "Phonetics/Sounds/Vattendroppar.wav"
     },
     {
       "id": "yxa",
