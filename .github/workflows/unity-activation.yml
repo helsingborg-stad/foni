@@ -1,4 +1,0 @@
-name: Acquire activation file
-
-on:
-  workflow_dispatch: {}

@@ -1,7 +1,0 @@
-name: Tests
-
-on:
-  push:
-    branches: main
-
-  workflow_dispatch: {}
