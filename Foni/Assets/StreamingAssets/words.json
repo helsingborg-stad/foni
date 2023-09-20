@@ -203,7 +203,7 @@
     {
       "id": "oliv",
       "image": "Phonetics/WordObjects/oliv.png",
-      "soundClip": "Phonetics/Sounds/Oliv.wav"
+      "soundClip": "Phonetics/Sounds/Oliver.wav"
     },
     {
       "id": "ost",
@@ -283,7 +283,7 @@
     {
       "id": "vindruva",
       "image": "Phonetics/WordObjects/vindruvor.png",
-      "soundClip": "Phonetics/Sounds/Vindruva.wav"
+      "soundClip": "Phonetics/Sounds/Vindruvor.wav"
     },
     {
       "id": "vas",
