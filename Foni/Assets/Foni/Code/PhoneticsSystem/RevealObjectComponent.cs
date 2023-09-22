@@ -122,7 +122,7 @@ namespace Foni.Code.PhoneticsSystem
 
         private void PlaySound()
         {
-            Globals.ExclusiveUIAudio.PlayIfCurrentlySilent(_relatedAudioClip);
+            Globals.AudioManager.PlayAudioOneShot("guess", _relatedAudioClip, false);
         }
 
         private IEnumerator AnimateMaterialReveal()

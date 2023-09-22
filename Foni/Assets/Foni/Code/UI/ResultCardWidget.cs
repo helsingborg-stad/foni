@@ -1,3 +1,4 @@
+using Foni.Code.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +25,8 @@ namespace Foni.Code.UI
 
         [SerializeField] private AudioSource audioSource;
 
+        private AudioClip _audioClip;
+
         public void Set(ResultCardInfo info)
         {
             image.sprite = info.Sprite;
@@ -33,12 +36,12 @@ namespace Foni.Code.UI
             altImage.gameObject.SetActive(info.AltImage != null);
             altImage.sprite = info.AltImage;
 
-            audioSource.clip = info.AudioClip;
+            _audioClip = info.AudioClip;
         }
 
         public void PlaySound()
         {
-            audioSource.PlayOneShot(audioSource.clip);
+            Globals.AudioManager.PlayAudioOneShot("result", _audioClip, true);
         }
     }
 }

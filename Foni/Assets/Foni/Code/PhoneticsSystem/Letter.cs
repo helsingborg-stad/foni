@@ -15,6 +15,7 @@ namespace Foni.Code.PhoneticsSystem
         public string ID;
         public List<Word> Words;
         public SoftRef<Sprite> HandGestureSprite;
+        public SoftRef<AudioClip> VocalizationSound;
         [CanBeNull] public SoftRef<Sprite> AltImage;
 
         public bool Equals(Letter other)
@@ -41,6 +42,7 @@ namespace Foni.Code.PhoneticsSystem
             public string id;
             public string[] words;
             public string handGestureImage;
+            public string vocalizationSound;
             [CanBeNull] public string altImage;
         }
 
@@ -72,6 +74,7 @@ namespace Foni.Code.PhoneticsSystem
                 ID = serializedLetter.id,
                 Words = letterWords,
                 HandGestureSprite = new SoftRef<Sprite>(serializedLetter.handGestureImage),
+                VocalizationSound = new SoftRef<AudioClip>(serializedLetter.vocalizationSound),
                 AltImage = (serializedLetter.altImage != null) ? new SoftRef<Sprite>(serializedLetter.altImage) : null
             };
         }

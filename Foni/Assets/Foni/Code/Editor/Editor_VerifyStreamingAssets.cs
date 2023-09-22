@@ -53,6 +53,16 @@ namespace Foni.Code.Editor
                 Debug.LogWarningFormat("Letter '{0}' missing hand gesture image '{1}'", letter.id,
                     letter.handGestureImage);
             }
+
+            var missingVocalizationSound = !File.Exists(Path.Join(
+                assetsPath,
+                letter.vocalizationSound));
+
+            if (missingVocalizationSound)
+            {
+                Debug.LogWarningFormat("Letter '{0}' missing vocalization sound '{1}'", letter.id,
+                    letter.vocalizationSound);
+            }
         }
 
         private static void LogVerifyWord(WordSerialization.SerializedWord word)

@@ -59,6 +59,7 @@ namespace Foni.Code.Core
         [SerializeField] private AudioClip guessSuccessSound;
 
         [SerializeField] private AudioClip guessFailSound;
+        [SerializeField] private AudioClip summaryIntroSound;
 #if UNITY_EDITOR
         [Tooltip("Not used in builds. Negative values are ignored and will use default/no seed.")] [SerializeField]
         private int editorRandomSeed = -1;
@@ -162,11 +163,11 @@ namespace Foni.Code.Core
 
             if (guessedCorrectly)
             {
-                HandleCorrectGuess();
+                HandleCorrectGuess(guessedLetter);
             }
             else
             {
-                HandleIncorrectGuess();
+                HandleIncorrectGuess(guessedLetter);
             }
         }
 
@@ -207,9 +208,14 @@ namespace Foni.Code.Core
                 yield return new WaitForTask(() => letter.HandGestureSprite.Load(_assetDataSource));
             }
 
-            foreach (var letter in allLettersToShow.Where(letter => letter.AltImage != null))
+            foreach (var letter in allLettersToShow)
             {
-                yield return new WaitForTask(() => letter.AltImage.Load(_assetDataSource));
+                if (letter.AltImage != null)
+                {
+                    yield return new WaitForTask(() => letter.AltImage.Load(_assetDataSource));
+                }
+
+                yield return new WaitForTask(() => letter.VocalizationSound.Load(_assetDataSource));
             }
 
             foreach (var word in wordsForRound)
@@ -260,13 +266,12 @@ namespace Foni.Code.Core
             yield return phoneticsTree.AnimateShowingLeaves();
         }
 
-        private void HandleCorrectGuess()
+        private void HandleCorrectGuess(Letter guessedLetter)
         {
-            handGesture.Hide();
-            StartCoroutine(DoGuessedCorrectly());
+            StartCoroutine(DoGuessedCorrectly(guessedLetter));
         }
 
-        private void HandleIncorrectGuess()
+        private void HandleIncorrectGuess(Letter guessedLetter)
         {
             _gameState.CurrentWrongGuesses++;
             _sessionDataBuilder.IncrementWrongGuesses();
@@ -278,15 +283,27 @@ namespace Foni.Code.Core
                 return;
             }
 
-            Globals.ExclusiveUIAudio.PlayOverride(guessFailSound);
+            StartCoroutine(DoGuessedIncorrectly(guessedLetter));
         }
 
-        private IEnumerator DoGuessedCorrectly()
+        private IEnumerator DoGuessedIncorrectly(Letter guessedLetter)
         {
-            Globals.ExclusiveUIAudio.PlayOverride(guessSuccessSound);
+            yield return Globals.AudioManager.PlayMultipleQueued("guess", new List<AudioClip>
+            {
+                guessedLetter.VocalizationSound.Asset,
+                guessFailSound
+            });
+        }
 
+        private IEnumerator DoGuessedCorrectly(Letter guessedLetter)
+        {
+            handGesture.Hide();
             _gameState.IsGameInteractive = false;
             _sessionDataBuilder.EndGuess();
+
+            Globals.AudioManager.Stop("guess");
+            yield return Globals.AudioManager.PlayAudio("guess", guessedLetter.VocalizationSound.Asset, true);
+            Globals.AudioManager.PlayAudioOneShot("guess", guessSuccessSound, true);
 
             yield return _gameState.RevealObjects[_gameState.CurrentLetter].AnimateHide();
 
@@ -327,6 +344,7 @@ namespace Foni.Code.Core
             roundResultsUI.SetCards(cards);
 
             yield return roundResultsUI.AnimateShow();
+            Globals.AudioManager.PlayAudioOneShot("result", summaryIntroSound, true);
 
             while (waiting) yield return null;
         }

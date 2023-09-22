@@ -55,16 +55,16 @@ namespace Foni.Code.Core
             set => _avatarIconMapper = value;
         }
 
-        private static ExclusiveAudioManager _exclusiveUIAudio;
+        private static AudioManager _audioManager;
 
-        public static ExclusiveAudioManager ExclusiveUIAudio
+        public static AudioManager AudioManager
         {
             get
             {
                 EnsureGlobalsObject();
-                return _exclusiveUIAudio;
+                return _audioManager;
             }
-            set => _exclusiveUIAudio = value;
+            set => _audioManager = value;
         }
 
         public static void EnsureGlobalsObject()

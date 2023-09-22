@@ -6,7 +6,9 @@
         "apelsin",
         "avokado",
         "arm"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_a.png",
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_a.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Aaaaa.wav",
       "altImage": "Phonetics/AltImages/T_a.png"
     },
     {
@@ -15,7 +17,9 @@
         "blåbär",
         "barnvagn",
         "byxor"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_b.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_b.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Bbbb.wav"
     },
     {
       "id": "d",
@@ -23,7 +27,9 @@
         "drake",
         "docka",
         "dator"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_d.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_d.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Dddd 2.wav"
     },
     {
       "id": "e",
@@ -31,7 +37,9 @@
         "ekorre",
         "eka",
         "eld"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_e.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_e.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Eeeee.wav"
     },
     {
       "id": "f",
@@ -39,7 +47,9 @@
         "får",
         "fingrar",
         "fjäril"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_f.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_f.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ffffff.wav"
     },
     {
       "id": "g",
@@ -47,7 +57,9 @@
         "gris",
         "groda",
         "gaffel"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_g.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_g.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Gggg.wav"
     },
     {
       "id": "h",
@@ -55,7 +67,9 @@
         "häst",
         "hallon",
         "halsduk"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_h.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_h.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Hhhh.wav"
     },
     {
       "id": "i",
@@ -63,7 +77,9 @@
         "igelkott",
         "isbitar",
         "insekter"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_i.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_i.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Iiiiii.wav"
     },
     {
       "id": "j",
@@ -71,7 +87,9 @@
         "julgran",
         "jacka",
         "juice"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_j.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_j.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Jjjjj.wav"
     },
     {
       "id": "k",
@@ -79,7 +97,9 @@
         "kiwi",
         "kniv",
         "knä"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_k.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_k.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Kkkkk.wav"
     },
     {
       "id": "l",
@@ -87,7 +107,9 @@
         "lime",
         "lastbil",
         "linjal"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_l.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_l.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Llllll.wav"
     },
     {
       "id": "m",
@@ -95,7 +117,9 @@
         "marsvin",
         "moln",
         "motorcykel"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_m.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_m.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Mmmmm.wav"
     },
     {
       "id": "n",
@@ -103,7 +127,9 @@
         "nyckelpiga",
         "nyckel",
         "naglar"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_n.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_n.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Nnnnn.wav"
     },
     {
       "id": "o",
@@ -111,7 +137,9 @@
         "orange",
         "oliv",
         "ost"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_o.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_o.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Oooo.wav"
     },
     {
       "id": "p",
@@ -119,7 +147,9 @@
         "persika",
         "potatis",
         "paraply"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_p.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_p.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Pppp.wav"
     },
     {
       "id": "r",
@@ -127,14 +157,18 @@
         "räv",
         "russin",
         "ryggsäck"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_r.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_r.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Rrrr.wav"
     },
     {
       "id": "s",
       "words": [
         "smultron",
         "segelbåt"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_s.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_s.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ssssss.wav"
     },
     {
       "id": "t",
@@ -142,7 +176,9 @@
         "tröja",
         "tår",
         "traktor"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_t.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_t.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ttttt.wav"
     },
     {
       "id": "u",
@@ -150,7 +186,9 @@
         "ubåt",
         "ugn",
         "undulat"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_u.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_u.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Uuuuu.wav"
     },
     {
       "id": "v",
@@ -158,14 +196,18 @@
         "vindruva",
         "vas",
         "vattendroppar"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_v.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_v.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Vvvvvv.wav"
     },
     {
       "id": "y",
       "words": [
         "yxa",
         "yr"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_y.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_y.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Yyyy.wav"
     },
     {
       "id": "å",
@@ -173,7 +215,9 @@
         "ål",
         "ånga",
         "åra"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_aa.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_aa.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ååååå.wav"
     },
     {
       "id": "ä",
@@ -181,7 +225,9 @@
         "ägg",
         "älg",
         "äng"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_aaa.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_aaa.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ääää.wav"
     },
     {
       "id": "ö",
@@ -189,7 +235,9 @@
         "ödla",
         "ögonbryn",
         "öra"
-      ], "handGestureImage": "Phonetics/HandGestures/T_HandGesture_oo.png"
+      ],
+      "handGestureImage": "Phonetics/HandGestures/T_HandGesture_oo.png",
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ööööö.wav"
     }
   ]
 }
