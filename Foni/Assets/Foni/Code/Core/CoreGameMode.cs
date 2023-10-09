@@ -297,13 +297,14 @@ namespace Foni.Code.Core
 
         private IEnumerator DoGuessedCorrectly(Letter guessedLetter)
         {
-            handGesture.Hide();
             _gameState.IsGameInteractive = false;
             _sessionDataBuilder.EndGuess();
 
             Globals.AudioManager.Stop("guess");
             yield return Globals.AudioManager.PlayAudio("guess", guessedLetter.VocalizationSound.Asset, true);
             Globals.AudioManager.PlayAudioOneShot("guess", guessSuccessSound, true);
+            
+            handGesture.Hide();
 
             yield return _gameState.RevealObjects[_gameState.CurrentLetter].AnimateHide();
 
@@ -422,6 +423,7 @@ namespace Foni.Code.Core
             var activeRevealObject = _gameState.RevealObjects[_gameState.CurrentLetter];
             phoneticsTree.ResetAllLeaves();
             handGesture.SetSprite(letter.HandGestureSprite.Asset);
+            handGesture.Show();
             _sessionDataBuilder.StartGuess(letter.ID);
             yield return activeRevealObject.AnimateReveal();
         }
