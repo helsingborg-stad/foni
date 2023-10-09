@@ -10,6 +10,7 @@ namespace Foni.Code.UI
         public string Title;
         public Sprite Sprite;
         public Sprite AltImage;
+        public Sprite HandGesture;
         public AudioClip AudioClip;
     }
 
@@ -23,6 +24,8 @@ namespace Foni.Code.UI
 
         [SerializeField] private Image altImage;
 
+        [SerializeField] private Image handGestureImage;
+
         [SerializeField] private AudioSource audioSource;
 
         private AudioClip _audioClip;
@@ -35,6 +38,8 @@ namespace Foni.Code.UI
 
             altImage.gameObject.SetActive(info.AltImage != null);
             altImage.sprite = info.AltImage;
+
+            handGestureImage.sprite = info.HandGesture;
 
             _audioClip = info.AudioClip;
         }

@@ -366,6 +366,7 @@ namespace Foni.Code.Core
             gameResultsUI.SetCards(resultCardInfos);
 
             yield return gameResultsUI.AnimateShow();
+            Globals.AudioManager.PlayAudioOneShot("result", summaryIntroSound, true);
         }
 
         public void EndAndSaveProfileStatistics(bool endActiveGuess)
@@ -411,6 +412,7 @@ namespace Foni.Code.Core
                 Title = letter.ID,
                 Sprite = historyEntry.Words[index].Sprite.Asset,
                 AltImage = letter.AltImage?.Asset,
+                HandGesture = letter.HandGestureSprite.Asset,
                 AudioClip = historyEntry.Words[index].SoundClip.Asset
             }).ToList();
         }
