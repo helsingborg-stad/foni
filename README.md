@@ -15,6 +15,7 @@
     - [Material Symbols by Google](#material-symbols-by-google)
     - [Inter Font by Rasmus Andersson](#inter-font-by-rasmus-andersson)
     - [Comic Neue Font by Craig Rozynski, Hrant Papazian](#comic-neue-font-by-craig-rozynski-hrant-papazian)
+    - [Borel Font by Rosalie Wagner](#borel-font-by-rosalie-wagner)
     - [Unity Asset Store - OpenWavParser by eToile](#unity-asset-store---openwavparser-by-etoile)
     - [PlistCS by Animetrics](#plistcs-by-animetrics)
     - ["Success" sound fx by Pixabay](#success-sound-fx-by-pixabay)
@@ -114,6 +115,12 @@ not be the same as their original format.
 - Usage: title font
 - License: [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
 - Link: https://fonts.google.com/specimen/Comic+Neue/
+
+### Borel Font by Rosalie Wagner
+
+- Usage: used in alt images (modified)
+- License: [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+- Link: https://fonts.google.com/specimen/Borel/
 
 ### Unity Asset Store - OpenWavParser by eToile
 

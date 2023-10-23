@@ -217,7 +217,8 @@
         "åra"
       ],
       "handGestureImage": "Phonetics/HandGestures/T_HandGesture_aa.png",
-      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ååååå.wav"
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ååååå.wav",
+      "altImage": "Phonetics/AltImages/T_aa.png"
     },
     {
       "id": "ä",
@@ -227,7 +228,8 @@
         "äng"
       ],
       "handGestureImage": "Phonetics/HandGestures/T_HandGesture_aaa.png",
-      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ääää.wav"
+      "vocalizationSound": "Phonetics/Sounds/Vocalization/Ääää.wav",
+      "altImage": "Phonetics/AltImages/T_aaa.png"
     },
     {
       "id": "ö",
