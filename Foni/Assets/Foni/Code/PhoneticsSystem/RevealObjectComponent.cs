@@ -17,9 +17,7 @@ namespace Foni.Code.PhoneticsSystem
 
         [SerializeField] private Renderer animateRenderer;
         [SerializeField] private SpriteRenderer spriteRenderer;
-        [SerializeField] private WorldSpaceButtonComponent soundButton;
         [SerializeField] private WorldSpaceButtonComponent spriteButton;
-        [SerializeField] private GameObject soundButtonAnimateRoot;
 
         [Header("Config/Animation")] //
         [SerializeField]
@@ -31,9 +29,6 @@ namespace Foni.Code.PhoneticsSystem
 
         [SerializeField] private EEasing revealEasing;
         [SerializeField] private float revealDuration;
-
-        [SerializeField] private EEasing soundButtonShowEasing;
-        [SerializeField] private float soundButtonShowDuration;
 
         [SerializeField] private EEasing bounceEasing1;
         [SerializeField] private EEasing bounceEasing2;
@@ -51,11 +46,9 @@ namespace Foni.Code.PhoneticsSystem
         private void Start()
         {
             animateRoot.transform.localScale = Vector3.zero;
-            soundButtonAnimateRoot.transform.localScale = Vector3.zero;
             spriteButton.enabled = false;
             SetupShaderForAnimation();
             spriteButton.OnClicked = TryPlaySound;
-            soundButton.OnClicked = TryPlaySound;
         }
 
         private void TryPlaySound()
@@ -93,26 +86,17 @@ namespace Foni.Code.PhoneticsSystem
             spriteButton.enabled = false;
             yield return TweenManager.OneShot(hideEasing, 1.0f, 0.0f, hideDuration,
                 TweenAction.TransformScale(animateRoot));
-            soundButtonAnimateRoot.transform.localScale = Vector3.zero;
         }
 
         public IEnumerator AnimateReveal()
         {
             var bounceAnimation = StartCoroutine(AnimateBounce());
             var materialAnimation = StartCoroutine(AnimateMaterialReveal());
-            var soundButtonAnimation = StartCoroutine(AnimateSoundButtonShow());
 
             yield return bounceAnimation;
             yield return materialAnimation;
-            yield return soundButtonAnimation;
 
             spriteButton.enabled = true;
-        }
-
-        private IEnumerator AnimateSoundButtonShow()
-        {
-            yield return TweenManager.OneShot(soundButtonShowEasing, 0.0f, 1.0f, soundButtonShowDuration,
-                TweenAction.TransformScale(soundButtonAnimateRoot));
         }
 
         public void ShroudImmediately()
