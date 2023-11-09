@@ -52,6 +52,11 @@ namespace Foni.Code.PhoneticsSystem
         [SerializeField] private float showDuration;
         [SerializeField] private float hideDuration;
 
+        [SerializeField] private float flutterAnimTime;
+        [SerializeField] private float flutterAnimIntervalDelay;
+        [SerializeField] private AnimationCurve flutterSizeAnimCurve;
+        private Coroutine _activeFlutterAnim;
+
 
         public Letter Letter { get; private set; }
 
@@ -87,6 +92,45 @@ namespace Foni.Code.PhoneticsSystem
                 TweenAction.TransformScale(animateRoot));
         }
 
+        public void StartFlutter()
+        {
+            if (_activeFlutterAnim != null)
+            {
+                StopCoroutine(_activeFlutterAnim);
+            }
+
+            _activeFlutterAnim = StartCoroutine(DoFlutterLoop());
+        }
+
+        public void StopFlutter()
+        {
+            if (_activeFlutterAnim != null)
+            {
+                StopCoroutine(_activeFlutterAnim);
+            }
+        }
+
+        private IEnumerator DoFlutterLoop()
+        {
+            while (true)
+            {
+                var time = 0.0f;
+                var origScale = animateRoot.transform.localScale;
+                while (time < flutterAnimTime)
+                {
+                    var value = flutterSizeAnimCurve.Evaluate(time / flutterAnimTime);
+                    animateRoot.transform.localScale =
+                        new Vector3(value * origScale.x, value * origScale.y, value * origScale.z);
+                    time += Time.deltaTime;
+                    yield return null;
+                }
+
+                animateRoot.transform.localScale = origScale;
+
+                yield return new WaitForSeconds(flutterAnimIntervalDelay);
+            }
+        }
+
         public void SetState(ELetterState newState)
         {
             DisableAllStateObjects();
@@ -100,6 +144,7 @@ namespace Foni.Code.PhoneticsSystem
                 .ForEach(GameObjectUtils.EnableIfDisabled);
 
             SetInnerCircleColor(matchingNewStateConfig.color);
+            StopFlutter();
         }
 
         private void SetInnerCircleColor(Color newColor)

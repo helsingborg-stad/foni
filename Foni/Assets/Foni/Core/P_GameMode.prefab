@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649993965634603650}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9196159839267228935
 MonoBehaviour:
@@ -52,7 +52,7 @@ MonoBehaviour:
   handGesture: {fileID: 0}
   roundResultsUI: {fileID: 0}
   gameResultsUI: {fileID: 0}
-  maxWrongGuesses: 3
+  maxWrongGuessesUntilHelp: 2
   guessSuccessSound: {fileID: 8300000, guid: 7f8e4f745acf84fd5a24386974c81a8b, type: 3}
   guessFailSound: {fileID: 8300000, guid: 45a46c4c82e4d4b90bd788cdd1d864b3, type: 3}
   summaryIntroSound: {fileID: 8300000, guid: a1630ababdca146b28fb70404ae35f6b, type: 3}

@@ -40,6 +40,15 @@ namespace Foni.Code.PhoneticsSystem
             letterComponents.ForEach(ResetLetterComponentVisuals);
         }
 
+        public void FlutterLeaf(Letter letter)
+        {
+            var component = letterComponents.Find(comp => comp.Letter.ID == letter.ID);
+            if (component)
+            {
+                component.StartFlutter();
+            }
+        }
+
         public IEnumerator AnimateShowingLeaves()
         {
             var coroutines = new List<Coroutine>();
@@ -77,6 +86,7 @@ namespace Foni.Code.PhoneticsSystem
         private static void ResetLetterComponentVisuals(LetterComponent letterComponent)
         {
             letterComponent.SetState(ELetterState.Default);
+            letterComponent.StopFlutter();
         }
 
         private static void HideLetterComponentVisuals(LetterComponent letterComponent)

@@ -10,7 +10,7 @@ using Foni.Code.ProfileSystem;
 using Foni.Code.UI;
 using Foni.Code.Util;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using Random = System.Random;
 
 namespace Foni.Code.Core
@@ -50,11 +50,13 @@ namespace Foni.Code.Core
         [SerializeField] private HandGesture handGesture;
 
         [SerializeField] private RoundResultsUI roundResultsUI;
+        [SerializeField] private PromptHelpUI promptHelpUI;
         [SerializeField] private GameResultsUI gameResultsUI;
 
+        [FormerlySerializedAs("maxWrongGuesses")]
         [Header("Config")] //
         [SerializeField]
-        private int maxWrongGuesses;
+        private int maxWrongGuessesUntilHelp;
 
         [SerializeField] private AudioClip guessSuccessSound;
 
@@ -276,14 +278,12 @@ namespace Foni.Code.Core
             _gameState.CurrentWrongGuesses++;
             _sessionDataBuilder.IncrementWrongGuesses();
 
-            if (_gameState.CurrentWrongGuesses >= maxWrongGuesses)
-            {
-                handGesture.Hide();
-                StartCoroutine(DoGameOverLose());
-                return;
-            }
-
             StartCoroutine(DoGuessedIncorrectly(guessedLetter));
+
+            if (_gameState.CurrentWrongGuesses == maxWrongGuessesUntilHelp)
+            {
+                StartCoroutine(ShowAndWaitForHelpPrompt());
+            }
         }
 
         private IEnumerator DoGuessedIncorrectly(Letter guessedLetter)
@@ -303,7 +303,7 @@ namespace Foni.Code.Core
             Globals.AudioManager.Stop("guess");
             yield return Globals.AudioManager.PlayAudio("guess", guessedLetter.VocalizationSound.Asset, true);
             Globals.AudioManager.PlayAudioOneShot("guess", guessSuccessSound, true);
-            
+
             handGesture.Hide();
 
             yield return _gameState.RevealObjects[_gameState.CurrentLetter].AnimateHide();
@@ -350,6 +350,35 @@ namespace Foni.Code.Core
             while (waiting) yield return null;
         }
 
+        private IEnumerator ShowAndWaitForHelpPrompt()
+        {
+            _gameState.IsGameInteractive = false;
+
+            var waiting = true;
+            var didAcceptHelp = false;
+
+            void ContinueCallback(bool acceptedHelp)
+            {
+                waiting = false;
+                didAcceptHelp = acceptedHelp;
+            }
+
+            promptHelpUI.OnContinue = ContinueCallback;
+
+            yield return new WaitForSeconds(1.5f);
+            yield return promptHelpUI.AnimateShow();
+
+            while (waiting) yield return null;
+
+            if (didAcceptHelp)
+            {
+                var letter = _gameState.ActiveLetters[_gameState.CurrentLetter];
+                phoneticsTree.FlutterLeaf(letter);
+            }
+
+            _gameState.IsGameInteractive = true;
+        }
+
         private IEnumerator DoGameOverWin()
         {
             Debug.Log("Game is over (win)");
@@ -382,27 +411,6 @@ namespace Foni.Code.Core
 
             activeProfile.Value.statistics.sessions.Add(sessionData);
             Globals.ServiceLocator.ProfileService.UpdateProfile(activeProfile.Value);
-        }
-
-        private IEnumerator DoGameOverLose()
-        {
-            Debug.Log("Game is over (lose)");
-            EndAndSaveProfileStatistics(true);
-
-            _gameState.IsGameInteractive = false;
-
-            var animations = new List<Coroutine>();
-            animations.AddRange(
-                _gameState.RevealObjects.Select(revealObject => StartCoroutine(revealObject.AnimateHide())));
-            animations.Add(StartCoroutine(phoneticsTree.AnimateHidingLeaves()));
-
-            foreach (var coroutine in animations)
-            {
-                yield return coroutine;
-            }
-
-            // TODO: show UI instead prompting to retry
-            SceneManager.LoadScene("ProfileMenuScene", LoadSceneMode.Single);
         }
 
         private static List<ResultCardInfo> RoundHistoryEntryToResultCardInfo(RoundHistoryEntry historyEntry)
