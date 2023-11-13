@@ -372,6 +372,7 @@ namespace Foni.Code.Core
 
             if (didAcceptHelp)
             {
+                _sessionDataBuilder.FlagHelpUsed();
                 var letter = _gameState.ActiveLetters[_gameState.CurrentLetter];
                 phoneticsTree.FlutterLeaf(letter);
             }

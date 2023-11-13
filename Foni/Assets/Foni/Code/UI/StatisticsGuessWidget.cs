@@ -10,6 +10,7 @@ namespace Foni.Code.UI
         [SerializeField] private TextMeshProUGUI timeText;
         [SerializeField] private TextMeshProUGUI wrongGuessCountText;
         [SerializeField] private TextMeshProUGUI soundPlayedCountText;
+        [SerializeField] private GameObject helpUsedIndicator;
 
         public void SetFromGuess(SingleGuessData guess)
         {
@@ -17,6 +18,7 @@ namespace Foni.Code.UI
             timeText.SetText(guess.durationUntilCorrectS.ToString("F1") + "s");
             wrongGuessCountText.SetText(guess.wrongGuesses.ToString());
             soundPlayedCountText.SetText(guess.timesSoundPlayed.ToString());
+            helpUsedIndicator.SetActive(guess.usedHelp);
         }
     }
 }

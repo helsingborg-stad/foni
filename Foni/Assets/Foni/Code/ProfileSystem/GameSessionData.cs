@@ -10,6 +10,7 @@ namespace Foni.Code.ProfileSystem
         public int wrongGuesses;
         public float durationUntilCorrectS;
         public int timesSoundPlayed;
+        public bool usedHelp;
     }
 
     [Serializable]

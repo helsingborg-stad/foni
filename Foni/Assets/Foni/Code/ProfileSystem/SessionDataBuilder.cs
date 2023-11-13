@@ -60,6 +60,14 @@ namespace Foni.Code.ProfileSystem
             return this;
         }
 
+        public SessionDataBuilder FlagHelpUsed()
+        {
+            var singleGuessData = _sessionData.guesses[_currentGuessIndex];
+            singleGuessData.usedHelp = true;
+            _sessionData.guesses[_currentGuessIndex] = singleGuessData;
+            return this;
+        }
+
         public SessionData EndSession()
         {
             var sessionTimeSpan = Globals.ServiceLocator.DateTimeService.Now - _roundStartTimestamp;

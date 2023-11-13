@@ -28,14 +28,16 @@ namespace Foni.Code.Tests.ProfileSystem
                                 letter = "s",
                                 wrongGuesses = 3,
                                 durationUntilCorrectS = (float)new TimeSpan(0, 0, 30).TotalSeconds,
-                                timesSoundPlayed = 1
+                                timesSoundPlayed = 1,
+                                usedHelp = true
                             },
                             new()
                             {
                                 letter = "i",
                                 wrongGuesses = 0,
                                 durationUntilCorrectS = (float)new TimeSpan(0, 0, 2).TotalSeconds,
-                                timesSoundPlayed = 0
+                                timesSoundPlayed = 0,
+                                usedHelp = false
                             }
                         }
                     }

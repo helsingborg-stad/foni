@@ -28,7 +28,8 @@ namespace Foni.Code.Tests.ProfileSystem
                                     letter = "s",
                                     wrongGuesses = 3,
                                     durationUntilCorrectS = (float)new TimeSpan(0, 0, 30).TotalSeconds,
-                                    timesSoundPlayed = 1
+                                    timesSoundPlayed = 1,
+                                    usedHelp = true
                                 }
                             }
                         }
@@ -41,7 +42,8 @@ namespace Foni.Code.Tests.ProfileSystem
                 letter = "i",
                 wrongGuesses = 0,
                 durationUntilCorrectS = (float)new TimeSpan(0, 0, 2).TotalSeconds,
-                timesSoundPlayed = 0
+                timesSoundPlayed = 0,
+                usedHelp = false
             });
 
             return profile;
@@ -50,7 +52,7 @@ namespace Foni.Code.Tests.ProfileSystem
         private static string GetTestProfileJson()
         {
             return
-                "{\"name\":\"Räv\",\"icon\":\"fox\",\"statistics\":{\"sessions\":[{\"timestampStart\":\"2023-06-30T15:30:45.0000000Z\",\"totalSessionTimeS\":195.0,\"guesses\":[{\"letter\":\"s\",\"wrongGuesses\":3,\"durationUntilCorrectS\":30.0,\"timesSoundPlayed\":1},{\"letter\":\"i\",\"wrongGuesses\":0,\"durationUntilCorrectS\":2.0,\"timesSoundPlayed\":0}]}]}}";
+                "{\"name\":\"Räv\",\"icon\":\"fox\",\"statistics\":{\"sessions\":[{\"timestampStart\":\"2023-06-30T15:30:45.0000000Z\",\"totalSessionTimeS\":195.0,\"guesses\":[{\"letter\":\"s\",\"wrongGuesses\":3,\"durationUntilCorrectS\":30.0,\"timesSoundPlayed\":1,\"usedHelp\":true},{\"letter\":\"i\",\"wrongGuesses\":0,\"durationUntilCorrectS\":2.0,\"timesSoundPlayed\":0,\"usedHelp\":false}]}]}}";
         }
 
         [Test]

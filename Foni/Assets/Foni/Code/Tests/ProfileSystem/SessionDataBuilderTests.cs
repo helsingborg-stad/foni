@@ -80,6 +80,25 @@ namespace Foni.Code.Tests.ProfileSystem
         }
 
         [Test]
+        public void UsedHelp()
+        {
+            var builder = new SessionDataBuilder()
+                .Initialize();
+
+            var guesses = builder
+                .StartGuess("a")
+                .FlagHelpUsed()
+                .EndGuess()
+                .StartGuess("b")
+                .EndGuess()
+                .EndSession()
+                .guesses;
+
+            Assert.AreEqual(true, guesses[0].usedHelp);
+            Assert.AreEqual(false, guesses[1].usedHelp);
+        }
+
+        [Test]
         public void RemovesIncompleteGuesses()
         {
             var data = new SessionDataBuilder()
