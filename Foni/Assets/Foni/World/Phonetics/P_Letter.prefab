@@ -404,7 +404,7 @@ MonoBehaviour:
   showDuration: 0.8
   hideDuration: 0.5
   flutterAnimTime: 1
-  flutterAnimIntervalDelay: 4
+  flutterAnimIntervalDelay: 0.5
   flutterSizeAnimCurve:
     serializedVersion: 2
     m_Curve:
@@ -419,10 +419,10 @@ MonoBehaviour:
       outWeight: 0.22796482
     - serializedVersion: 3
       time: 0.3333
-      value: 1.1
-      inSlope: 0.9554483
+      value: 1.3
+      inSlope: 0
       outSlope: 0
-      tangentMode: 1
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.058956113
       outWeight: 0.33333334
@@ -437,7 +437,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.666
-      value: 1.1
+      value: 1.3
       inSlope: 2.0581086
       outSlope: 0
       tangentMode: 1

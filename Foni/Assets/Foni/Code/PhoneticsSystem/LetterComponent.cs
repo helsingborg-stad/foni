@@ -56,11 +56,17 @@ namespace Foni.Code.PhoneticsSystem
         [SerializeField] private float flutterAnimIntervalDelay;
         [SerializeField] private AnimationCurve flutterSizeAnimCurve;
         private Coroutine _activeFlutterAnim;
+        private Vector3 _initialScale;
 
 
         public Letter Letter { get; private set; }
 
         public event EventHandler OnClicked;
+
+        private void Start()
+        {
+            _initialScale = animateRoot.transform.localScale;
+        }
 
         public void UpdateFromLetter(Letter newLetter, Random randomness)
         {
@@ -104,10 +110,14 @@ namespace Foni.Code.PhoneticsSystem
 
         public void StopFlutter()
         {
-            if (_activeFlutterAnim != null)
-            {
-                StopCoroutine(_activeFlutterAnim);
-            }
+            if (_activeFlutterAnim == null) return;
+
+            StopCoroutine(_activeFlutterAnim);
+        }
+
+        public void ClearFlutterScale()
+        {
+            animateRoot.transform.localScale = _initialScale;
         }
 
         private IEnumerator DoFlutterLoop()
@@ -115,17 +125,17 @@ namespace Foni.Code.PhoneticsSystem
             while (true)
             {
                 var time = 0.0f;
-                var origScale = animateRoot.transform.localScale;
+                var preFlutterScale = animateRoot.transform.localScale;
                 while (time < flutterAnimTime)
                 {
                     var value = flutterSizeAnimCurve.Evaluate(time / flutterAnimTime);
                     animateRoot.transform.localScale =
-                        new Vector3(value * origScale.x, value * origScale.y, value * origScale.z);
+                        new Vector3(value * preFlutterScale.x, value * preFlutterScale.y, value * preFlutterScale.z);
                     time += Time.deltaTime;
                     yield return null;
                 }
 
-                animateRoot.transform.localScale = origScale;
+                animateRoot.transform.localScale = preFlutterScale;
 
                 yield return new WaitForSeconds(flutterAnimIntervalDelay);
             }

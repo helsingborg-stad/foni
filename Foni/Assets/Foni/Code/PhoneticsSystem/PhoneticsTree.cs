@@ -40,6 +40,11 @@ namespace Foni.Code.PhoneticsSystem
             letterComponents.ForEach(ResetLetterComponentVisuals);
         }
 
+        public void HideAllLeaves()
+        {
+            letterComponents.ForEach(l => l.HideImmediately());
+        }
+
         public void FlutterLeaf(Letter letter)
         {
             var component = letterComponents.Find(comp => comp.Letter.ID == letter.ID);
@@ -87,6 +92,7 @@ namespace Foni.Code.PhoneticsSystem
         {
             letterComponent.SetState(ELetterState.Default);
             letterComponent.StopFlutter();
+            letterComponent.ClearFlutterScale();
         }
 
         private static void HideLetterComponentVisuals(LetterComponent letterComponent)

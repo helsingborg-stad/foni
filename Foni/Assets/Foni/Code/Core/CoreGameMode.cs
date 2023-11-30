@@ -322,6 +322,7 @@ namespace Foni.Code.Core
                 yield return phoneticsTree.AnimateHidingLeaves();
                 yield return ShowAndWaitForRoundResultUI();
                 phoneticsTree.ResetAllLeaves();
+                phoneticsTree.HideAllLeaves();
                 yield return SetupNextRound();
                 yield return DoOpeningAnimation();
             }
