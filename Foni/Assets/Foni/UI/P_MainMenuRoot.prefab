@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FONI
+  m_text: Foni
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6231c7fbbe3f04304890fd554c77dd40, type: 2}
   m_sharedMaterial: {fileID: -582086653509273901, guid: 6231c7fbbe3f04304890fd554c77dd40, type: 2}

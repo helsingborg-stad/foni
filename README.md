@@ -15,7 +15,7 @@
     - ["Finger up" icon by Kalashnyk](#finger-up-icon-by-kalashnyk)
     - ["Dislike" icon by Kalashnyk](#dislike-icon-by-kalashnyk)
     - [Material Symbols by Google](#material-symbols-by-google)
-    - [Inter Font by Rasmus Andersson](#inter-font-by-rasmus-andersson)
+    - [Linux Libertine font by Libertine Open Fonts Project](#linux-libertine-font-by-libertine-open-fonts-project)
     - [Comic Neue Font by Craig Rozynski, Hrant Papazian](#comic-neue-font-by-craig-rozynski-hrant-papazian)
     - [Borel Font by Rosalie Wagner](#borel-font-by-rosalie-wagner)
     - [Unity Asset Store - OpenWavParser by eToile](#unity-asset-store---openwavparser-by-etoile)
@@ -118,11 +118,11 @@ not be the same as their original format.
 - License: [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
 - Link: https://fonts.google.com/icons
 
-### Inter Font by Rasmus Andersson
+### Linux Libertine font by Libertine Open Fonts Project
 
 - Usage: main font
 - License: [OFL](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
-- Link: https://fonts.google.com/specimen/Inter/
+- Link: https://www.dafont.com/linux-libertine.font
 
 ### Comic Neue Font by Craig Rozynski, Hrant Papazian
 
