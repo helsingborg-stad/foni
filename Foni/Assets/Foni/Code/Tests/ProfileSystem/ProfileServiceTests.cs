@@ -57,6 +57,11 @@ namespace Foni.Code.Tests.ProfileSystem
                 return Task.FromResult("{\"profiles\": [" + GetMockProfileJson() + "]}");
             }
 
+            public Task<string> LoadOrDefault(string id, string defaultValue)
+            {
+                throw new NotImplementedException();
+            }
+
             public Task Save(string id, string content)
             {
                 return Task.CompletedTask;

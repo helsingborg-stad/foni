@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,19 @@ namespace Foni.Code.SaveSystem.Implementation
         {
             var dataPath = await PathUtils.GetPersistentDataPath();
             return await File.ReadAllTextAsync(Path.Join(dataPath, id), Encoding.UTF8);
+        }
+
+        public async Task<string> LoadOrDefault(string id, string defaultValue)
+        {
+            var dataPath = await PathUtils.GetPersistentDataPath();
+            try
+            {
+                return await File.ReadAllTextAsync(Path.Join(dataPath, id), Encoding.UTF8);
+            }
+            catch (Exception)
+            {
+                return defaultValue;
+            }
         }
 
         public async Task Save(string id, string content)
