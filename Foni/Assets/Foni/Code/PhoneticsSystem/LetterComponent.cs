@@ -63,7 +63,7 @@ namespace Foni.Code.PhoneticsSystem
 
         public event EventHandler OnClicked;
 
-        private void Start()
+        private void Awake()
         {
             _initialScale = animateRoot.transform.localScale;
         }
