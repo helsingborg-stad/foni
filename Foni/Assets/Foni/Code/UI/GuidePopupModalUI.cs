@@ -50,6 +50,7 @@ namespace Foni.Code.UI
 
         private IEnumerator DoViewCheck()
         {
+            animateRoot.transform.localScale = Vector3.zero;
             yield return null;
             var hasViewedGuide = false;
             yield return new WaitForTask<string>(
