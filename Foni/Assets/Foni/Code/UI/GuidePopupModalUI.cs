@@ -19,7 +19,7 @@ namespace Foni.Code.UI
 
         private void Start()
         {
-            StartCoroutine(DoViewCheck());
+            //StartCoroutine(DoViewCheck());
         }
 
         public void HideAndSetAsViewed()

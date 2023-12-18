@@ -52,6 +52,10 @@ This project is built using Unity and is intended to be compatible with the
 latest Unity 2022 version. Unity editor versions are easily managed using
 [Unity Hub](https://unity.com/unity-hub).
 
+Code solution files are not included as they depend on the editor of your choice.
+You can generate them from within Unity from 
+`Settings -> External Tools -> External Script Editor` and choose your desired editor.
+
 ## Third-Party Notices
 
 This project uses external/third-party assets. Some assets may have been modified
