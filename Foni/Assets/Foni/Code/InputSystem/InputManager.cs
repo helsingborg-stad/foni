@@ -11,6 +11,10 @@ namespace Foni.Code.InputSystem
         private void Start()
         {
             EnhancedTouchSupport.Enable();
+
+#if UNITY_EDITOR
+            TouchSimulation.Enable();
+#endif
         }
 
         private void Update()
