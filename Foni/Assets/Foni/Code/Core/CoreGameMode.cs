@@ -103,7 +103,7 @@ namespace Foni.Code.Core
             {
                 Letters = letters,
                 Words = words,
-                RoundConfig = roundConfig
+                RoundConfig = roundConfig,
             };
 
             Debug.LogFormat("Loaded words: {0}", _loadedAssets.Words.Count);
@@ -136,7 +136,7 @@ namespace Foni.Code.Core
                 CurrentWrongGuesses = 0,
                 ActiveLetters = new List<Letter>(),
                 RevealObjects = new List<RevealObjectComponent>(),
-                History = Enumerable.Repeat(new RoundHistoryEntry(), _loadedAssets.RoundConfig.Rounds.Count).ToList()
+                History = Enumerable.Repeat(new RoundHistoryEntry(), _loadedAssets.RoundConfig.Rounds.Count).ToList(),
             };
 
             phoneticsTree.OnLeafClicked += OnPhoneticsTreeLeafClicked;
@@ -246,7 +246,7 @@ namespace Foni.Code.Core
             _gameState.History[_gameState.CurrentRound] = new RoundHistoryEntry
             {
                 Letters = lettersForRound,
-                Words = wordsForRound
+                Words = wordsForRound,
             };
         }
 
@@ -291,7 +291,7 @@ namespace Foni.Code.Core
             yield return Globals.AudioManager.PlayMultipleQueued("guess", new List<AudioClip>
             {
                 guessedLetter.VocalizationSound.Asset,
-                guessFailSound
+                guessFailSound,
             });
         }
 
@@ -423,7 +423,7 @@ namespace Foni.Code.Core
                 Sprite = historyEntry.Words[index].Sprite.Asset,
                 AltImage = letter.AltImage?.Asset,
                 HandGesture = letter.HandGestureSprite.Asset,
-                AudioClip = historyEntry.Words[index].SoundClip.Asset
+                AudioClip = historyEntry.Words[index].SoundClip.Asset,
             }).ToList();
         }
 

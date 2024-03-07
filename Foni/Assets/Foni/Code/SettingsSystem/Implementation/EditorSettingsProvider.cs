@@ -6,7 +6,7 @@ namespace Foni.Code.SettingsSystem.Implementation
         {
             return new Settings
             {
-                TargetFrameRate = -1
+                TargetFrameRate = -1,
             };
         }
     }

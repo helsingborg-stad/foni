@@ -17,11 +17,6 @@ namespace Foni.Code.UI
         [SerializeField] private float animateShowDuration;
         [SerializeField] private float animateHideDuration;
 
-        private void Start()
-        {
-            //StartCoroutine(DoViewCheck());
-        }
-
         public void HideAndSetAsViewed()
         {
             StartCoroutine(DoHideAndSetAsViewed());

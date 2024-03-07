@@ -1,6 +1,5 @@
 using Foni.Code.AudioSystem;
 using Foni.Code.ProfileSystem;
-using Foni.Code.SettingsSystem;
 using UnityEngine;
 
 namespace Foni.Code.Core
@@ -29,18 +28,6 @@ namespace Foni.Code.Core
                 return _serviceLocator;
             }
             set => _serviceLocator = value;
-        }
-
-        private static SettingsManager _settingsManager;
-
-        public static SettingsManager SettingsManager
-        {
-            get
-            {
-                EnsureGlobalsObject();
-                return _settingsManager;
-            }
-            set => _settingsManager = value;
         }
 
         private static AvatarIconMapper _avatarIconMapper;

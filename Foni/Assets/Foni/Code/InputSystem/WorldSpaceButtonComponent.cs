@@ -1,4 +1,3 @@
-using System;
 using Foni.Code.TweenSystem;
 using Foni.Code.TweenSystem.Actions;
 using Foni.Code.TweenSystem.Easing;

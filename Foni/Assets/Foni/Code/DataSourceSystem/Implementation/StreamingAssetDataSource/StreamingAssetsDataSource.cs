@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 
 namespace Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource
@@ -20,11 +19,6 @@ namespace Foni.Code.DataSourceSystem.Implementation.StreamingAssetDataSource
         {
             var result = await Strategy.Get(path);
             return result;
-        }
-
-        public Task Save(string path, string rawData)
-        {
-            throw new NotImplementedException();
         }
     }
 }

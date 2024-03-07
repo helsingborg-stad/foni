@@ -31,10 +31,9 @@ namespace Foni.Code.Core
                 AssetCache = new AssetCache(),
                 DateTimeService = new DefaultDateTimeService(),
                 SaveService = saveService,
-                ProfileService = new ProfileService(saveService)
+                ProfileService = new ProfileService(saveService),
             };
             Globals.ServiceLocator = serviceLocator;
-            Globals.SettingsManager = gameObject.AddComponent<SettingsManager>();
             Globals.AvatarIconMapper = gameObject.GetComponent<AvatarIconMapper>();
             Globals.AudioManager = gameObject.GetComponent<AudioManager>();
 

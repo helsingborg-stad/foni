@@ -38,7 +38,7 @@ namespace Foni.Code.Editor
                 .ToList();
         }
 
-        public static bool IsAssetUsed(string partialAssetPath,
+        private static bool IsAssetUsed(string partialAssetPath,
             IEnumerable<LetterSerialization.SerializedLetter> letters,
             IEnumerable<WordSerialization.SerializedWord> words)
         {
@@ -48,7 +48,7 @@ namespace Foni.Code.Editor
                    words.Any(word => word.image == partialAssetPath || word.soundClip == partialAssetPath);
         }
 
-        public static bool IsAssetUnused(string partialAssetPath,
+        private static bool IsAssetUnused(string partialAssetPath,
             IEnumerable<LetterSerialization.SerializedLetter> letters,
             IEnumerable<WordSerialization.SerializedWord> words)
         {

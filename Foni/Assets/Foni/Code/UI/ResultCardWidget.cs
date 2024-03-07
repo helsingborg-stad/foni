@@ -26,8 +26,6 @@ namespace Foni.Code.UI
 
         [SerializeField] private Image handGestureImage;
 
-        [SerializeField] private AudioSource audioSource;
-
         private AudioClip _audioClip;
 
         public void Set(ResultCardInfo info)

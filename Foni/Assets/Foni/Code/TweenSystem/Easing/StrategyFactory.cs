@@ -51,7 +51,7 @@ namespace Foni.Code.TweenSystem.Easing
                 EEasing.BounceOut => BounceOut,
                 EEasing.BounceInOut => BounceInOut,
                 EEasing.BounceOutIn => BounceOutIn,
-                _ => throw new ArgumentOutOfRangeException(nameof(easing), easing, null)
+                _ => throw new ArgumentOutOfRangeException(nameof(easing), easing, null),
             };
         }
     }

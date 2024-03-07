@@ -30,7 +30,7 @@ namespace Foni.Code.SystemPropertiesSystem
         {
             string content = null;
 
-            await Globals.ServiceLocator.AsyncService.RunOnMainThread(() => LoadCommitTextAsset((textContent) =>
+            await Globals.ServiceLocator.AsyncService.RunOnMainThread(() => LoadCommitTextAsset(textContent =>
                 content = textContent));
 
             return content;

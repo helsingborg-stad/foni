@@ -7,7 +7,11 @@ namespace Foni.Code.Tests.Util
     {
         private struct TestStruct
         {
+            // Props here are accessed via reflection, hence disabling warnings
+            
+            // ReSharper disable once NotAccessedField.Local
             public int PublicField;
+            // ReSharper disable once UnusedAutoPropertyAccessor.Local
             public float PublicProperty { get; set; }
         }
 

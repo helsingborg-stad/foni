@@ -15,7 +15,7 @@ namespace Foni.Code.PhoneticsSystem
         public SoftRef<Sprite> Sprite;
         public SoftRef<AudioClip> SoundClip;
 
-        public bool Equals(Word other)
+        private bool Equals(Word other)
         {
             return ID == other.ID;
         }
@@ -27,7 +27,7 @@ namespace Foni.Code.PhoneticsSystem
 
         public override int GetHashCode()
         {
-            return (ID != null ? ID.GetHashCode() : 0);
+            return ID != null ? ID.GetHashCode() : 0;
         }
     }
 
@@ -53,7 +53,7 @@ namespace Foni.Code.PhoneticsSystem
             {
                 ID = serializedWord.id,
                 Sprite = new SoftRef<Sprite>(serializedWord.image),
-                SoundClip = new SoftRef<AudioClip>(serializedWord.soundClip)
+                SoundClip = new SoftRef<AudioClip>(serializedWord.soundClip),
             };
         }
 
